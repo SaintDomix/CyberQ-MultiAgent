@@ -44,3 +44,10 @@ node_modules/
 *.joblib
 *.pkl
 *.zip
+
+# Local agent instructions and superseded planning notes: retain locally.
+/AGENTS.md
+/docs/IMPLEMENTATION_PLAN.md
+/docs/productization/PARALLEL_DEFENSE_CANDIDATE.md
+/docs/productization/UX_CLARITY_CANDIDATE.md
+/docs/productization/FINAL_STABILIZATION.md

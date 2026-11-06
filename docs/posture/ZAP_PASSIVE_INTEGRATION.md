@@ -153,7 +153,9 @@ cd /home/saintdomix/dissertation_model
 export POSTURE_ZAP_OWNED_EPHEMERAL=1
 export POSTURE_ZAP_API_ORIGIN=http://127.0.0.1:8081
 # Non-secret marker for the explicitly loopback/no-key daemon above:
-export POSTURE_ZAP_API_KEY=LOOPBACK_EPHEMERAL_NO_KEY
+read -r -s -p "ZAP API key: " POSTURE_ZAP_API_KEY
+printf '\n'
+export POSTURE_ZAP_API_KEY
 .venv/bin/python -B scripts/run_posture.py status
 .venv/bin/python -B scripts/run_posture.py assess --authorized
 ```

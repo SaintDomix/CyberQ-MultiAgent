@@ -8,8 +8,9 @@ reassess historical checks, implement fusion/scoring, or change behavioral model
 
 - `check_result`: PASS, FAIL, PARTIAL, NOT_APPLICABLE, NOT_TESTED, ERROR,
   DISMISSED. Unknown results are null. A role's HTTP status is evidence only.
-- `confirmation_status`: the eight statuses required by AGENTS.md. Unknown is
-  null, distinct from NOT_TESTED and NOT_CONFIRMED.
+- `confirmation_status`: CONFIRMED, VERSION_BASED, LIKELY, CONTEXTUAL,
+  NOT_CONFIRMED, NOT_APPLICABLE, NOT_TESTED and FALSE_POSITIVE. Unknown is null,
+  distinct from NOT_TESTED and NOT_CONFIRMED.
 - `severity`: INFO, LOW, MEDIUM, HIGH, CRITICAL, or null.
 - `confidence`: optional `{value, label, method}`; value is a finite evidence-
   confidence estimate in [0, 1]. No estimate is inferred from legacy tokens.

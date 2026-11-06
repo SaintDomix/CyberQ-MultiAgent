@@ -1,275 +1,201 @@
-# CyberQuality Multi-Agent — Assignment 4
+# CyberQ Multi-Agent
 
-One coordinated task executes **Native, ZAP, Behavioral, Evidence Verification,
-and Cybersecurity Quality agents**, supervised by an orchestration-only Coordinator.
-The offline demo uses authentic preserved evidence and actual frozen-model
-inference. It does not simulate LLM calls or scan the shared laboratory.
+CyberQ Multi-Agent is a university cybersecurity assessment project for an
+authorized Moodle environment. It coordinates five specialized agents to combine
+security posture, OWASP ZAP evidence and behavioral detection, verify their
+provenance, and produce an auditable Cybersecurity Quality Index (CQI) assessment.
 
-Read [the isolation rules](docs/COURSEWORK_ISOLATION.md) first. The original
-dissertation is immutable. Never activate the copied `.venv`, configure a remote,
-or enable Moodle/Apache/ZAP operations. Only `.venv-coursework` is used.
+The application extends an existing research platform with a FastAPI backend,
+React interface and persistent assessment traces. Agents use deterministic
+workflows and existing ML models; **no hosted LLM calls are claimed**.
 
-## Reproducible demonstration
+## Objectives and features
 
-```bash
-cd /mnt/assignment/cyberquality_multiagent
-/usr/bin/python3 -I -S scripts/coursework_check.py --preservation --source-proof
-timeout 110s .venv-coursework/bin/python -I -B scripts/run_multiagent.py --scenario sqli_run --export
+- Coordinate all five specialists in one task with a shared assessment ID.
+- Preserve independent Native, ZAP and Behavioral operations.
+- Process 83 behavioral features using frozen OCSVM and XGBoost models, with
+  TreeSHAP explanations and incident aggregation.
+- Verify artifact hashes, provenance, identities, consistency and missing evidence.
+- Calculate CQI dimensions D1–D6 using the existing scientific implementation.
+- Record structured JSON messages, real tool attempts, timings and workload shares.
+- Enforce task budgets, bounded retries, exclusive execution and laboratory ownership.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    UI[React dashboard] --> API[FastAPI]
+    API --> C[Coordinator]
+    C --> N[Native Security]
+    C --> Z[ZAP Security]
+    C --> B[Behavioral Detection]
+    N --> V[Evidence Verification]
+    Z --> V
+    B --> V
+    V --> Q[Cybersecurity Quality]
+    Q --> C
+    C --> S[(SQLite task state and audit trail)]
 ```
 
-This prints one task ID, real call distribution and CQI. Its durable state and
-hash-chained events are in `runtime/coursework/multiagent/tasks.sqlite3`. Exported
-receipts contain messages, sources, verification and tool attempts. No training.
-The result is explicitly **historical reanalysis with limitations**, not a fresh
-assessment: Native lacks an asserted collection timestamp and ZAP is unpaired.
+| Role | Responsibility | Registered tools |
+| --- | --- | ---: |
+| Coordinator | Dispatch, dependencies, limits and final delivery; no domain tools | 0 |
+| Native Security Agent | Resolve Native posture evidence and map controls | 2 |
+| ZAP Security Agent | Resolve scanner evidence, profile and assessment scope | 2 |
+| Behavioral Detection Agent | Resolve windows, inference, explanations and incidents | 3 |
+| Evidence Verification Agent | Independently verify artifacts, claims and journal records | 3 |
+| Cybersecurity Quality Agent | Invoke CQI and check calculation consistency | 2 |
 
-Build and open the existing React application with the new Multi-Agent view:
+Tools reuse the existing platform. Live Native/ZAP share the existing posture
+job; Behavioral reads a bounded snapshot from an already active owned monitor.
+The assessment never starts monitoring automatically. See the
+[architecture and tool registry](docs/assignment4/ARCHITECTURE.md),
+[typed message schemas](docs/assignment4/schemas.json) and
+[executed message examples](docs/assignment4/real-messages.json).
+
+## Technologies and requirements
+
+- Python 3.10; FastAPI, Uvicorn and Pydantic.
+- React 19 and Vite 8; frontend validation used Node.js 24.
+- NumPy, pandas, scikit-learn, XGBoost and joblib; native TreeSHAP explanations.
+- SQLite for task state and observation journals; pytest and Node test runner.
+- Authorized Moodle/Apache and OWASP ZAP for optional live assessment.
+
+Dependency specifications are in [requirements.txt](requirements.txt),
+[requirements/](requirements/), [backend requirements](demo/backend/requirements.txt)
+and [package.json](demo/frontend/package.json), with an npm lockfile.
+
+**This public repository is a source release, not a self-contained laboratory
+image.** Models, raw logs, replay datasets, saved scanner results, private
+configuration and generated reports are excluded. The demonstration additionally
+requires the matching research artifact bundle and manifests, including the
+sources declared in [artifact_sources.json](demo/artifact_sources.json).
+Request access from the project author for supervised reproduction; do not
+substitute invented evidence or download unrelated models.
+
+## Setup and execution
+
+The current isolation layer is deliberately tied to the provisioned Ubuntu
+coursework workspace and disk. A fresh GitHub clone at an arbitrary path is
+**not supported as a runnable installation**. Read the
+[isolation requirements](docs/COURSEWORK_ISOLATION.md) before execution.
+Do not use the dissertation checkout or activate the copied legacy virtualenv.
+
+For the provisioned environment, from its repository root:
 
 ```bash
-.venv-coursework/lib/python3.10/site-packages/playwright/driver/node demo/frontend/scripts/build_coursework.mjs
+# Verify isolation and preservation before application execution.
+/usr/bin/python3 -I -S scripts/coursework_check.py --preservation --source-proof
+
+# Retain or prepare the independent environment from its approved local payload.
+/usr/bin/python3 -I -S scripts/coursework_prepare.py
+
+# Build coursework assets, then start the foreground application.
+.venv-coursework/lib/python3.10/site-packages/playwright/driver/node \
+  demo/frontend/scripts/build_coursework.mjs
 .venv-coursework/bin/python -I -B scripts/coursework_serve.py
 ```
 
-Open `http://127.0.0.1:8001`. The home assessment dashboard offers
-**OFFLINE_EVIDENCE** / **LIVE_LAB** and one **Run Full Assessment** button.
-Offline defaults to the complete accepted attack replay; individual saved runs
-remain selectable. LIVE_LAB remains explicitly BLOCKED without separate approval
-and exclusive ownership. See all five specialist states, CQI D1–D6, findings,
-verification, source limitations and workload. Open **Detailed results, JSON
-messages and logs** for the existing Multi-Agent inspector. Shortcuts lead to
-standalone CyberQuality operations; the previous independent evidence overview
-remains below the dashboard with its separate source scope labelled.
-Stop with **Ctrl-C in that terminal**.
-Never use copied PID files or stop original services. Builds are versioned inside
-`runtime/coursework/frontend`; previous frontend artifacts remain intact.
+Open **http://127.0.0.1:8001**. Stop the foreground server with **Ctrl-C**.
+Preparation needs the locally provisioned dependency payload; it is not a
+replacement for a complete public installation package. Generated state and
+versioned builds stay under `runtime/coursework/`.
 
-## Verification commands
+The unchanged isolation checks require **no configured Git remotes**. A publication
+checkout with `origin` restored will fail the check and guarded Python startup.
+Use the provisioned execution copy under its documented controls, separately from
+publication. Never weaken the check or bypass it to run a GitHub checkout.
+
+## Offline demonstration
+
+1. Start the provisioned application and select **OFFLINE_EVIDENCE** in Overview.
+2. Select an available preserved scenario and press **Run Full Assessment**.
+3. Follow the five specialist states under one task ID.
+4. Inspect findings and source limitations in Overview, branch details in
+   Security Posture and Behavioral Monitoring, and JSON messages, tools and
+   workload in Multi-Agent.
+5. Export the task trace and discuss VERIFIED/PARTIAL outcomes separately from
+   workflow completion.
+
+CLI alternative, with the same required artifacts and safety checks:
 
 ```bash
-timeout 200s .venv-coursework/bin/python -I -B scripts/validate_multiagent.py --platform
-/usr/bin/python3 -I -S scripts/coursework_http_check.py --multiagent
-.venv-coursework/bin/python -I -B scripts/coursework_export_ui.py
-.venv-coursework/bin/python -I -B scripts/export_multiagent_fixture.py
-/usr/bin/python3 -I -S scripts/check_coursework_frontend.py
-timeout 90s .venv-coursework/bin/python -I -B scripts/coursework_offline_check.py
-.venv-coursework/bin/python -I -B scripts/build_assignment4_materials.py
-/usr/bin/python3 -I -S scripts/assignment4_safety.py
+timeout 110s .venv-coursework/bin/python -I -B scripts/run_multiagent.py \
+  --scenario sqli_run --export
 ```
 
-The HTTP harness binds only loopback 8001, starts/stops only its owned guarded
-backend, and tests an offline task plus rejected live/schema requests. The managed
-network sandbox denies socket operations (also asyncio thread wakeups): run HTTP
-and async regression checks in an approved host context while retaining the
-application's isolation boundary. Do not relax that boundary.
+Offline Native/ZAP results come from authentic saved evidence. Behavioral replay
+can perform new inference from historical requests; this is neither a new scan
+nor live monitoring. See the [demonstration guide](docs/assignment4/DEMONSTRATION.md).
 
-Frontend unit/render checks (use a second terminal or stop the server first):
+## Authorized live assessment
 
-```bash
-.venv-coursework/bin/python -I -B scripts/coursework_export_ui.py
-cd demo/frontend
-PRODUCT_TEST_PAYLOAD=/mnt/assignment/cyberquality_multiagent/runtime/coursework/product-payload.json \
-  ../../.venv-coursework/lib/python3.10/site-packages/playwright/driver/node \
-  --test --experimental-test-isolation=none src/utils/data.test.js src/utils/product.test.js \
-  scripts/product_render.test.mjs scripts/monitoring_controls.test.mjs scripts/multiagent_render.test.mjs
-```
+Live access is denied by default. It requires an explicitly authorized target and
+profile, authenticated scanner configuration, a verified isolated ZAP instance,
+exclusive laboratory ownership and a valid finite lease. A UI selection or
+request flag does not grant authorization.
 
-The real task UI fixture is generated by `build_assignment4_materials.py` (or the
-provided completed task at `runtime/coursework/assignment4/ui-task.json`).
+After the operator completes those prerequisites, standalone Native, ZAP and
+monitoring controls remain available. A LIVE_LAB Full Assessment can request fresh
+Native/ZAP collection and reuse an already running coursework monitoring session.
+Absent behavioral windows are reported explicitly; saved replay is not substituted.
+Independent branch operations do not publish the official overall CQI.
 
-## Unified assessment workflow
+Public users cannot reproduce the live experiment without the approved laboratory,
+models, evidence and operator handoff. No live operation is authorized by this
+README. Consult the [operator guide](docs/assignment4/LIVE_LAB_OPERATOR_GUIDE.md);
+its dated workstation-specific observations are historical, not current readiness.
 
-Open `http://127.0.0.1:8001/` on Ubuntu. Overview runs one Full Assessment.
-The selected `ma-*` task persists in browser local storage across navigation and
-refresh. Overview, Security Posture, Behavioral Monitoring and Multi-Agent share
-that ID and the persisted branch references; they never silently substitute the
-latest standalone/research results. A completed task is immutable.
+## Validation and results
 
-- **Overview:** run/mode/progress, concise findings, verification and existing
-  CQI D1–D6. No full finding tables, raw JSON or tool logs.
-- **Security Posture:** the selected task's Native/ZAP findings and existing
-  finding drawers/execution views. Independent Native/ZAP controls/history remain.
-- **Behavioral Monitoring:** the selected task's exact windows/models/explanations,
-  or explicitly selected latest live / accepted historical evidence. The existing
-  monitoring controls remain independent; assessments never start a monitor.
-- **Multi-Agent:** the same task's six roles, dependencies, messages, real tools,
-  timings, verification, limits and measured workload. It does not duplicate the
-  overview or run a second workflow.
+| Evidence level | Verified scope and limitation |
+| --- | --- |
+| Offline orchestration | All five specialists executed in one persisted task with actual registered tools and dependency-bound JSON messages. |
+| Workload | A documented normal run made 12 specialist tool attempts: 2/2/3/3/2. Maximum share was 25%; Coordinator domain calls were zero. LLM shares are N/A because there were no LLM calls. |
+| Scenario validation | Seven historical scenarios and controlled failure cases were exercised. A passed rejection test is not a successful security assessment. |
+| Observed live execution | Completed coursework task `ma-d7d6bb91416842df82705bccd1a0e50e` is recorded locally. This is an observed laboratory execution, not independent validation of detector performance. |
+| Detection performance | Requires the separate controlled benchmark protocol and matching datasets; orchestration tests do not establish accuracy or generalization. |
+| CQI | Calculation and evidence mappings are under audit. Stored scores are not presented here as validated research findings. CQI is an ordinal index, not attack probability. |
 
-On the two branch pages, **Displayed branch results** explicitly switches between
-selected full-assessment snapshot, latest standalone/active monitoring, and the
-accepted research baseline. Standalone operations never publish the official
-Overall CQI. The other four research pages keep their existing calculations,
-presentation and evidence selectors; those are independent research outputs.
+See the dated [execution proof](docs/assignment4/FINAL_EXECUTION_PROOF.md) and
+[scenario/workload record](docs/assignment4/RESULTS.md). Their test totals describe
+specific runs, not a promise that an artifact-free clone passes those suites.
+Browser click-through was not verified in the documented offline acceptance run.
 
-`GET /api/multiagent/official` selects only a committed, eligible completed full
-task whose Quality Agent passed the existing CQI consistency check. Failed,
-blocked and insufficient calculations cannot overwrite the last valid result.
-The last valid result is labelled with its own task/date when another attempt is
-selected. Existing partial-evidence eligibility and CQI mathematics are unchanged.
-`GET /api/multiagent/tasks/{task_id}/assessment` projects that task's recorded
-Native, ZAP and Behavioral results without selecting latest global evidence,
-re-running inference, or recalculating CQI. Browser polling waits for matching
-terminal task/branch snapshots before it stops.
-
-### Authorized live preparation — still BLOCKED pending a separate handoff
-
-Fresh LIVE_LAB Full Assessment invokes the **existing combined Native/ZAP posture
-job once** from the Native acquisition tool; the ZAP tool joins that same job and
-its genuine results. The shared underlying posture ID and progress are recorded
-under the full task. This preserves the existing scanner orchestration and avoids
-a second scan implementation or duplicate posture jobs. Selecting saved posture
-requires `fresh_posture:false` plus an explicit `posture_assessment_id`; no failed
-live scan silently falls back to saved results. Native/ZAP provider times need
-not equal Behavioral window/session times. Verification uses each branch's own
-identity and the existing CQI freshness policy (24h posture versus 300s behavior).
-Replay CQI retains its existing frozen Native inputs; no direct ZAP weight is added.
-
-Behavioral uses the same application's already active, owned monitor. A bounded
-read-only transaction captures at most 200 complete windows, 8 MiB, and two seconds
-of SQL work. It reuses committed 83-feature vectors, OCSVM/XGBoost/TreeSHAP and
-incidents; records session/source/model/window/time/byte references; and never
-starts/stops monitoring. Missing/insufficient monitoring is explicitly UNAVAILABLE
-with zero substituted windows, allowing other branches and the unchanged partial
-CQI policy to proceed. Integrity, identity and future-time conflicts still fail.
-
-The worker output is now confined to `runtime/coursework/behavioral_v2/ui-*`.
-`coursework/lab.py` and `scripts/coursework_lab.py` prepare private authenticated
-8082 configuration and a finite, audited, kernel-locked ownership lease. Default
-access stays denied. No ambient POSTURE variable, UI checkbox or mode selection
-unlocks it. The controller requires a reviewed READY receipt, separately recorded
-user authorization, original-job quiescence, a fresh heartbeat and verified
-external exclusion. It never stops/changes the original. A coursework lock cannot
-force the unchanged dissertation to cooperate: without a verified external
-exclusion arrangement the handoff must remain BLOCKED. Expiry/errors stop lease
-renewal; the controller retains its lock until owned/foreign job quiescence and
-remote cleanup are verified. Lost/unreleased ownership cannot be reacquired
-silently. The API key stays in a private 0600 coursework file, outside Git, and is
-sent through the existing header interface. Only approved Moodle origin and
-loopback 8082 connections, and the exact existing owned monitor command, can be
-admitted under a valid lease. External signals remain restricted to registered
-coursework children; owned cleanup remains possible after expiry.
-
-FULL_AUTHORIZED retains its existing longer scan budget: task/tool limits are
-7200/6600 seconds by default, still bounded (offline defaults remain 90/30).
-The lease ceiling is three hours; a scan is rejected before starting if the
-authorized time cannot cover its existing profile budget plus cleanup reserve.
-
-No authorization/configuration/lease was created or acquired during development.
-Native's optional PHP subprocess collector remains denied and its Moodle config
-is not readable by this account; those checks may stay unavailable/partial.
-See the [operator guide](docs/assignment4/LIVE_LAB_OPERATOR_GUIDE.md) before any
-future live phase. Fixture tests are not live validation.
-
-### Actual acceptance — 6 November 2026
-
-- **45** multi-agent/platform checks passed, including seven real historical
-  scenarios and labelled controlled failures/local live fixtures.
-- Targeted follow-up checks passed for live metadata, missing monitoring, secure
-  default denial, standalone publication and the preserved long FULL_AUTHORIZED
-  budget. The last targeted run passed four checks.
-- **170** existing backend checks passed; three intentional isolation exclusions.
-- **76** Node/React checks passed, including actual selected branch rendering,
-  consistent context, last-valid-CQI labels and summary/technical separation.
-- Production build passed. Localhost API/assets and existing research/report
-  routes passed. Interactive browser testing: **NOT TESTED**, no browser installed.
-- Fresh HTTP task: `ma-26b9a92408fd4734a270d67adffd52c7`, sqli_run, COMPLETED in
-  **2.4113s** including request/poll overhead; 12 actual tool attempts, max **25%**,
-  zero Coordinator domain calls, five dispatches, zero LLM calls (shares N/A).
-  Native/ZAP were authentic saved inputs; Behavioral performed new model inference.
-  Verification remains honestly PARTIAL. This was not live scanning or monitoring.
-- The immutable task, official CQI and branch references survived blocked
-  standalone/live requests unchanged. Local fixtures also exercised the existing
-  standalone posture pipeline and subsequent monitor polls without publishing CQI.
-
-Reproduce the focused/regression checks from this root:
+Focused reproduction commands in the provisioned environment:
 
 ```bash
+# Historical scenarios and explicitly local monitoring adapters; no shared lab.
 .venv-coursework/bin/python -I -B scripts/validate_multiagent.py --platform
+
+# Existing offline backend checks, feature extraction and frozen-model inference.
+.venv-coursework/bin/python -I -B scripts/coursework_offline_check.py
+
+# Export real local UI fixtures, then validate frontend rendering.
+.venv-coursework/bin/python -I -B scripts/coursework_export_ui.py
 .venv-coursework/bin/python -I -B scripts/export_multiagent_fixture.py
 /usr/bin/python3 -I -S scripts/check_coursework_frontend.py
-.venv-coursework/bin/python -I -B scripts/coursework_offline_check.py
-.venv-coursework/lib/python3.10/site-packages/playwright/driver/node demo/frontend/scripts/build_coursework.mjs
-# Requires port 8001 free; starts/stops only its own coursework child:
-/usr/bin/python3 -I -S scripts/coursework_http_check.py --multiagent
 ```
 
-Managed-sandbox socket restrictions require host context for asynchronous backend
-and HTTP checks, with the application boundary still installed. Never bypass it
-using `-S` on `.venv-coursework` Python. Test receipts and exact changed-file proof
-are under `runtime/coursework/unified` and `runtime/coursework/assignment4`.
-A direct targeted pytest attempt was initially denied before collection because
-its default log target was outside the allowed state tree. It was rerun successfully
-with an explicit coursework log; no isolation rule was relaxed.
+These commands require local artifacts and create coursework-only test state.
+They do not authorize scans or shared-log monitoring.
 
-Read-only readiness audit: original PID 415036/backend 8000 unchanged, no monitor
-or current posture job observed; Moodle TCP 80 reachable; Apache metadata readable
-without consuming it. Kali installation/account/8082/key/queues and external
-exclusion remain unverified, so no live approval was requested or assumed.
-
-## Actual results and documentation
-
-- [Fresh execution proof, timings and cache boundaries](docs/assignment4/FINAL_EXECUTION_PROOF.md)
-- [Coursework operator commands and current live blockers](docs/assignment4/LIVE_LAB_OPERATOR_GUIDE.md)
-- [Architecture, specialist specifications, tools and state](docs/assignment4/ARCHITECTURE.md)
-- [Verification semantics and safety](docs/assignment4/VERIFICATION.md)
-- [Demonstration guide and examination checklist](docs/assignment4/DEMONSTRATION.md)
-- [Measured results and test matrix](docs/assignment4/RESULTS.md)
-- [Strict machine-readable schemas](docs/assignment4/schemas.json)
-- [Actual structured messages](docs/assignment4/real-messages.json)
-
-Normal workflow: **12 tool attempts**, shares **16.67%, 16.67%, 25%, 25%, 16.67%**.
-Coordinator has zero registered domain tools. LLM calls: **0**, LLM shares **N/A**.
-This implementation uses deterministic specialist policies and existing AI models;
-it does not claim LLM-agent behavior. The DOCX specification was not found in the
-local search; implementation follows the user's explicit requirements. Confirm
-with the examiner if LLM-based decision-making is additionally required.
-
-Live monitoring and PASSIVE_BASELINE/STANDARD/FULL_AUTHORIZED remain locked and
-unverified. Real browser interaction is not claimed; production build, served
-assets and React rendering are tested. No runnable browser was available locally.
-Logical task/tool deadlines discard late results; trusted native ML calls use
-cooperative deadlines rather than forcible thread termination. The CLI's `timeout`
-is an additional process bound for demonstrations.
-
-<details><summary>Exact source/document edits in the unified integration</summary>
+## Repository and scientific documentation
 
 ```text
-README.md
-coursework/isolation.py
-coursework/lab.py
-coursework/multiagent/agents.py
-coursework/multiagent/api.py
-coursework/multiagent/engine.py
-coursework/multiagent/live.py
-coursework/multiagent/models.py
-coursework/multiagent/store.py
-coursework/multiagent/tools.py
-coursework/multiagent/views.py
-coursework/posture.py
-demo/backend/app.py
-demo/backend/runtime.py
-demo/frontend/scripts/multiagent_render.test.mjs
-demo/frontend/src/App.jsx
-demo/frontend/src/components/MultiAgent.jsx
-demo/frontend/src/components/PostureWorkspace.jsx
-demo/frontend/src/pages/ProductPages.jsx
-demo/frontend/src/styles/index.css
-docs/assignment4/LIVE_LAB_OPERATOR_GUIDE.md
-scripts/assignment4_safety.py
-scripts/coursework_check.py
-scripts/coursework_http_check.py
-scripts/coursework_lab.py
-scripts/coursework_serve.py
-scripts/export_multiagent_fixture.py
-scripts/run_behavioral_v2_live.py
-src/posture/orchestration.py
-src/posture/providers.py
-tests/test_platform_integration.py
+coursework/       Isolation, ownership controls and multi-agent orchestration
+demo/backend/     FastAPI application and existing platform services
+demo/frontend/    React interface, assets source and frontend tests
+src/              Native/ZAP integration, behavioral ML, evidence, CQI and reports
+tests/            Unit, integration, scenario and regression tests
+scripts/          Guarded launch, validation, demonstration and reporting tools
+requirements/     Additional Python dependency specifications
+docs/             Architecture, protocols, scientific methods and dated validation
+lab/              Controlled validator benchmark application
 ```
 
-Generated task state, fixture evidence, receipts, build versions and logs are
-ignored under `runtime/coursework`. Read-only system diagnostics also generated
-ignored bytecode caches under `coursework/__pycache__`; subsequent diagnostic
-entrypoints disable bytecode writes. No original or protected artifact was edited.
-The final receipt records hashes, tests, process separation and the readiness audit.
-</details>
+Start with the [documentation index](docs/README.md). Scientific references include
+the [CQI mathematical model](docs/research/CQI_MATHEMATICAL_MODEL.md) and
+[behavioral benchmark protocol](docs/research/BEHAVIORAL_MODEL_BENCHMARK.md).
+Private task databases, raw research evidence and generated examination PDFs are
+not included in the public release.

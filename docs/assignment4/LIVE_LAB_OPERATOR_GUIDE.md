@@ -1,5 +1,11 @@
 # Coursework operation and laboratory handoff
 
+> Historical operator runbook for the provisioned laboratory. Machine addresses,
+> PID observations and blocker statements below describe that preparation phase.
+> A later live task completed; re-establish all prerequisites before any new use.
+> These commands do not provision a public clone or authorize a laboratory action.
+> See the [current project summary](../../README.md) for release limitations.
+
 ## Stopped-original handoff update
 
 The user has stopped the original through its own lifecycle. The coursework gate

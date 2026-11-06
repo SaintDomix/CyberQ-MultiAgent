@@ -1,5 +1,10 @@
 # Fresh offline execution proof — 6 November 2026
 
+> Historical execution trace, retained for reproducibility. Its stored CQI values
+> are not endorsed as validated research findings while calculation/mapping is
+> under audit. Its live-access observations describe that run, not current lab
+> readiness. See the [current project summary](../../README.md).
+
 Task `ma-7d024c962c8a4acaa40d751cd31c5701` is newly created, OFFLINE_EVIDENCE / attack_replay,
 COMPLETED. All five specialists executed in one dependency-coordinated task.
 No production workflow, model, scoring or isolation code was changed for this

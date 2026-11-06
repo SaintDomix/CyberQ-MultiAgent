@@ -1,5 +1,11 @@
 # Actual results and workload report
 
+> Dated offline validation record. The following counts and scores describe the
+> recorded runs, not a fresh release test or validated current CQI finding.
+> A later LIVE_LAB task was observed in the coursework environment; it does not
+> establish independent detection performance. CQI calculation/mapping is under
+> audit. See the [current project summary](../../README.md) for scope and limits.
+
 Primary localhost task: `ma-b13d670f88e3480aaf257f74f873f4bf`.
 
 This task actually executed all five specialists. It completed historical reanalysis with partial temporal provenance; it is not a fresh cybersecurity assessment.
