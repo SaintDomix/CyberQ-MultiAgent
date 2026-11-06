@@ -1,0 +1,21 @@
+{
+  "sources": {
+    "attack_manifest": {
+      "path": "outputs/branch2/m5_final_day/fresh_attack_holdout_01/artifact_hashes.json",
+      "sha256": "43736f1b363d4014fae78dbc3651853c83e4a31a8eb0a5c70edbc2bee421698b"
+    },
+    "benign_manifest": {
+      "path": "outputs/branch2/m5_final_day/blind_benign_test_01/evaluation/artifact_manifest.json",
+      "sha256": "2f3bd3a1ee0c7a97c2871009f07ccea4531f2f413cc8fab3e37f4338624febde"
+    },
+    "posture": {
+      "path": "outputs/branch1_m1d_acceptance_lab_run02/findings.json",
+      "sha256": "ca798f9aab2f3be7a08001538f130c9e54a5d7b0171b92d47c2f7491a3973f3e"
+    },
+    "v1_attack_metrics": {
+      "path": "outputs/branch2/m5_final_day/fresh_attack_holdout_01/v1_metrics.json",
+      "sha256": "386f939ceacb6f88ec8b2b8a75eb3ffd62c91a152d1919db6c8b8ef3a91f2411"
+    }
+  },
+  "version": "product-frozen-source-bindings-1.0"
+}

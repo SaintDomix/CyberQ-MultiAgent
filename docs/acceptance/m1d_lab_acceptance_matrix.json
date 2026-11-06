@@ -1,0 +1,410 @@
+{
+  "target": "http://192.168.226.132/moodle/",
+  "network_validation_executed": false,
+  "configuration_basis": "saved internal evidence; config.php access denied; no PHP bootstrap/DB query or HTTP request",
+  "candidates": [
+    {
+      "parent_finding_id": "ADV-MSA-26-0031",
+      "parent_evidence_id": "evidence-9f40e0701fa6cb04b34b8bf46390c740d9693681f12d4ea80894ff0de2b7ddb6",
+      "parent_confirmation_status": "VERSION_BASED",
+      "parent_scope": "baseline",
+      "validator": "sql_injection",
+      "readiness": "BLOCKED_ADVISORY_BINDING_AND_INTERFACE",
+      "feature_exists": "Question-bank read function exists; affected function/input not identified by local catalog. Saved REST web-service configuration is disabled.",
+      "endpoint": null,
+      "input_parameters": [],
+      "http_method": null,
+      "authentication_requirement": "REST would require an authorized web-service token; related AJAX function requires a logged-in session and sesskey.",
+      "required_role_capability": [
+        "moodle/question:viewall for related get_random_question_summaries; affected function capability remains unknown"
+      ],
+      "benign_test_value": null,
+      "safe_validation": false,
+      "sufficient_evidence": "Only after exact affected function/input and read-only interface are established: repeated baseline/quote database-specific differential gives LIKELY, not confirmed exploitation.",
+      "skip_reasons": [
+        "Catalog has no affected function, vulnerable parameter, upstream advisory URL or patch reference.",
+        "REST disabled in saved settings; it must not be enabled for this acceptance task.",
+        "Related AJAX route requires POST JSON and sesskey; current engine permits GET and prohibits token/sesskey queries.",
+        "AJAX exposure is not ruled out merely by disabled REST; actual affected path unresolved.",
+        "No verified category/context/test-resource IDs or benign affected-input value."
+      ],
+      "source_references": [
+        "src/branch1/advisories.json: MSA-26-0031",
+        "evidence/live_smoke/internal_evidence.json: settings.enablewebservices=0, webserviceprotocols=null",
+        "/var/www/html/moodle/lib/db/services.php:1745",
+        "/var/www/html/moodle/question/classes/external.php:132",
+        "/var/www/html/moodle/lib/ajax/service.php:44",
+        "/var/www/html/moodle/lib/external/classes/external_api.php:216",
+        "/var/www/html/moodle/webservice/rest/server.php:37"
+      ],
+      "related_interface": {
+        "function": "core_question_get_random_question_summaries",
+        "endpoint": "http://192.168.226.132/moodle/lib/ajax/service.php",
+        "method": "POST JSON",
+        "parameters": [
+          "categoryid",
+          "includesubcategories",
+          "tagids[]",
+          "contextid",
+          "limit",
+          "offset"
+        ],
+        "input_types": "INT/BOOL/INT[]; not an identified vulnerable string input",
+        "advisory_binding": "NOT_ESTABLISHED",
+        "rest_endpoint": "http://192.168.226.132/moodle/webservice/rest/server.php",
+        "rest_dispatch_parameters": [
+          "wsfunction",
+          "wstoken"
+        ]
+      }
+    },
+    {
+      "parent_finding_id": "ADV-MSA-26-0020",
+      "parent_evidence_id": "evidence-9af230861fa409342fb251bfeb7b7dc32009069eb0dc6d022da950c4848b5b67",
+      "parent_confirmation_status": "VERSION_BASED",
+      "parent_scope": "baseline",
+      "validator": "unsafe_reflection_xss",
+      "readiness": "BLOCKED_MUTATING_IMPORT",
+      "feature_exists": "mod_feedback exists and is enabled in saved inventory; no specific feedback activity ID established.",
+      "endpoint": "http://192.168.226.132/moodle/mod/feedback/import.php",
+      "input_parameters": [
+        "id (course-module ID, PARAM_INT)",
+        "choosefile (filepicker/draft upload; optional PARAM_PATH)",
+        "XML ITEM/@TYPE -> error message"
+      ],
+      "http_method": "POST multipart/form-data for import (GET displays form)",
+      "authentication_requirement": "Authenticated course session; form submission/sesskey context",
+      "required_role_capability": [
+        "mod/feedback:edititems in module context"
+      ],
+      "benign_test_value": null,
+      "safe_validation": false,
+      "sufficient_evidence": "A read-only reflection interface to the same error path would be needed. Inert marker reflection/context evidence cannot be obtained by treating upload contents as a GET string.",
+      "skip_reasons": [
+        "Import can add items or delete existing items; stored content/mutation prohibited.",
+        "Current XSS validator sends GET query markers, not uploaded XML.",
+        "No course-module ID, upload/draft context or verified capability/session supplied."
+      ],
+      "source_references": [
+        "/var/www/html/moodle/mod/feedback/import.php:30,58,60,73,85,116,150,162,206",
+        "/var/www/html/moodle/mod/feedback/import_form.php:44",
+        "/var/www/html/moodle/lib/formslib.php:182",
+        "evidence/live_smoke/internal_evidence.json: mod_feedback.enabled=true"
+      ]
+    },
+    {
+      "parent_finding_id": "ADV-MSA-26-0021",
+      "parent_evidence_id": "evidence-a589d09ff57dcb1bbcf95449f89246849350cd1a0b8c4f49aa4cc9203155c0ee",
+      "parent_confirmation_status": "VERSION_BASED",
+      "parent_scope": "baseline",
+      "validator": "unsafe_reflection_xss",
+      "readiness": "BLOCKED_STORED_GRADE_EDIT",
+      "feature_exists": "Grade editor is present; no course or grade-item ID established.",
+      "endpoint": "http://192.168.226.132/moodle/grade/edit/tree/item.php",
+      "input_parameters": [
+        "courseid (PARAM_INT)",
+        "id (grade-item ID, PARAM_INT)",
+        "idnumber (form text, PARAM_RAW)"
+      ],
+      "http_method": "POST form for edit (GET displays form)",
+      "authentication_requirement": "Authenticated course session; form submission/sesskey context",
+      "required_role_capability": [
+        "moodle/grade:manage in course context"
+      ],
+      "benign_test_value": null,
+      "safe_validation": false,
+      "sufficient_evidence": "Advisory-specific evidence would require a separately reviewed mutation-free route; reflecting idnumber on an unrelated GET endpoint would not validate this advisory.",
+      "skip_reasons": [
+        "Form processing persists grade-item properties; stored/persistent payloads prohibited.",
+        "Current SafetyPolicy blocks edit paths; current XSS validator does not submit POST forms.",
+        "No known course/grade-item ID or authorized grade-management session."
+      ],
+      "source_references": [
+        "/var/www/html/moodle/grade/edit/tree/item.php:33,49,51,120,170",
+        "/var/www/html/moodle/grade/edit/tree/item_form.php:50",
+        "/var/www/html/moodle/lib/formslib.php:182"
+      ]
+    },
+    {
+      "parent_finding_id": "AUTH-005",
+      "parent_evidence_id": "evidence-77a9e96aa47f0e49aeeb3e6afdfd405b92ae10125df0da2f24c73a918fb9f3f6",
+      "parent_confirmation_status": "CONFIRMED",
+      "parent_scope": "saved_live_smoke",
+      "validator": "account_enumeration",
+      "readiness": "BLOCKED_NO_LOOKUP_ONLY_INTERFACE",
+      "feature_exists": "Recovery endpoint exists; protectusernames=1 in saved settings.",
+      "endpoint": "http://192.168.226.132/moodle/login/forgot_password.php",
+      "input_parameters": [
+        "username (form PARAM_RAW)",
+        "email (form PARAM_RAW_TRIMMED)"
+      ],
+      "http_method": "POST recovery form; GET displays form",
+      "authentication_requirement": "Anonymous recovery submission; dedicated confirmed-existing and known-absent test identifiers required",
+      "required_role_capability": [],
+      "benign_test_value": null,
+      "safe_validation": false,
+      "sufficient_evidence": "Four read-only, no-mail/no-state-change lookups with input echoes normalized. Reproduced status/redirect/message distinction confirms observable account distinction only.",
+      "skip_reasons": [
+        "Recovery processing creates/updates/deletes password-reset records and can send mail.",
+        "lookup_only=true cannot honestly be asserted.",
+        "GET form display is not an account-existence lookup; login GET username only prefills a form.",
+        "No confirmed test usernames/emails or known-absent identity supplied; role user IDs are not account identifiers.",
+        "No password attempts, recovery tokens or disabling protectusernames."
+      ],
+      "source_references": [
+        "/var/www/html/moodle/login/forgot_password.php:42",
+        "/var/www/html/moodle/login/forgot_password_form.php:56,65",
+        "/var/www/html/moodle/login/lib.php:40,49,140,169,180",
+        "/var/www/html/moodle/login/index.php:355",
+        "evidence/live_smoke/internal_evidence.json: settings.protectusernames=1"
+      ]
+    },
+    {
+      "parent_finding_id": "ADV-MSA-26-0029",
+      "parent_evidence_id": "evidence-aaea893b8755d51dc87bc5ef1057af82e3df265e995ff7ac09dff33b00788111",
+      "parent_confirmation_status": "VERSION_BASED",
+      "parent_scope": "baseline",
+      "validator": "access_control",
+      "readiness": "BLOCKED_FRAGMENT_INTERFACE_AND_RESOURCE_CONTEXT",
+      "feature_exists": "Report-builder filter/audience callbacks exist; no instantiated report or usable report ID established.",
+      "endpoint": "http://192.168.226.132/moodle/lib/ajax/service.php",
+      "input_parameters": [
+        "JSON methodname=core_get_fragment",
+        "component=core_reportbuilder",
+        "callback=filters_form or audience_form",
+        "contextid",
+        "args[name,value]: reportid, parameters (filter) or classname (audience)"
+      ],
+      "http_method": "POST JSON AJAX",
+      "authentication_requirement": "Authenticated session and sesskey",
+      "required_role_capability": [
+        "Report view/edit policy; filter requires can_view_report, audience requires can_edit_report in installed form code"
+      ],
+      "benign_test_value": null,
+      "safe_validation": false,
+      "sufficient_evidence": "Verified distinct roles, known report/context IDs and restricted content comparison at the exact fragment interface; function execution not necessary.",
+      "skip_reasons": [
+        "Current access validator compares GET HTML pages, not POST JSON/sesskey fragments.",
+        "No report/context ID, policy, dedicated sessions or reviewed audience classname supplied.",
+        "Do not substitute an ordinary security report page for this advisory.",
+        "Source presence does not establish feature availability or vulnerable execution."
+      ],
+      "source_references": [
+        "/var/www/html/moodle/reportbuilder/lib.php:40,57",
+        "/var/www/html/moodle/lib/db/services.php:963",
+        "/var/www/html/moodle/lib/external/externallib.php:352,385",
+        "/var/www/html/moodle/lib/external/classes/external_api.php:216",
+        "/var/www/html/moodle/reportbuilder/classes/form/filter.php:65",
+        "/var/www/html/moodle/reportbuilder/classes/form/audience.php:101"
+      ]
+    },
+    {
+      "parent_finding_id": "evidence-e8fd3f6e7c4d969336a9073c0ae6a11a155b4f0cb5ade74b8ee2c27d12ab616f",
+      "parent_evidence_id": "evidence-e8fd3f6e7c4d969336a9073c0ae6a11a155b4f0cb5ade74b8ee2c27d12ab616f",
+      "parent_confirmation_status": "FALSE_POSITIVE",
+      "parent_scope": "baseline",
+      "validator": "access_control",
+      "readiness": "DISMISSED_DO_NOT_REACTIVATE",
+      "feature_exists": "Historic student admin landing page was a generic-content false positive.",
+      "endpoint": "http://192.168.226.132/moodle/admin/index.php?cache=1",
+      "input_parameters": [
+        "cache=1"
+      ],
+      "http_method": "GET",
+      "authentication_requirement": "Historical student/admin roles; not a new runtime candidate",
+      "required_role_capability": [],
+      "benign_test_value": null,
+      "safe_validation": false,
+      "sufficient_evidence": "Keep FALSE_POSITIVE and NOT_APPLICABLE; no reactivation or retargeting.",
+      "skip_reasons": [
+        "Dismissed parent candidates must remain dismissed."
+      ],
+      "source_references": [
+        "evidence/baseline/branch1/role_access_review_v3.json"
+      ]
+    },
+    {
+      "parent_finding_id": "ROLE-student-security_report",
+      "parent_evidence_id": "evidence-864fca3a093182a364589a58feff0b6a4637d38b6a026ca63b37dd25ec73919c",
+      "parent_confirmation_status": "CONFIRMED",
+      "parent_scope": "saved_live_smoke",
+      "validator": "access_control",
+      "readiness": "BLOCKED_RESPONSE_CAP_AND_FRESH_SESSIONS",
+      "feature_exists": "Security report exists; saved admin can view it and student receives denial.",
+      "endpoint": "http://192.168.226.132/moodle/report/security/index.php",
+      "input_parameters": [],
+      "http_method": "GET (no detail parameter needed)",
+      "authentication_requirement": "Dedicated student and administrator sessions",
+      "required_role_capability": [
+        "report/security:view in system context for privileged role; reviewed denial policy for student"
+      ],
+      "benign_test_value": null,
+      "safe_validation": false,
+      "sufficient_evidence": "Two role pairs with profile-identity markers, denial/login barriers and securityreporttable content. HTTP 200 and links alone cannot confirm access.",
+      "skip_reasons": [
+        "Saved student body is 129581 bytes and admin body 159681 bytes, exceeding enforced 65536-byte response cap.",
+        "Executor rejects over-cap responses; no complete content comparison possible under current limits.",
+        "Fresh dedicated sessions and current role/capability policy still needed.",
+        "Do not increase limits or reinterpret truncated content in this task; review a suitable bounded read-only alternative separately."
+      ],
+      "source_references": [
+        "/var/www/html/moodle/report/security/index.php:30",
+        "/var/www/html/moodle/report/security/settings.php:29",
+        "evidence/baseline/branch1/role_v3_student/role_student_v3.csv",
+        "evidence/baseline/branch1/role_v3_admin/role_admin_v3.csv",
+        "evidence/baseline/branch1/role_v3_student/student_security_report.html",
+        "evidence/baseline/branch1/role_v3_admin/admin_security_report.html"
+      ],
+      "observed_identity_markers": {
+        "student": "http://192.168.226.132/moodle/user/profile.php?id=3",
+        "administrator": "http://192.168.226.132/moodle/user/profile.php?id=2"
+      },
+      "observed_privileged_marker": "id=\"securityreporttable\""
+    },
+    {
+      "parent_finding_id": "COOKIE-MoodleSession-SECURE",
+      "parent_evidence_id": "evidence-f481888f21c6e366100ea10573e1e2f9873c171f0bc1515256154b9f61fd3bff",
+      "parent_confirmation_status": "CONFIRMED",
+      "parent_scope": "baseline",
+      "validator": "session_control",
+      "readiness": "READY_ANONYMOUS_COOKIE_OBSERVATION",
+      "feature_exists": "Session startup exists; saved HTTP login page is 23304 bytes and below cap. MoodleSession cookie name supported by saved posture evidence.",
+      "endpoint": "http://192.168.226.132/moodle/login/index.php",
+      "input_parameters": [],
+      "http_method": "GET",
+      "authentication_requirement": "Anonymous; no credentials/session input required",
+      "required_role_capability": [],
+      "benign_test_value": null,
+      "safe_validation": true,
+      "sufficient_evidence": "Named cookie must be emitted on both requests with consistent Secure/HttpOnly/SameSite/transport attributes; CONFIRMED applies only to observed attributes. Missing emission -> NOT_TESTED.",
+      "skip_reasons": [
+        "Skip authenticated lifecycle claims; anonymous cookie observation does not establish login rotation or invalidation.",
+        "Stop at configured response/timeout caps; no redirects followed.",
+        "Do not treat cookiesecure=1 as unconditional effective Secure over HTTP; installed helper requires HTTPS or sslproxy."
+      ],
+      "source_references": [
+        "/var/www/html/moodle/lib/classes/session/manager.php:320,330,384",
+        "/var/www/html/moodle/lib/sessionlib.php:93",
+        "evidence/baseline/branch1/role_v3_anonymous/role_anonymous_v3.csv: dashboard login response body_length=23304",
+        "evidence/live_smoke/internal_evidence.json: settings.cookiesecure=1, wwwroot=http, sslproxy=null"
+      ]
+    },
+    {
+      "parent_finding_id": "COOKIE-MoodleSession-HTTPONLY",
+      "parent_evidence_id": "evidence-a46217c483cf84418766b1ab7976b603f000104a2f553fd7042db8c74dad5bac",
+      "parent_confirmation_status": "NOT_CONFIRMED",
+      "parent_scope": "baseline",
+      "validator": "session_control",
+      "readiness": "READY_ANONYMOUS_COOKIE_OBSERVATION",
+      "feature_exists": "Session startup exists; saved HTTP login page is 23304 bytes and below cap. MoodleSession cookie name supported by saved posture evidence.",
+      "endpoint": "http://192.168.226.132/moodle/login/index.php",
+      "input_parameters": [],
+      "http_method": "GET",
+      "authentication_requirement": "Anonymous; no credentials/session input required",
+      "required_role_capability": [],
+      "benign_test_value": null,
+      "safe_validation": true,
+      "sufficient_evidence": "Named cookie must be emitted on both requests with consistent Secure/HttpOnly/SameSite/transport attributes; CONFIRMED applies only to observed attributes. Missing emission -> NOT_TESTED.",
+      "skip_reasons": [
+        "Skip authenticated lifecycle claims; anonymous cookie observation does not establish login rotation or invalidation.",
+        "Stop at configured response/timeout caps; no redirects followed.",
+        "Do not treat cookiesecure=1 as unconditional effective Secure over HTTP; installed helper requires HTTPS or sslproxy."
+      ],
+      "source_references": [
+        "/var/www/html/moodle/lib/classes/session/manager.php:320,330,384",
+        "/var/www/html/moodle/lib/sessionlib.php:93",
+        "evidence/baseline/branch1/role_v3_anonymous/role_anonymous_v3.csv: dashboard login response body_length=23304",
+        "evidence/live_smoke/internal_evidence.json: settings.cookiesecure=1, wwwroot=http, sslproxy=null"
+      ]
+    },
+    {
+      "parent_finding_id": "COOKIE-MoodleSession-SAMESITE",
+      "parent_evidence_id": "evidence-cb8ce4e9e2d0b4a1e727424ec5ed14dd7b1dad85cc443fd955e64406e7688a2d",
+      "parent_confirmation_status": "NOT_CONFIRMED",
+      "parent_scope": "baseline",
+      "validator": "session_control",
+      "readiness": "READY_ANONYMOUS_COOKIE_OBSERVATION",
+      "feature_exists": "Session startup exists; saved HTTP login page is 23304 bytes and below cap. MoodleSession cookie name supported by saved posture evidence.",
+      "endpoint": "http://192.168.226.132/moodle/login/index.php",
+      "input_parameters": [],
+      "http_method": "GET",
+      "authentication_requirement": "Anonymous; no credentials/session input required",
+      "required_role_capability": [],
+      "benign_test_value": null,
+      "safe_validation": true,
+      "sufficient_evidence": "Named cookie must be emitted on both requests with consistent Secure/HttpOnly/SameSite/transport attributes; CONFIRMED applies only to observed attributes. Missing emission -> NOT_TESTED.",
+      "skip_reasons": [
+        "Skip authenticated lifecycle claims; anonymous cookie observation does not establish login rotation or invalidation.",
+        "Stop at configured response/timeout caps; no redirects followed.",
+        "Do not treat cookiesecure=1 as unconditional effective Secure over HTTP; installed helper requires HTTPS or sslproxy."
+      ],
+      "source_references": [
+        "/var/www/html/moodle/lib/classes/session/manager.php:320,330,384",
+        "/var/www/html/moodle/lib/sessionlib.php:93",
+        "evidence/baseline/branch1/role_v3_anonymous/role_anonymous_v3.csv: dashboard login response body_length=23304",
+        "evidence/live_smoke/internal_evidence.json: settings.cookiesecure=1, wwwroot=http, sslproxy=null"
+      ]
+    },
+    {
+      "parent_finding_id": "SESSION-001",
+      "parent_evidence_id": "evidence-f2cf76cc8d53f0e25fd7a8c611da5ec871226697213509745a50295fc3aea822",
+      "parent_confirmation_status": "CONFIRMED",
+      "parent_scope": "baseline",
+      "validator": "session_control",
+      "readiness": "SKIP_DIFFERENT_PREDICATE",
+      "feature_exists": "Login endpoint exists; parent describes cache headers, not cookie attributes.",
+      "endpoint": "http://192.168.226.132/moodle/login/index.php",
+      "input_parameters": [],
+      "http_method": "GET",
+      "authentication_requirement": "Anonymous",
+      "required_role_capability": [],
+      "benign_test_value": null,
+      "safe_validation": false,
+      "sufficient_evidence": "Cache-Control/Pragma require a cache-header predicate; current session validator evaluates emitted cookie attributes.",
+      "skip_reasons": [
+        "Do not relabel cookie observations as validation of the cache-control parent."
+      ],
+      "source_references": [
+        "outputs/branch1_active_plan_m1d/findings.json: SESSION-001",
+        "src/branch1/active/advanced.py: SessionControl.evaluate"
+      ]
+    },
+    {
+      "parent_finding_id": "ADV-MSA-26-0030",
+      "parent_evidence_id": "evidence-ed44a3eb28335a7356abd1be02554601fc1ae40fff2d7889a8981b9662fc5f1a",
+      "parent_confirmation_status": "VERSION_BASED",
+      "parent_scope": "baseline",
+      "validator": "ssrf_context",
+      "readiness": "READY_CONTEXT_ONLY",
+      "feature_exists": "repository_url exists and is enabled in saved inventory; source performs server-side HEAD/GET. Exact advisory-to-fix linkage not established.",
+      "endpoint": "http://192.168.226.132/moodle/repository/repository_ajax.php",
+      "input_parameters": [
+        "file (URL downloader input)",
+        "action=list",
+        "repo_id",
+        "ctx_id",
+        "sesskey (do not supply in template)"
+      ],
+      "http_method": "POST repository interface; contextual validator sends no request",
+      "authentication_requirement": "Actual fetch interface requires authenticated context/session and sesskey; context-only assessment needs none",
+      "required_role_capability": [
+        "repository/url:view and repository/context checks"
+      ],
+      "benign_test_value": null,
+      "safe_validation": true,
+      "sufficient_evidence": "Saved enabled repository inventory plus installed URL fetch implementation supports CONTEXTUAL prerequisites only, never CONFIRMED SSRF. Disabled REST does not disable repository_url.",
+      "skip_reasons": [
+        "No server-side fetch authorized or implemented by this context-only validator.",
+        "Saved blocked-host list includes local/private ranges and metadata address; these defenses are context, not proof of enforcement.",
+        "Repository instance/context IDs and current feature accessibility are unverified.",
+        "No same-lab callback target or source-specific advisory linkage established; do not scan, fetch metadata or use external callbacks."
+      ],
+      "source_references": [
+        "evidence/live_smoke/internal_evidence.json: repository_url.enabled=true, curlsecurityblockedhosts, curlsecurityallowedport",
+        "/var/www/html/moodle/repository/url/lib.php:59,82,153,160,170",
+        "/var/www/html/moodle/repository/url/db/access.php:30",
+        "/var/www/html/moodle/repository/repository_ajax.php:35,51,57,67,84,100"
+      ]
+    }
+  ]
+}

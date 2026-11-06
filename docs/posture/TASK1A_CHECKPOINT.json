@@ -1,0 +1,88 @@
+{
+  "behavioral_v2": {
+    "canonical_root_sha256": "59a8c7c5d3d51632d0afe45f8cd2fe50570b7af2943d26bb313888327ea9f436",
+    "package_id": "behavioral-v2-59a8c7c5d3d51632d0af",
+    "result": "VERIFIED"
+  },
+  "branch": "work/posture-vnext-20261026",
+  "committed": false,
+  "free_disk_bytes": 781856768,
+  "frozen_research_core": {
+    "changed_files": [],
+    "diff_from_milestone_3_end_to_end": "EMPTY",
+    "result": "PASS"
+  },
+  "git_diff_stat": " demo/backend/adapters.py                      | 16 ++++++-\n demo/backend/app.py                           | 19 ++++++--\n demo/backend/schemas.py                       | 31 ++++++++++++++\n demo/backend/services.py                      | 62 +++++++++++++++++++++++++--\n demo/frontend/scripts/product_render.test.mjs | 41 ++++++++++++++++++\n demo/frontend/src/pages/ProductPages.jsx      | 14 +++---\n docs/release/FINAL_ARCHITECTURE.md            | 21 ++++++++-\n 7 files changed, 190 insertions(+), 14 deletions(-)\n",
+  "git_status_short": " M demo/backend/adapters.py\n M demo/backend/app.py\n M demo/backend/schemas.py\n M demo/backend/services.py\n M demo/frontend/scripts/product_render.test.mjs\n M demo/frontend/src/pages/ProductPages.jsx\n M docs/release/FINAL_ARCHITECTURE.md\n?? data/branch2_v2/final_candidate_01/\n?? data/branch2_v3/\n?? data/raw/AP01_suspicious_run51_access.log\n?? data/raw/AP01_suspicious_run52_access.log\n?? data/raw/AP01_suspicious_run53_access.log\n?? data/raw/AP01_suspicious_run54_access.log\n?? data/raw/AP01_suspicious_run55_access.log\n?? data/raw/AP01_suspicious_run56_access.log\n?? data/raw/AP01_suspicious_run57_access.log\n?? data/raw/AP01_suspicious_run58_access.log\n?? data/raw/AP01_suspicious_run59_access.log\n?? data/raw/AP01_suspicious_run60_access.log\n?? data/raw/B04_benign_run51_access.log\n?? data/raw/B04_benign_run52_access.log\n?? data/raw/B04_benign_run53_access.log\n?? data/raw/BN02_benign_run51_access.log\n?? data/raw/BN02_benign_run52_access.log\n?? data/raw/PT01_suspicious_run51_access.log\n?? data/raw/PT01_suspicious_run52_access.log\n?? data/raw/PT01_suspicious_run53_access.log\n?? data/raw/PT01_suspicious_run54_access.log\n?? data/raw/PT01_suspicious_run55_access.log\n?? data/raw/PT01_suspicious_run56_access.log\n?? data/raw/PT01_suspicious_run57_access.log\n?? data/raw/PT01_suspicious_run58_access.log\n?? data/raw/PT01_suspicious_run59_access.log\n?? data/raw/PT01_suspicious_run60_access.log\n?? data/raw/RB01_suspicious_run51_access.log\n?? data/raw/RB01_suspicious_run52_access.log\n?? data/raw/RB01_suspicious_run53_access.log\n?? data/raw/RB01_suspicious_run54_access.log\n?? data/raw/RB01_suspicious_run55_access.log\n?? data/raw/RB01_suspicious_run56_access.log\n?? data/raw/RB01_suspicious_run57_access.log\n?? data/raw/RB01_suspicious_run58_access.log\n?? data/raw/S01_suspicious_run54_access.log\n?? data/raw/S01_suspicious_run55_access.log\n?? data/raw/S01_suspicious_run56_access.log\n?? data/raw/S01_suspicious_run57_access.log\n?? data/raw/S01_suspicious_run58_access.log\n?? data/raw/S01_suspicious_run59_access.log\n?? data/raw/S01_suspicious_run60_access.log\n?? data/raw/S02_suspicious_run53_access.log\n?? data/raw/S02_suspicious_run54_access.log\n?? data/raw/S02_suspicious_run55_access.log\n?? data/raw/S02_suspicious_run56_access.log\n?? data/raw/S02_suspicious_run57_access.log\n?? data/raw/S02_suspicious_run58_access.log\n?? data/raw/S02_suspicious_run59_access.log\n?? data/raw/S02_suspicious_run60_access.log\n?? data/raw/SQ01_suspicious_run51_access.log\n?? data/raw/SQ01_suspicious_run52_access.log\n?? data/raw/SQ01_suspicious_run53_access.log\n?? data/raw/SQ01_suspicious_run54_access.log\n?? data/raw/SQ01_suspicious_run55_access.log\n?? data/raw/SQ01_suspicious_run56_access.log\n?? data/raw/SQ01_suspicious_run57_access.log\n?? data/raw/SQ01_suspicious_run58_access.log\n?? data/raw/SQ01_suspicious_run59_access.log\n?? data/raw/SQ01_suspicious_run60_access.log\n?? data/raw/XS01_suspicious_run51_access.log\n?? data/raw/XS01_suspicious_run52_access.log\n?? data/raw/XS01_suspicious_run53_access.log\n?? data/raw/XS01_suspicious_run54_access.log\n?? data/raw/XS01_suspicious_run55_access.log\n?? data/raw/XS01_suspicious_run56_access.log\n?? data/raw/XS01_suspicious_run57_access.log\n?? data/raw/XS01_suspicious_run58_access.log\n?? data/raw/XS01_suspicious_run59_access.log\n?? data/raw/XS01_suspicious_run60_access.log\n?? demo/backend/posture_api.py\n?? demo/frontend/src/components/OperationalPosture.jsx\n?? docs/posture/\n?? evidence/branch2_captures/\n?? outputs/branch2/live/\n?? outputs/branch2/m5/\n?? outputs/fusion/\n?? scripts/run_posture.py\n?? src/posture/\n?? tests/test_fresh_posture.py\n?? tests/test_operational_posture.py\n?? tests/test_posture_demo_patch.py\n?? tests/test_posture_timeouts.py\n?? tests/test_zap_history.py\n",
+  "observed_prerequisites": {
+    "config_php_readable_by_process": false,
+    "local_version_php_readable": true,
+    "patch_baseline_configured": false,
+    "php_available": true,
+    "role_context_configured": false
+  },
+  "policy_unchanged": [
+    "src/posture/model.py",
+    "src/posture/policy.py",
+    "src/fusion/"
+  ],
+  "protected_integrity": {
+    "after_inventory_sha256": "094a9d677f77d1cc927aae3734fddd2931eb8117b1b87812206f4c348b813106",
+    "before_inventory_sha256": "094a9d677f77d1cc927aae3734fddd2931eb8117b1b87812206f4c348b813106",
+    "changed_or_missing": [],
+    "preexisting_files": 1375,
+    "result": "PASS",
+    "roots": [
+      "data/",
+      "evidence/",
+      "outputs/",
+      "runtime/posture/"
+    ]
+  },
+  "remaining_limitations": [
+    "Real two-assessment ZAP acceptance pending configured owned loopback API/key.",
+    "Internal collector config.php is unreadable by current process; no privilege changes made.",
+    "Fresh authenticated role sessions/content markers and explicit patch baseline are unavailable.",
+    "20-request/60-second provider caps can leave controls explicitly NOT_AVAILABLE.",
+    "Existing all-or-nothing Moodle module cannot return an incomplete result set; completed prepass results are retained, missing verdicts remain explicit.",
+    "No new active validation or ZAP Active Scan was implemented."
+  ],
+  "source_files_added_this_task": [
+    "src/posture/inventory.py",
+    "tests/test_fresh_posture.py",
+    "docs/posture/BRANCH1_CURRENT_CHECK_INVENTORY.md",
+    "docs/posture/TASK1A_CHECKPOINT.json"
+  ],
+  "source_files_changed_this_task": [
+    "demo/backend/adapters.py",
+    "demo/backend/app.py",
+    "demo/backend/posture_api.py",
+    "demo/backend/schemas.py",
+    "demo/backend/services.py",
+    "demo/frontend/scripts/product_render.test.mjs",
+    "demo/frontend/src/components/OperationalPosture.jsx",
+    "docs/posture/DYNAMIC_POSTURE_ASSESSMENT.md",
+    "docs/posture/ZAP_PASSIVE_INTEGRATION.md",
+    "src/posture/native.py",
+    "src/posture/orchestration.py",
+    "src/posture/providers.py",
+    "tests/test_operational_posture.py",
+    "tests/test_posture_demo_patch.py",
+    "tests/test_posture_timeouts.py",
+    "tests/test_zap_history.py"
+  ],
+  "starting_head": "f3fdd199a1ffa9fa3f3b3c370f2ed48967328812",
+  "tagged": false,
+  "task": "TASK 1A fresh current reassessment",
+  "tests": {
+    "focused_frontend_passed": 7,
+    "focused_python_passed": 157,
+    "full_suite": "NOT_RUN; task requests focused tests",
+    "git_diff_check": "PASS",
+    "production_build": "NOT_RUN; avoided large build per disk constraint"
+  },
+  "two_real_passive_assessments": {
+    "reason": "POSTURE_ZAP_OWNED_EPHEMERAL is not 1 and POSTURE_ZAP_API_KEY is not configured in this process. No ZAP session was adopted, reset or contacted; no lab HTTP traffic generated.",
+    "status": "NOT_RUN"
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "MSA-26-0020",
+    "title": "Reflected XSS via Feedback import error message",
+    "risk": "Minor",
+    "branch": "405",
+    "affected_max": 2024100711,
+    "fixed_release": "4.5.12",
+    "surface": "feedback_import"
+  },
+  {
+    "id": "MSA-26-0021",
+    "title": "CSRF and XSS in grade item idnumber editing",
+    "risk": "Serious",
+    "branch": "405",
+    "affected_max": 2024100711,
+    "fixed_release": "4.5.12",
+    "surface": "gradebook"
+  },
+  {
+    "id": "MSA-26-0025",
+    "title": "CSRF risk in quiz attempt regrading",
+    "risk": "Serious",
+    "branch": "405",
+    "affected_max": 2024100711,
+    "fixed_release": "4.5.12",
+    "surface": "quiz"
+  },
+  {
+    "id": "MSA-26-0028",
+    "title": "DoS risk via user profile description",
+    "risk": "Serious",
+    "branch": "405",
+    "affected_max": 2024100711,
+    "fixed_release": "4.5.12",
+    "surface": "user_profile"
+  },
+  {
+    "id": "MSA-26-0029",
+    "title": "Missing capability checks in report builder fragment callbacks",
+    "risk": "Minor",
+    "branch": "405",
+    "affected_max": 2024100711,
+    "fixed_release": "4.5.12",
+    "surface": "report_builder"
+  },
+  {
+    "id": "MSA-26-0030",
+    "title": "SSRF risk in URL downloader",
+    "risk": "Serious",
+    "branch": "405",
+    "affected_max": 2024100712,
+    "fixed_release": "4.5.13",
+    "surface": "url_fetch"
+  },
+  {
+    "id": "MSA-26-0031",
+    "title": "SQL injection risk in question bank web service",
+    "risk": "Serious",
+    "branch": "405",
+    "affected_max": 2024100712,
+    "fixed_release": "4.5.13",
+    "surface": "webservice"
+  },
+  {
+    "id": "MSA-26-0032",
+    "title": "User profile information disclosure via grade web service",
+    "risk": "Serious",
+    "branch": "405",
+    "affected_max": 2024100712,
+    "fixed_release": "4.5.13",
+    "surface": "webservice"
+  },
+  {
+    "id": "MSA-26-0033",
+    "title": "Arbitrary class instantiation via audience classname in core_reportbuilder",
+    "risk": "Minor",
+    "branch": "405",
+    "affected_max": 2024100712,
+    "fixed_release": "4.5.13",
+    "surface": "report_builder"
+  },
+  {
+    "id": "MSA-26-0041",
+    "title": "CSRF risk in XML grade imports",
+    "risk": "Serious",
+    "branch": "405",
+    "affected_max": 2024100712,
+    "fixed_release": "4.5.13",
+    "surface": "grade_import"
+  }
+]

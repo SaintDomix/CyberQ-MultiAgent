@@ -1,0 +1,36 @@
+{
+  "mappings": {
+    "ROLE-student-security_report": {
+      "access_control": {
+        "url": "http://192.168.226.132/moodle/report/security/index.php",
+        "read_only": true,
+        "expected_denied": true,
+        "restricted_session": "student-test",
+        "privileged_session": "administrator-test",
+        "restricted_role": "student",
+        "privileged_role": "administrator",
+        "identity_markers": {
+          "restricted": "http://192.168.226.132/moodle/user/profile.php?id=3",
+          "privileged": "http://192.168.226.132/moodle/user/profile.php?id=2"
+        },
+        "privileged_markers": [
+          "id=\"securityreporttable\""
+        ],
+        "cookie_name": "MoodleSession",
+        "source_reference": "report/security/index.php, report/security/settings.php, historical role_v3 security_report snapshots",
+        "required_capability": "report/security:view",
+        "denial_semantics": "401/403 or explicit access denied/permission denied or login/auth redirect; plain 404/200 insufficient"
+      }
+    }
+  },
+  "sessions": {
+    "student-test": {
+      "role": "student",
+      "cookie_env": "B1_STUDENT_COOKIE"
+    },
+    "administrator-test": {
+      "role": "administrator",
+      "cookie_env": "B1_ADMIN_COOKIE"
+    }
+  }
+}

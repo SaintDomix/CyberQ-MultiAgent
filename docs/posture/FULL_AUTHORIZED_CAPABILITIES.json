@@ -1,0 +1,1213 @@
+{
+  "active_scanners": [
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "6",
+      "name": "Path Traversal",
+      "policyId": "2",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "7",
+      "name": "Remote File Inclusion",
+      "policyId": "2",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "10045",
+      "name": "Source Code Disclosure - /WEB-INF Folder",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "10048",
+      "name": "Remote Code Execution - Shell Shock",
+      "policyId": "2",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "20015",
+      "name": "Heartbleed OpenSSL Vulnerability",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "20017",
+      "name": "Source Code Disclosure - CVE-2012-1823",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "20018",
+      "name": "Remote Code Execution - CVE-2012-1823",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "20019",
+      "name": "External Redirect",
+      "policyId": "3",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40009",
+      "name": "Server Side Include",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40012",
+      "name": "Cross Site Scripting (Reflected)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40014",
+      "name": "Cross Site Scripting (Persistent)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40018",
+      "name": "SQL Injection",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40019",
+      "name": "SQL Injection - MySQL (Time Based)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40020",
+      "name": "SQL Injection - Hypersonic SQL (Time Based)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40021",
+      "name": "SQL Injection - Oracle (Time Based)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40022",
+      "name": "SQL Injection - PostgreSQL (Time Based)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40024",
+      "name": "SQL Injection - SQLite (Time Based)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40026",
+      "name": "Cross Site Scripting (DOM Based)",
+      "policyId": "1",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40027",
+      "name": "SQL Injection - MsSQL (Time Based)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40043",
+      "name": "Log4Shell",
+      "policyId": "3",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40045",
+      "name": "Spring4Shell",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40048",
+      "name": "Remote Code Execution (React2Shell)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90019",
+      "name": "Server Side Code Injection",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90020",
+      "name": "Remote OS Command Injection",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90021",
+      "name": "XPath Injection",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90023",
+      "name": "XML External Entity Attack",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90024",
+      "name": "Generic Padding Oracle",
+      "policyId": "3",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90034",
+      "name": "Cloud Metadata Potentially Exposed",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90035",
+      "name": "Server Side Template Injection",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90036",
+      "name": "Server Side Template Injection (Blind)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90037",
+      "name": "Remote OS Command Injection (Time Based)",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "0",
+      "name": "Directory Browsing",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "10106",
+      "name": "HTTP Only Site",
+      "policyId": "3",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "30001",
+      "name": "Buffer Overflow",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "30002",
+      "name": "Format String Error",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40003",
+      "name": "CRLF Injection",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40008",
+      "name": "Parameter Tampering",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40028",
+      "name": "ELMAH Information Leak",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40029",
+      "name": "Trace.axd Information Leak",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40032",
+      "name": ".htaccess Information Leak",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40034",
+      "name": ".env Information Leak",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40035",
+      "name": "Hidden File Finder",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40042",
+      "name": "Spring Actuator Information Leak",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40044",
+      "name": "Exponential Entity Expansion (Billion Laughs Attack)",
+      "policyId": "3",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90017",
+      "name": "XSLT Injection",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "10047",
+      "name": "HTTPS Content Available via HTTP",
+      "policyId": "3",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "10058",
+      "name": "GET for POST",
+      "policyId": "3",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "10104",
+      "name": "User Agent Fuzzer",
+      "policyId": "0",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40016",
+      "name": "Cross Site Scripting (Persistent) - Prime",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "40017",
+      "name": "Cross Site Scripting (Persistent) - Spider",
+      "policyId": "4",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "50000",
+      "name": "Script Active Scan Rules",
+      "policyId": "3",
+      "quality": "release",
+      "status": "release"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90026",
+      "name": "SOAP Action Spoofing",
+      "policyId": "3",
+      "quality": "beta",
+      "status": "beta"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "attackStrength": "DEFAULT",
+      "enabled": "true",
+      "id": "90029",
+      "name": "SOAP XML Injection",
+      "policyId": "3",
+      "quality": "beta",
+      "status": "beta"
+    }
+  ],
+  "addons": [
+    {
+      "id": "help",
+      "version": "22.0.0"
+    },
+    {
+      "id": "websocket",
+      "version": "35.0.0"
+    },
+    {
+      "id": "hud",
+      "version": "0.19.0"
+    },
+    {
+      "id": "retest",
+      "version": "0.11.0"
+    },
+    {
+      "id": "replacer",
+      "version": "21.0.0"
+    },
+    {
+      "id": "zest",
+      "version": "48.11.0"
+    },
+    {
+      "id": "diff",
+      "version": "18.0.0"
+    },
+    {
+      "id": "callhome",
+      "version": "0.20.0"
+    },
+    {
+      "id": "authhelper",
+      "version": "0.34.0"
+    },
+    {
+      "id": "openapi",
+      "version": "48.0.0"
+    },
+    {
+      "id": "sequence",
+      "version": "9.0.0"
+    },
+    {
+      "id": "graaljs",
+      "version": "0.12.0"
+    },
+    {
+      "id": "scripts",
+      "version": "45.17.0"
+    },
+    {
+      "id": "client",
+      "version": "0.20.0"
+    },
+    {
+      "id": "reveal",
+      "version": "10.0.0"
+    },
+    {
+      "id": "pscanrules",
+      "version": "70.0.0"
+    },
+    {
+      "id": "insights",
+      "version": "0.0.1"
+    },
+    {
+      "id": "exim",
+      "version": "0.16.0"
+    },
+    {
+      "id": "oast",
+      "version": "0.24.0"
+    },
+    {
+      "id": "domxss",
+      "version": "23.0.0"
+    },
+    {
+      "id": "invoke",
+      "version": "17.0.0"
+    },
+    {
+      "id": "directorylistv1",
+      "version": "9.0.0"
+    },
+    {
+      "id": "postman",
+      "version": "0.9.0"
+    },
+    {
+      "id": "reports",
+      "version": "0.43.0"
+    },
+    {
+      "id": "alertFilters",
+      "version": "26.0.0"
+    },
+    {
+      "id": "bruteforce",
+      "version": "20.0.0"
+    },
+    {
+      "id": "webdriverlinux",
+      "version": "169.0.0"
+    },
+    {
+      "id": "spider",
+      "version": "0.18.0"
+    },
+    {
+      "id": "network",
+      "version": "0.25.0"
+    },
+    {
+      "id": "database",
+      "version": "0.9.0"
+    },
+    {
+      "id": "fuzz",
+      "version": "13.16.0"
+    },
+    {
+      "id": "quickstart",
+      "version": "53.0.0"
+    },
+    {
+      "id": "selenium",
+      "version": "15.43.0"
+    },
+    {
+      "id": "formhandler",
+      "version": "6.8.0"
+    },
+    {
+      "id": "commonlib",
+      "version": "1.39.0"
+    },
+    {
+      "id": "automation",
+      "version": "0.58.0"
+    },
+    {
+      "id": "retire",
+      "version": "0.52.0"
+    },
+    {
+      "id": "pscan",
+      "version": "0.6.0"
+    },
+    {
+      "id": "requester",
+      "version": "7.9.0"
+    },
+    {
+      "id": "spiderAjax",
+      "version": "23.29.0"
+    },
+    {
+      "id": "encoder",
+      "version": "1.8.0"
+    },
+    {
+      "id": "ascanrules",
+      "version": "78.0.0"
+    },
+    {
+      "id": "gettingStarted",
+      "version": "20.0.0"
+    },
+    {
+      "id": "graphql",
+      "version": "0.29.0"
+    },
+    {
+      "id": "onlineMenu",
+      "version": "15.0.0"
+    },
+    {
+      "id": "tips",
+      "version": "16.0.0"
+    },
+    {
+      "id": "scanpolicies",
+      "version": "0.7.0"
+    },
+    {
+      "id": "soap",
+      "version": "29.0.0"
+    }
+  ],
+  "capabilities": {
+    "active_scan": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    },
+    "ajax_spider": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    },
+    "authentication": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": false,
+      "reason": "Anonymous run; verified credentials/session configuration NOT_CONFIGURED."
+    },
+    "automation_framework": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": false,
+      "reason": "Installed capability; no generic automated job/session configured in this profile."
+    },
+    "client_spider": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    },
+    "forced_browse": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": false,
+      "reason": "Installed GUI/add-on; no forced-browse API component exposed by this runtime."
+    },
+    "fuzzer": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": false,
+      "reason": "Specialized message/location/payload/processor job required; no fuzz-everything operation."
+    },
+    "graphql": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    },
+    "openapi": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    },
+    "passive_scan": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    },
+    "postman": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    },
+    "sequence": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": false,
+      "reason": "Installed capability; no generic automated job/session configured in this profile."
+    },
+    "session_management": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": false,
+      "reason": "Installed capability; no generic automated job/session configured in this profile."
+    },
+    "soap": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    },
+    "technology_context": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    },
+    "traditional_spider": {
+      "available": true,
+      "executed": false,
+      "installed": true,
+      "integrated": true,
+      "reason": null
+    }
+  },
+  "control_api_origin": "http://127.0.0.1:8081",
+  "local_servers": [],
+  "passive_scanners": [
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10111",
+      "name": "Authentication Request Identified"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10112",
+      "name": "Session Management Response Identified"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10113",
+      "name": "Verification Request Identified"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "50001",
+      "name": "Script Passive Scan Rules"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10020",
+      "name": "Anti-clickjacking Header"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "90022",
+      "name": "Application Error Disclosure"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10044",
+      "name": "Big Redirect Detected (Potential Sensitive Information Leak)"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10015",
+      "name": "Re-examine Cache-control Directives"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "90011",
+      "name": "Charset Mismatch"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10038",
+      "name": "Content Security Policy (CSP) Header Not Set"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10055",
+      "name": "CSP"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10019",
+      "name": "Content-Type Header Missing"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10010",
+      "name": "Cookie No HttpOnly Flag"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "90033",
+      "name": "Loosely Scoped Cookie"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10054",
+      "name": "Cookie without SameSite Attribute"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10011",
+      "name": "Cookie Without Secure Flag"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10098",
+      "name": "Cross-Domain Misconfiguration"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10017",
+      "name": "Cross-Domain JavaScript Source File Inclusion"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10202",
+      "name": "Absence of Anti-CSRF Tokens"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10033",
+      "name": "Directory Browsing"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10097",
+      "name": "Hash Disclosure"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10034",
+      "name": "Heartbleed OpenSSL Vulnerability (Indicative)"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10009",
+      "name": "In Page Banner Information Leak"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "2",
+      "name": "Private IP Disclosure"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "3",
+      "name": "Session ID in URL Rewrite"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10023",
+      "name": "Information Disclosure - Debug Error Messages"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10024",
+      "name": "Information Disclosure - Sensitive Information in URL"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10025",
+      "name": "Information Disclosure - Sensitive Information in HTTP Referrer Header"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10027",
+      "name": "Information Disclosure - Suspicious Comments"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10105",
+      "name": "Weak Authentication Method"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10041",
+      "name": "HTTP to HTTPS Insecure Transition in Form Post"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10042",
+      "name": "HTTPS to HTTP Insecure Transition in Form Post"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "90001",
+      "name": "Insecure JSF ViewState"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "90002",
+      "name": "Java Serialization Object"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10108",
+      "name": "Reverse Tabnabbing"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10040",
+      "name": "Secure Pages Include Mixed Content"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10109",
+      "name": "Modern Web Application"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10062",
+      "name": "PII Disclosure"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10115",
+      "name": "Script Served From Malicious Domain (polyfill)"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10050",
+      "name": "Retrieved from Cache"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10036",
+      "name": "HTTP Server Response Header"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10035",
+      "name": "Strict-Transport-Security Header"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "90003",
+      "name": "Sub Resource Integrity Attribute Missing"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10096",
+      "name": "Timestamp Disclosure"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10030",
+      "name": "User Controllable Charset"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10029",
+      "name": "Cookie Poisoning"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10031",
+      "name": "User Controllable HTML Element Attribute (Potential XSS)"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10043",
+      "name": "User Controllable JavaScript Event (XSS)"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10028",
+      "name": "Off-site Redirect"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10057",
+      "name": "Username Hash Found"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10032",
+      "name": "Viewstate"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10061",
+      "name": "X-AspNet-Version Response Header"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10039",
+      "name": "X-Backend-Server Header Information Leak"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10052",
+      "name": "X-ChromeLogger-Data (XCOLD) Header Information Leak"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10021",
+      "name": "X-Content-Type-Options Header Missing"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10056",
+      "name": "X-Debug-Token Information Leak"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10037",
+      "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10116",
+      "name": "ZAP is Out of Date"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "10003",
+      "name": "Vulnerable JS Library (Powered by Retire.js)"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "90030",
+      "name": "WSDL File Detection"
+    },
+    {
+      "alertThreshold": "DEFAULT",
+      "enabled": "true",
+      "id": "50003",
+      "name": "Stats Passive Scan Rule"
+    }
+  ],
+  "version": "2.17.0"
+}

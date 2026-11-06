@@ -1,0 +1,1126 @@
+{
+  "TaskState": {
+    "$defs": {
+      "AgentResult": {
+        "additionalProperties": false,
+        "properties": {
+          "agent": {
+            "enum": [
+              "native",
+              "zap",
+              "behavioral",
+              "verification",
+              "quality"
+            ],
+            "title": "Agent",
+            "type": "string"
+          },
+          "summary": {
+            "additionalProperties": true,
+            "title": "Summary",
+            "type": "object"
+          },
+          "tools_used": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Tools Used",
+            "type": "array"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/$defs/EvidenceRef"
+            },
+            "title": "Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "agent",
+          "summary",
+          "tools_used",
+          "evidence"
+        ],
+        "title": "AgentResult",
+        "type": "object"
+      },
+      "EvidenceRef": {
+        "additionalProperties": false,
+        "properties": {
+          "ref_id": {
+            "title": "Ref Id",
+            "type": "string"
+          },
+          "path": {
+            "title": "Path",
+            "type": "string"
+          },
+          "kind": {
+            "default": "FILE",
+            "enum": [
+              "FILE",
+              "SQLITE",
+              "MODEL_PACKAGE"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "expected_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Expected Sha256",
+            "type": "string"
+          },
+          "read_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Read Sha256",
+            "type": "string"
+          },
+          "anchor": {
+            "default": "PRESERVED_INVENTORY",
+            "enum": [
+              "PRESERVED_INVENTORY",
+              "FROZEN_SOURCE_BINDING"
+            ],
+            "title": "Anchor",
+            "type": "string"
+          },
+          "source_record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Record Ids",
+            "type": "array"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "temporal_scope": {
+            "const": "HISTORICAL_SAVED_EVIDENCE",
+            "default": "HISTORICAL_SAVED_EVIDENCE",
+            "title": "Temporal Scope",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ref_id",
+          "path",
+          "expected_sha256",
+          "read_sha256"
+        ],
+        "title": "EvidenceRef",
+        "type": "object"
+      },
+      "Failure": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "retryable": {
+            "default": false,
+            "title": "Retryable",
+            "type": "boolean"
+          },
+          "agent": {
+            "default": "coordinator",
+            "enum": [
+              "coordinator",
+              "native",
+              "zap",
+              "behavioral",
+              "verification",
+              "quality"
+            ],
+            "title": "Agent",
+            "type": "string"
+          },
+          "tool": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Tool"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "Failure",
+        "type": "object"
+      },
+      "Message": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_version": {
+            "const": "cqma-message-1.0",
+            "default": "cqma-message-1.0",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "message_id": {
+            "pattern": "^msg-[0-9a-f]{32}$",
+            "title": "Message Id",
+            "type": "string"
+          },
+          "task_id": {
+            "pattern": "^ma-[0-9a-f]{32}$",
+            "title": "Task Id",
+            "type": "string"
+          },
+          "sender": {
+            "enum": [
+              "coordinator",
+              "native",
+              "zap",
+              "behavioral",
+              "verification",
+              "quality"
+            ],
+            "title": "Sender",
+            "type": "string"
+          },
+          "recipient": {
+            "enum": [
+              "coordinator",
+              "native",
+              "zap",
+              "behavioral",
+              "verification",
+              "quality"
+            ],
+            "title": "Recipient",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "DISPATCH",
+              "RESULT",
+              "FINAL",
+              "FAILURE"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "depends_on": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Depends On",
+            "type": "array"
+          },
+          "payload": {
+            "additionalProperties": true,
+            "title": "Payload",
+            "type": "object"
+          }
+        },
+        "required": [
+          "message_id",
+          "task_id",
+          "sender",
+          "recipient",
+          "kind",
+          "created_at",
+          "payload"
+        ],
+        "title": "Message",
+        "type": "object"
+      },
+      "TaskRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "scenario": {
+            "enum": [
+              "attack_replay",
+              "benign_replay",
+              "sqli_run",
+              "xss_run",
+              "traversal_run",
+              "bruteforce_run",
+              "unknown_run"
+            ],
+            "title": "Scenario",
+            "type": "string"
+          },
+          "mode": {
+            "default": "OFFLINE_EVIDENCE",
+            "enum": [
+              "OFFLINE_EVIDENCE",
+              "LIVE_LAB"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "zap_profile": {
+            "default": "STANDARD",
+            "enum": [
+              "PASSIVE_BASELINE",
+              "STANDARD",
+              "FULL_AUTHORIZED"
+            ],
+            "title": "Zap Profile",
+            "type": "string"
+          },
+          "max_steps": {
+            "default": 18,
+            "maximum": 40,
+            "minimum": 1,
+            "title": "Max Steps",
+            "type": "integer"
+          },
+          "timeout_seconds": {
+            "default": 90,
+            "maximum": 120,
+            "minimum": 0.01,
+            "title": "Timeout Seconds",
+            "type": "number"
+          },
+          "tool_timeout_seconds": {
+            "default": 30,
+            "maximum": 60,
+            "minimum": 0.01,
+            "title": "Tool Timeout Seconds",
+            "type": "number"
+          },
+          "max_retries": {
+            "default": 1,
+            "maximum": 2,
+            "minimum": 0,
+            "title": "Max Retries",
+            "type": "integer"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "pattern": "^[a-zA-Z0-9_-]{8,64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Request Id"
+          }
+        },
+        "required": [
+          "scenario"
+        ],
+        "title": "TaskRequest",
+        "type": "object"
+      },
+      "ToolResult": {
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "additionalProperties": true,
+            "title": "Summary",
+            "type": "object"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/$defs/EvidenceRef"
+            },
+            "title": "Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      },
+      "VerificationOutcome": {
+        "additionalProperties": false,
+        "properties": {
+          "subject": {
+            "title": "Subject",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "VERIFIED",
+              "PARTIAL",
+              "CONFLICTED",
+              "MISSING",
+              "INVALID"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "reasons": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Reasons",
+            "type": "array"
+          },
+          "related_refs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Related Refs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "subject",
+          "status",
+          "reasons"
+        ],
+        "title": "VerificationOutcome",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "cqma-task-1.0",
+        "default": "cqma-task-1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "task_id": {
+        "pattern": "^ma-[0-9a-f]{32}$",
+        "title": "Task Id",
+        "type": "string"
+      },
+      "request": {
+        "$ref": "#/$defs/TaskRequest"
+      },
+      "status": {
+        "default": "CREATED",
+        "enum": [
+          "CREATED",
+          "RUNNING",
+          "VERIFYING",
+          "SCORING",
+          "COMPLETED",
+          "FAILED",
+          "TIMED_OUT",
+          "BLOCKED",
+          "LIMIT_EXCEEDED",
+          "INTERRUPTED"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "created_at": {
+        "title": "Created At",
+        "type": "string"
+      },
+      "updated_at": {
+        "title": "Updated At",
+        "type": "string"
+      },
+      "agents": {
+        "additionalProperties": {
+          "type": "string"
+        },
+        "title": "Agents",
+        "type": "object"
+      },
+      "steps": {
+        "default": 0,
+        "title": "Steps",
+        "type": "integer"
+      },
+      "messages": {
+        "items": {
+          "$ref": "#/$defs/Message"
+        },
+        "title": "Messages",
+        "type": "array"
+      },
+      "outputs": {
+        "additionalProperties": {
+          "$ref": "#/$defs/AgentResult"
+        },
+        "title": "Outputs",
+        "type": "object"
+      },
+      "tool_outputs": {
+        "additionalProperties": {
+          "$ref": "#/$defs/ToolResult"
+        },
+        "title": "Tool Outputs",
+        "type": "object"
+      },
+      "verification": {
+        "items": {
+          "$ref": "#/$defs/VerificationOutcome"
+        },
+        "title": "Verification",
+        "type": "array"
+      },
+      "failure": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Failure"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      },
+      "result": {
+        "anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Result"
+      },
+      "distribution": {
+        "additionalProperties": true,
+        "title": "Distribution",
+        "type": "object"
+      },
+      "warnings": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Warnings",
+        "type": "array"
+      }
+    },
+    "required": [
+      "task_id",
+      "request",
+      "created_at",
+      "updated_at"
+    ],
+    "title": "TaskState",
+    "type": "object"
+  },
+  "TaskRequest": {
+    "additionalProperties": false,
+    "properties": {
+      "scenario": {
+        "enum": [
+          "attack_replay",
+          "benign_replay",
+          "sqli_run",
+          "xss_run",
+          "traversal_run",
+          "bruteforce_run",
+          "unknown_run"
+        ],
+        "title": "Scenario",
+        "type": "string"
+      },
+      "mode": {
+        "default": "OFFLINE_EVIDENCE",
+        "enum": [
+          "OFFLINE_EVIDENCE",
+          "LIVE_LAB"
+        ],
+        "title": "Mode",
+        "type": "string"
+      },
+      "zap_profile": {
+        "default": "STANDARD",
+        "enum": [
+          "PASSIVE_BASELINE",
+          "STANDARD",
+          "FULL_AUTHORIZED"
+        ],
+        "title": "Zap Profile",
+        "type": "string"
+      },
+      "max_steps": {
+        "default": 18,
+        "maximum": 40,
+        "minimum": 1,
+        "title": "Max Steps",
+        "type": "integer"
+      },
+      "timeout_seconds": {
+        "default": 90,
+        "maximum": 120,
+        "minimum": 0.01,
+        "title": "Timeout Seconds",
+        "type": "number"
+      },
+      "tool_timeout_seconds": {
+        "default": 30,
+        "maximum": 60,
+        "minimum": 0.01,
+        "title": "Tool Timeout Seconds",
+        "type": "number"
+      },
+      "max_retries": {
+        "default": 1,
+        "maximum": 2,
+        "minimum": 0,
+        "title": "Max Retries",
+        "type": "integer"
+      },
+      "request_id": {
+        "anyOf": [
+          {
+            "pattern": "^[a-zA-Z0-9_-]{8,64}$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Request Id"
+      }
+    },
+    "required": [
+      "scenario"
+    ],
+    "title": "TaskRequest",
+    "type": "object"
+  },
+  "Message": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "cqma-message-1.0",
+        "default": "cqma-message-1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "message_id": {
+        "pattern": "^msg-[0-9a-f]{32}$",
+        "title": "Message Id",
+        "type": "string"
+      },
+      "task_id": {
+        "pattern": "^ma-[0-9a-f]{32}$",
+        "title": "Task Id",
+        "type": "string"
+      },
+      "sender": {
+        "enum": [
+          "coordinator",
+          "native",
+          "zap",
+          "behavioral",
+          "verification",
+          "quality"
+        ],
+        "title": "Sender",
+        "type": "string"
+      },
+      "recipient": {
+        "enum": [
+          "coordinator",
+          "native",
+          "zap",
+          "behavioral",
+          "verification",
+          "quality"
+        ],
+        "title": "Recipient",
+        "type": "string"
+      },
+      "kind": {
+        "enum": [
+          "DISPATCH",
+          "RESULT",
+          "FINAL",
+          "FAILURE"
+        ],
+        "title": "Kind",
+        "type": "string"
+      },
+      "created_at": {
+        "title": "Created At",
+        "type": "string"
+      },
+      "depends_on": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Depends On",
+        "type": "array"
+      },
+      "payload": {
+        "additionalProperties": true,
+        "title": "Payload",
+        "type": "object"
+      }
+    },
+    "required": [
+      "message_id",
+      "task_id",
+      "sender",
+      "recipient",
+      "kind",
+      "created_at",
+      "payload"
+    ],
+    "title": "Message",
+    "type": "object"
+  },
+  "AgentResult": {
+    "$defs": {
+      "EvidenceRef": {
+        "additionalProperties": false,
+        "properties": {
+          "ref_id": {
+            "title": "Ref Id",
+            "type": "string"
+          },
+          "path": {
+            "title": "Path",
+            "type": "string"
+          },
+          "kind": {
+            "default": "FILE",
+            "enum": [
+              "FILE",
+              "SQLITE",
+              "MODEL_PACKAGE"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "expected_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Expected Sha256",
+            "type": "string"
+          },
+          "read_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Read Sha256",
+            "type": "string"
+          },
+          "anchor": {
+            "default": "PRESERVED_INVENTORY",
+            "enum": [
+              "PRESERVED_INVENTORY",
+              "FROZEN_SOURCE_BINDING"
+            ],
+            "title": "Anchor",
+            "type": "string"
+          },
+          "source_record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Record Ids",
+            "type": "array"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "temporal_scope": {
+            "const": "HISTORICAL_SAVED_EVIDENCE",
+            "default": "HISTORICAL_SAVED_EVIDENCE",
+            "title": "Temporal Scope",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ref_id",
+          "path",
+          "expected_sha256",
+          "read_sha256"
+        ],
+        "title": "EvidenceRef",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "agent": {
+        "enum": [
+          "native",
+          "zap",
+          "behavioral",
+          "verification",
+          "quality"
+        ],
+        "title": "Agent",
+        "type": "string"
+      },
+      "summary": {
+        "additionalProperties": true,
+        "title": "Summary",
+        "type": "object"
+      },
+      "tools_used": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Tools Used",
+        "type": "array"
+      },
+      "evidence": {
+        "items": {
+          "$ref": "#/$defs/EvidenceRef"
+        },
+        "title": "Evidence",
+        "type": "array"
+      }
+    },
+    "required": [
+      "agent",
+      "summary",
+      "tools_used",
+      "evidence"
+    ],
+    "title": "AgentResult",
+    "type": "object"
+  },
+  "ToolArguments": {
+    "additionalProperties": false,
+    "properties": {
+      "task_id": {
+        "pattern": "^ma-[0-9a-f]{32}$",
+        "title": "Task Id",
+        "type": "string"
+      },
+      "agent": {
+        "enum": [
+          "native",
+          "zap",
+          "behavioral",
+          "verification",
+          "quality"
+        ],
+        "title": "Agent",
+        "type": "string"
+      },
+      "dependency_message_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Dependency Message Ids",
+        "type": "array"
+      },
+      "scenario": {
+        "title": "Scenario",
+        "type": "string"
+      }
+    },
+    "required": [
+      "task_id",
+      "agent",
+      "dependency_message_ids",
+      "scenario"
+    ],
+    "title": "ToolArguments",
+    "type": "object"
+  },
+  "ToolResult": {
+    "$defs": {
+      "EvidenceRef": {
+        "additionalProperties": false,
+        "properties": {
+          "ref_id": {
+            "title": "Ref Id",
+            "type": "string"
+          },
+          "path": {
+            "title": "Path",
+            "type": "string"
+          },
+          "kind": {
+            "default": "FILE",
+            "enum": [
+              "FILE",
+              "SQLITE",
+              "MODEL_PACKAGE"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "expected_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Expected Sha256",
+            "type": "string"
+          },
+          "read_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Read Sha256",
+            "type": "string"
+          },
+          "anchor": {
+            "default": "PRESERVED_INVENTORY",
+            "enum": [
+              "PRESERVED_INVENTORY",
+              "FROZEN_SOURCE_BINDING"
+            ],
+            "title": "Anchor",
+            "type": "string"
+          },
+          "source_record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Record Ids",
+            "type": "array"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "temporal_scope": {
+            "const": "HISTORICAL_SAVED_EVIDENCE",
+            "default": "HISTORICAL_SAVED_EVIDENCE",
+            "title": "Temporal Scope",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ref_id",
+          "path",
+          "expected_sha256",
+          "read_sha256"
+        ],
+        "title": "EvidenceRef",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "summary": {
+        "additionalProperties": true,
+        "title": "Summary",
+        "type": "object"
+      },
+      "data": {
+        "additionalProperties": true,
+        "title": "Data",
+        "type": "object"
+      },
+      "evidence": {
+        "items": {
+          "$ref": "#/$defs/EvidenceRef"
+        },
+        "title": "Evidence",
+        "type": "array"
+      }
+    },
+    "required": [
+      "summary"
+    ],
+    "title": "ToolResult",
+    "type": "object"
+  },
+  "EvidenceRef": {
+    "additionalProperties": false,
+    "properties": {
+      "ref_id": {
+        "title": "Ref Id",
+        "type": "string"
+      },
+      "path": {
+        "title": "Path",
+        "type": "string"
+      },
+      "kind": {
+        "default": "FILE",
+        "enum": [
+          "FILE",
+          "SQLITE",
+          "MODEL_PACKAGE"
+        ],
+        "title": "Kind",
+        "type": "string"
+      },
+      "expected_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Expected Sha256",
+        "type": "string"
+      },
+      "read_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Read Sha256",
+        "type": "string"
+      },
+      "anchor": {
+        "default": "PRESERVED_INVENTORY",
+        "enum": [
+          "PRESERVED_INVENTORY",
+          "FROZEN_SOURCE_BINDING"
+        ],
+        "title": "Anchor",
+        "type": "string"
+      },
+      "source_record_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Source Record Ids",
+        "type": "array"
+      },
+      "observed_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Observed At"
+      },
+      "temporal_scope": {
+        "const": "HISTORICAL_SAVED_EVIDENCE",
+        "default": "HISTORICAL_SAVED_EVIDENCE",
+        "title": "Temporal Scope",
+        "type": "string"
+      }
+    },
+    "required": [
+      "ref_id",
+      "path",
+      "expected_sha256",
+      "read_sha256"
+    ],
+    "title": "EvidenceRef",
+    "type": "object"
+  },
+  "Failure": {
+    "additionalProperties": false,
+    "properties": {
+      "code": {
+        "title": "Code",
+        "type": "string"
+      },
+      "message": {
+        "title": "Message",
+        "type": "string"
+      },
+      "retryable": {
+        "default": false,
+        "title": "Retryable",
+        "type": "boolean"
+      },
+      "agent": {
+        "default": "coordinator",
+        "enum": [
+          "coordinator",
+          "native",
+          "zap",
+          "behavioral",
+          "verification",
+          "quality"
+        ],
+        "title": "Agent",
+        "type": "string"
+      },
+      "tool": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Tool"
+      }
+    },
+    "required": [
+      "code",
+      "message"
+    ],
+    "title": "Failure",
+    "type": "object"
+  },
+  "VerificationOutcome": {
+    "additionalProperties": false,
+    "properties": {
+      "subject": {
+        "title": "Subject",
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "VERIFIED",
+          "PARTIAL",
+          "CONFLICTED",
+          "MISSING",
+          "INVALID"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "reasons": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Reasons",
+        "type": "array"
+      },
+      "related_refs": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Related Refs",
+        "type": "array"
+      }
+    },
+    "required": [
+      "subject",
+      "status",
+      "reasons"
+    ],
+    "title": "VerificationOutcome",
+    "type": "object"
+  }
+}

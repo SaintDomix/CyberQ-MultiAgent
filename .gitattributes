@@ -1,0 +1,8 @@
+# csv.writer emits RFC-style CRLF. Preserve research hashes across checkouts;
+# recognize CRLF while retaining normal whitespace checks for spaces and tabs.
+/outputs/benchmarks/final/*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/outputs/research_pack/final/*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# This hash-bound historical renderer output includes a final blank line.
+# Keep it intact; source files still receive the default EOF whitespace check.
+/outputs/end_to_end/m3c_final_01/report.md -text whitespace=blank-at-eol,space-before-tab,-blank-at-eof

@@ -1,0 +1,588 @@
+{
+  "controls": [
+    {
+      "control_id": "ACCESS-001",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "ACCESS-001"
+    },
+    {
+      "control_id": "ACCESS-002",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "ACCESS-002"
+    },
+    {
+      "control_id": "ACCESS-003",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "ACCESS-003"
+    },
+    {
+      "control_id": "ACCESS-004",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "ACCESS-004"
+    },
+    {
+      "control_id": "ACCESS-005",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "ACCESS-005"
+    },
+    {
+      "control_id": "ACCESS-006",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "ACCESS-006"
+    },
+    {
+      "control_id": "ADV-MSA-26-0020",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "ADV-MSA-26-0021",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "ADV-MSA-26-0025",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "ADV-MSA-26-0028",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "ADV-MSA-26-0029",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "ADV-MSA-26-0030",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "ADV-MSA-26-0031",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "ADV-MSA-26-0032",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "ADV-MSA-26-0033",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "ADV-MSA-26-0041",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "AUTH-001",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "AUTH-001"
+    },
+    {
+      "control_id": "AUTH-002",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "AUTH-002"
+    },
+    {
+      "control_id": "AUTH-003",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "AUTH-003"
+    },
+    {
+      "control_id": "AUTH-004",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "AUTH-004"
+    },
+    {
+      "control_id": "AUTH-005",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "AUTH-005"
+    },
+    {
+      "control_id": "AUTH-006",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "AUTH-006"
+    },
+    {
+      "control_id": "AUTH-007",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "AUTH-007"
+    },
+    {
+      "control_id": "AUTH-INT-001",
+      "dimension": "D2",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "AUTH-INT-001"
+    },
+    {
+      "control_id": "AUTH-INT-002",
+      "dimension": "D2",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "AUTH-INT-002"
+    },
+    {
+      "control_id": "AUTH-INT-003",
+      "dimension": "D2",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "AUTH-INT-003"
+    },
+    {
+      "control_id": "AUTH-INT-004",
+      "dimension": "D2",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "AUTH-INT-004"
+    },
+    {
+      "control_id": "CFG-001",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "CFG-001"
+    },
+    {
+      "control_id": "CFG-002",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "CFG-002"
+    },
+    {
+      "control_id": "CFG-003",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "CFG-003"
+    },
+    {
+      "control_id": "CFG-004",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "CFG-004"
+    },
+    {
+      "control_id": "COOKIE-000",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/cookies.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "COOKIE-000"
+    },
+    {
+      "control_id": "COOKIE-MoodleSession-DOMAIN",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/cookies.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "COOKIE-MoodleSession-DOMAIN"
+    },
+    {
+      "control_id": "COOKIE-MoodleSession-HTTPONLY",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/cookies.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "COOKIE-MoodleSession-HTTPONLY"
+    },
+    {
+      "control_id": "COOKIE-MoodleSession-PATH",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/cookies.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "COOKIE-MoodleSession-PATH"
+    },
+    {
+      "control_id": "COOKIE-MoodleSession-SAMESITE",
+      "dimension": "D2",
+      "implementation": "src/branch1/external_rules/cookies.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "COOKIE-MoodleSession-SAMESITE"
+    },
+    {
+      "control_id": "COOKIE-MoodleSession-SECURE",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/cookies.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "PLAINTEXT_TRANSPORT"
+    },
+    {
+      "control_id": "CORE-001",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "CORE-001"
+    },
+    {
+      "control_id": "CORS-001",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "CORS-001"
+    },
+    {
+      "control_id": "CORS-002",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "CORS-002"
+    },
+    {
+      "control_id": "DISC-001",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_WEB_SERVER",
+      "root_id": "DISC-001"
+    },
+    {
+      "control_id": "DISC-002",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_WEB_SERVER",
+      "root_id": "DISC-002"
+    },
+    {
+      "control_id": "DISC-003",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_WEB_SERVER",
+      "root_id": "DISC-003"
+    },
+    {
+      "control_id": "DISC-004",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "DISC-004"
+    },
+    {
+      "control_id": "DISC-005",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "DISC-005"
+    },
+    {
+      "control_id": "DISC-006",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "DISC-006"
+    },
+    {
+      "control_id": "DISC-007",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "DISC-007"
+    },
+    {
+      "control_id": "DISC-008",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "DISC-008"
+    },
+    {
+      "control_id": "DISC-009",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "DISC-009"
+    },
+    {
+      "control_id": "EXPOSURE-001",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_WEB_SERVER",
+      "root_id": "EXPOSURE-001"
+    },
+    {
+      "control_id": "EXPOSURE-002",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_WEB_SERVER",
+      "root_id": "EXPOSURE-002"
+    },
+    {
+      "control_id": "EXPOSURE-003",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_WEB_SERVER",
+      "root_id": "EXPOSURE-003"
+    },
+    {
+      "control_id": "EXPOSURE-004",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_WEB_SERVER",
+      "root_id": "EXPOSURE-004"
+    },
+    {
+      "control_id": "EXPOSURE-005",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_WEB_SERVER",
+      "root_id": "EXPOSURE-005"
+    },
+    {
+      "control_id": "EXPOSURE-006",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_WEB_SERVER",
+      "root_id": "EXPOSURE-006"
+    },
+    {
+      "control_id": "EXPOSURE-007",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "EXPOSURE-007"
+    },
+    {
+      "control_id": "EXPOSURE-008",
+      "dimension": "D3",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "EXPOSURE-008"
+    },
+    {
+      "control_id": "FS-001",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "WEBSERVER_WRITE_PERMISSIONS"
+    },
+    {
+      "control_id": "FS-002",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "WEBSERVER_WRITE_PERMISSIONS"
+    },
+    {
+      "control_id": "FS-003",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "FS-003"
+    },
+    {
+      "control_id": "HDR-001",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "PLAINTEXT_TRANSPORT"
+    },
+    {
+      "control_id": "HDR-002",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HDR-002"
+    },
+    {
+      "control_id": "HDR-003",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HDR-003"
+    },
+    {
+      "control_id": "HDR-004",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HDR-004"
+    },
+    {
+      "control_id": "HDR-005",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HDR-005"
+    },
+    {
+      "control_id": "HDR-006",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HDR-006"
+    },
+    {
+      "control_id": "HDR-007",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HDR-007"
+    },
+    {
+      "control_id": "HDR-008",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HDR-008"
+    },
+    {
+      "control_id": "HDR-009",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HDR-009"
+    },
+    {
+      "control_id": "HTTP-001",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HTTP-001"
+    },
+    {
+      "control_id": "HTTP-002",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "HTTP-002"
+    },
+    {
+      "control_id": "PATCH-001",
+      "dimension": "D4",
+      "implementation": "src/branch1/intelligence.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "MOODLE_PATCH_LEVEL"
+    },
+    {
+      "control_id": "PHP-001",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "PHP-001"
+    },
+    {
+      "control_id": "PRIV-001",
+      "dimension": "D3",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "PRIV-001"
+    },
+    {
+      "control_id": "PRIV-002",
+      "dimension": "D3",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "PRIV-002"
+    },
+    {
+      "control_id": "SESSION-INT-001",
+      "dimension": "D2",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "SESSION-INT-001"
+    },
+    {
+      "control_id": "SESSION-INT-002",
+      "dimension": "D2",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "SESSION-INT-002"
+    },
+    {
+      "control_id": "SSRF-DEF-001",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "SSRF-DEF-001"
+    },
+    {
+      "control_id": "SSRF-DEF-002",
+      "dimension": "D5",
+      "implementation": "src/branch1/internal.py",
+      "platform_scope": "INTERNAL_SERVER",
+      "root_id": "SSRF-DEF-002"
+    },
+    {
+      "control_id": "TLS-001",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/tls.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "PLAINTEXT_TRANSPORT"
+    },
+    {
+      "control_id": "TLS-002",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/tls.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "TLS-002"
+    },
+    {
+      "control_id": "TLS-003",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/generic_rules.py",
+      "platform_scope": "GENERIC_HTTP",
+      "root_id": "PLAINTEXT_TRANSPORT"
+    },
+    {
+      "control_id": "TRANSPORT-004",
+      "dimension": "D1",
+      "implementation": "src/branch1/external_rules/moodle_rules.py",
+      "platform_scope": "PLATFORM_MOODLE",
+      "root_id": "TRANSPORT-004"
+    }
+  ],
+  "semantics": "Fixed reviewed control identities; source duplicates and scanner rule count do not grow denominator; roots only use existing reviewed equivalences.",
+  "sha256": "a99c83b52cd7ed51a4e61a60d6caa0d3e9e4d259fe7927461a81aeb9f23c2e27",
+  "version": "cqi-control-registry-2.0"
+}

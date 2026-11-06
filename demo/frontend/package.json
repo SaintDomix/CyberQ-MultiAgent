@@ -1,0 +1,20 @@
+{
+  "name": "dissertation-research-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --test --experimental-test-isolation=none src/utils/data.test.js src/utils/product.test.js scripts/product_render.test.mjs",
+    "test:live-explainability": "node --test --experimental-test-isolation=none scripts/live_explanation_render.test.mjs",
+    "test:normalization": "node --test --experimental-test-isolation=none scripts/normalization_render.test.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "vite": "8.3.3"
+  }
+}

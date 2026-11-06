@@ -1,0 +1,130 @@
+{
+  "mappings": {
+    "COOKIE-MoodleSession-SECURE": {
+      "session_control": {
+        "url": "http://192.168.226.132/moodle/login/index.php",
+        "cookie_name": "MoodleSession",
+        "read_only": true,
+        "require_authenticated": false,
+        "configuration_reference": "evidence/live_smoke/internal_evidence.json#/settings",
+        "acceptance_scope": "anonymous effective attributes only; no lifecycle claim",
+        "session_predicate": "secure"
+      }
+    },
+    "COOKIE-MoodleSession-HTTPONLY": {
+      "session_control": {
+        "url": "http://192.168.226.132/moodle/login/index.php",
+        "cookie_name": "MoodleSession",
+        "read_only": true,
+        "require_authenticated": false,
+        "configuration_reference": "evidence/live_smoke/internal_evidence.json#/settings",
+        "acceptance_scope": "anonymous effective attributes only; no lifecycle claim",
+        "session_predicate": "httponly"
+      }
+    },
+    "COOKIE-MoodleSession-SAMESITE": {
+      "session_control": {
+        "url": "http://192.168.226.132/moodle/login/index.php",
+        "cookie_name": "MoodleSession",
+        "read_only": true,
+        "require_authenticated": false,
+        "configuration_reference": "evidence/live_smoke/internal_evidence.json#/settings",
+        "acceptance_scope": "anonymous effective attributes only; no lifecycle claim",
+        "session_predicate": "samesite"
+      }
+    },
+    "SESSION-001": {
+      "session_control": {
+        "source_endpoint": "http://192.168.226.132/moodle/login/index.php",
+        "read_only": false,
+        "acceptance_blocker": "Cache-header predicate differs from emitted-cookie predicate; retain NOT_TESTED"
+      }
+    },
+    "ADV-MSA-26-0031": {
+      "sql_injection": {
+        "read_only": false,
+        "acceptance_blocker": "Affected function/input unresolved; REST disabled; related AJAX POST/sesskey unsupported",
+        "configuration_reference": "evidence/live_smoke/internal_evidence.json#/settings/enablewebservices"
+      }
+    },
+    "ADV-MSA-26-0020": {
+      "unsafe_reflection_xss": {
+        "source_endpoint": "http://192.168.226.132/moodle/mod/feedback/import.php",
+        "source_method": "POST form",
+        "read_only": false,
+        "acceptance_blocker": "Import/edit mutation prohibited; no read-only affected-input mapping"
+      }
+    },
+    "ADV-MSA-26-0021": {
+      "unsafe_reflection_xss": {
+        "source_endpoint": "http://192.168.226.132/moodle/grade/edit/tree/item.php",
+        "source_method": "POST form",
+        "read_only": false,
+        "acceptance_blocker": "Import/edit mutation prohibited; no read-only affected-input mapping"
+      }
+    },
+    "AUTH-005": {
+      "account_enumeration": {
+        "source_endpoint": "http://192.168.226.132/moodle/login/forgot_password.php",
+        "source_parameters": [
+          "username",
+          "email"
+        ],
+        "source_method": "POST form",
+        "read_only": false,
+        "lookup_only": false,
+        "acceptance_blocker": "Recovery submission mutates reset records and sends mail; no authorized read-only lookup"
+      }
+    },
+    "ADV-MSA-26-0029": {
+      "access_control": {
+        "source_endpoint": "http://192.168.226.132/moodle/lib/ajax/service.php",
+        "source_method": "POST JSON",
+        "read_only": false,
+        "acceptance_blocker": "Fragment GET interface unsupported; report/context IDs and role policy missing"
+      }
+    },
+    "ROLE-student-security_report": {
+      "access_control": {
+        "url": "http://192.168.226.132/moodle/report/security/index.php",
+        "read_only": false,
+        "expected_denied": true,
+        "restricted_session": "student-test",
+        "privileged_session": "administrator-test",
+        "restricted_role": "student",
+        "privileged_role": "administrator",
+        "identity_markers": {
+          "restricted": "http://192.168.226.132/moodle/user/profile.php?id=3",
+          "privileged": "http://192.168.226.132/moodle/user/profile.php?id=2"
+        },
+        "privileged_markers": [
+          "id=\"securityreporttable\""
+        ],
+        "acceptance_blocker": "Saved authenticated/error bodies exceed 65536-byte cap; refresh sessions and policy before separate review"
+      }
+    },
+    "ADV-MSA-26-0030": {
+      "ssrf_context": {
+        "feature_enabled": true,
+        "url_fetch_available": true,
+        "feature_evidence": "docs/acceptance/m1d_lab_source_manifest.json: saved repository_url.enabled=true and installed repository/url/lib.php:153-170",
+        "source_endpoint": "http://192.168.226.132/moodle/repository/repository_ajax.php",
+        "source_method": "POST; not invoked",
+        "webservices_enabled_in_saved_evidence": false,
+        "feature_state_basis": "saved configuration plus installed source; current DB state not queried",
+        "advisory_function_linkage": "unverified",
+        "runtime_fetch_authorized": false
+      }
+    }
+  },
+  "sessions": {
+    "student-test": {
+      "role": "student",
+      "cookie_env": "B1_STUDENT_COOKIE"
+    },
+    "administrator-test": {
+      "role": "administrator",
+      "cookie_env": "B1_ADMIN_COOKIE"
+    }
+  }
+}

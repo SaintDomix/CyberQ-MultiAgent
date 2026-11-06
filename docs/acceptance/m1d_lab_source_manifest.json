@@ -1,0 +1,176 @@
+{
+  "target": "http://192.168.226.132/moodle/",
+  "source_version": "4.5.11+ (Build: 20260519), 2024100711.03, branch 405",
+  "files": [
+    {
+      "path": "src/branch1/advisories.json",
+      "sha256": "33276883f6bbc288a9abd408c4ccb0aeff6b9aa2123f0321b042307e45c0f072"
+    },
+    {
+      "path": "src/branch1/active/advanced.py",
+      "sha256": "7458c199be0deedaa4b23384134b950e220fcdb1aec7810e24f16d959995170f"
+    },
+    {
+      "path": "src/branch1/active/runtime.py",
+      "sha256": "2ae5e311207943c550b74330116c2cca5e37a548431acca5c78d3ad47a12df17"
+    },
+    {
+      "path": "src/branch1/active/registry.py",
+      "sha256": "a8d8291ebcad0116533fdea088a2d7ced984175c686bb964536ff8e37a8d8477"
+    },
+    {
+      "path": "src/branch1/active/safety.py",
+      "sha256": "8c3f3e9fdd19b1a893a3312d0d82619e7351f808b8c7f68ee35c2c7273c43414"
+    },
+    {
+      "path": "outputs/branch1_active_plan_m1d/findings.json",
+      "sha256": "ca798f9aab2f3be7a08001538f130c9e54a5d7b0171b92d47c2f7491a3973f3e"
+    },
+    {
+      "path": "outputs/branch1_unified_live_smoke/findings.json",
+      "sha256": "2d87781c5754b1858dcc15f75274d18e8930931105c4a92d65eea3f356cd51b5"
+    },
+    {
+      "path": "evidence/live_smoke/internal_evidence.json",
+      "sha256": "c26f81fbf160a6f8afe57e1b66c4f9bf074a3e12e0d8e06cdcd85d1956a48266"
+    },
+    {
+      "path": "evidence/baseline/branch1/role_access_review_v3.json",
+      "sha256": "d0376d262a302ede39ff8d61ca93059df22f246efb571658cf0314ecf1e6329c"
+    },
+    {
+      "path": "evidence/baseline/branch1/role_v3_anonymous/role_anonymous_v3.csv",
+      "sha256": "9097ef79b47ba4a52e27aaa196a4b6671bec9e167198059027d698bbb78f543a"
+    },
+    {
+      "path": "evidence/baseline/branch1/role_v3_student/role_student_v3.csv",
+      "sha256": "0c7b2c075f6a08490ba541ac839a4b43aa854a01e3acbb05277e7f5fab3ad812"
+    },
+    {
+      "path": "evidence/baseline/branch1/role_v3_admin/role_admin_v3.csv",
+      "sha256": "56260726a04767d322aa936ff4a34a62ef08174207cac8694e5ceb60c9d8471e"
+    },
+    {
+      "path": "evidence/baseline/branch1/role_v3_student/student_security_report.html",
+      "sha256": "4b5a06aa8f123b00036ef4b85b3cefc71252d9ae80422622d3a5cdfb15b27488"
+    },
+    {
+      "path": "evidence/baseline/branch1/role_v3_admin/admin_security_report.html",
+      "sha256": "ebcf48ec59d54b9ea4a989a5a90d121a70d42b009630d07294a5c04e35019974"
+    },
+    {
+      "path": "/var/www/html/moodle/version.php",
+      "sha256": "66f00f25aa0b3dba07b27846d427b31fda2d92dbae4286aacb51ffe0a3a5be48"
+    },
+    {
+      "path": "/var/www/html/moodle/mod/feedback/import.php",
+      "sha256": "95d2ce5a3209d35c77a3963181163ed25e16e84757bf94db2603c687755c8dda"
+    },
+    {
+      "path": "/var/www/html/moodle/mod/feedback/import_form.php",
+      "sha256": "e82d8aa88d3552ea1332cd47e3adec35f400d460f8b0bef9b5c685c82c66aaa9"
+    },
+    {
+      "path": "/var/www/html/moodle/grade/edit/tree/item.php",
+      "sha256": "be01703b4ef24516ff958f4b8839b834d88ec8d733b5558456001bba88ada4b5"
+    },
+    {
+      "path": "/var/www/html/moodle/grade/edit/tree/item_form.php",
+      "sha256": "c5d0ddcdf15b9b0663bdec321ebbed2de094682f663794bb90d04454af92d0b7"
+    },
+    {
+      "path": "/var/www/html/moodle/login/index.php",
+      "sha256": "68f92bd46335a8ead19c12d2323f7931843b6e42e14577928569b102ebcf036a"
+    },
+    {
+      "path": "/var/www/html/moodle/login/forgot_password.php",
+      "sha256": "4888731d2cc047d9ffe8cd5cb4457473882e06c0357f79ebf12e52f40a30ab8f"
+    },
+    {
+      "path": "/var/www/html/moodle/login/forgot_password_form.php",
+      "sha256": "3a281761a8e0539c2e1dad33e9cfc1b58586ef402c0bad668c0d01f32e6b0530"
+    },
+    {
+      "path": "/var/www/html/moodle/login/lib.php",
+      "sha256": "0b0e7ea32ea894550917ef27c11cb7124399de2c9a8a1c580132776a249539e8"
+    },
+    {
+      "path": "/var/www/html/moodle/lib/formslib.php",
+      "sha256": "e77e1a9880ca11d9be448904170a987c58ec6649361c235b235371c4e1c874b8"
+    },
+    {
+      "path": "/var/www/html/moodle/lib/classes/session/manager.php",
+      "sha256": "f638a9bb8deb53297e6052a8364c2a3df7cef050fbc46f380e4a196675d8d4db"
+    },
+    {
+      "path": "/var/www/html/moodle/lib/sessionlib.php",
+      "sha256": "c694b1f2ccd6d84b55fddb9ca1993ced1efc8486de6b13e4fc328b5481e74b1d"
+    },
+    {
+      "path": "/var/www/html/moodle/question/classes/external.php",
+      "sha256": "26f5fb19c0c8841515fd9c8514d75a94cca50c23e960e5bcf6e154e42aa6f9de"
+    },
+    {
+      "path": "/var/www/html/moodle/lib/db/services.php",
+      "sha256": "06dc8349901ad7a84c88e95f33c2cbe38e8f8c7d57c02a43bda873132ef82fb1"
+    },
+    {
+      "path": "/var/www/html/moodle/lib/ajax/service.php",
+      "sha256": "eb91ac61158b7eb16f12dc178b32050220a04802383a2b264755813e206723b5"
+    },
+    {
+      "path": "/var/www/html/moodle/lib/external/classes/external_api.php",
+      "sha256": "c84797c0117e8c328bd9ea894427a8529d364f99334f9d976bf50d04b71b9a4c"
+    },
+    {
+      "path": "/var/www/html/moodle/webservice/rest/server.php",
+      "sha256": "201afe7c28f6fe9b23e62d263941f100095f81d8ec2b98c6afb8d8b1c16e9243"
+    },
+    {
+      "path": "/var/www/html/moodle/webservice/lib.php",
+      "sha256": "8f327f1699328d056494497e3c215446ba2a7f3d2bbe987078d01ab9c462bb28"
+    },
+    {
+      "path": "/var/www/html/moodle/reportbuilder/lib.php",
+      "sha256": "3245e028370f0a39f94cb6c4145d19d69d05e03e33ddbad89d969184cc51d568"
+    },
+    {
+      "path": "/var/www/html/moodle/reportbuilder/classes/form/filter.php",
+      "sha256": "b9f9a89ccddf63559e7f83f48bde401596d9d958daaec68d31a83e8ea1d1bb41"
+    },
+    {
+      "path": "/var/www/html/moodle/reportbuilder/classes/form/audience.php",
+      "sha256": "6ba9aa618b39926c615419b18a880891f07d6cab96d4ad4dcc184eb6d4effb12"
+    },
+    {
+      "path": "/var/www/html/moodle/lib/external/externallib.php",
+      "sha256": "d82ecface6e865be2ad6c4ef7021eba5c7079963236d5bb040ababbbfdc6af7d"
+    },
+    {
+      "path": "/var/www/html/moodle/repository/url/lib.php",
+      "sha256": "ea11a6e33403cfd450ac76fb223bcc4aa5c14e35631d27c76dbef91cb12d1834"
+    },
+    {
+      "path": "/var/www/html/moodle/repository/url/db/access.php",
+      "sha256": "672aa57f9baaf684898becdccdfc5e09b9ccddcaecc1d5a76474c046d46b6826"
+    },
+    {
+      "path": "/var/www/html/moodle/repository/repository_ajax.php",
+      "sha256": "ba8c529366f38a2f7ae6854f62085e6ca3d2c3ae5d2aa0c2eb80cc12bf46ae21"
+    },
+    {
+      "path": "/var/www/html/moodle/report/security/index.php",
+      "sha256": "b98eaab6020961a9a2a3bd841525044d0e4bebacb6a96f7acd9b8b1711c0587d"
+    },
+    {
+      "path": "/var/www/html/moodle/report/security/settings.php",
+      "sha256": "a006f4b1ccddd4d1b5c04938799e99c6c6c616c99029c0a47063387b39cafffe"
+    }
+  ],
+  "limitations": [
+    "Config.php read access denied; no secret-bearing configuration copied.",
+    "Saved feature flags are not a fresh DB configuration measurement.",
+    "Historical advisory catalog linkage is not upstream-verified.",
+    "No network requests or server-side PHP execution."
+  ]
+}

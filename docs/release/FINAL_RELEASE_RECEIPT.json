@@ -1,0 +1,516 @@
+{
+  "accepted_canonical_root_sha256": "59a8c7c5d3d51632d0afe45f8cd2fe50570b7af2943d26bb313888327ea9f436",
+  "accepted_package_id": "behavioral-v2-59a8c7c5d3d51632d0af",
+  "accepted_package_unchanged": true,
+  "automatic_commit": false,
+  "automatic_tag": false,
+  "baseline_weights": {
+    "D1": "1/6",
+    "D2": "1/6",
+    "D3": "1/6",
+    "D4": "1/6",
+    "D5": "1/6",
+    "D6": "1/6"
+  },
+  "branch": "m5-behavioral-v2",
+  "browser_acceptance": {
+    "actual_loopback_backend": true,
+    "external_requests": 0,
+    "final_v2_and_historical_v1_report_links": "PASS",
+    "javascript_errors": [],
+    "live_monitor_started": false,
+    "pages": 7,
+    "scenario_reset": "PASS",
+    "status": "PASS",
+    "viewports": [
+      "1920x1080",
+      "1280x900"
+    ]
+  },
+  "checkpoint_base_head": "30aa494aa41a6f077db25750ed38d647600a63fc",
+  "checkpoint_commit_authorized": true,
+  "checkpoint_git_identity_semantics": "git_head records the pre-checkpoint HEAD; the annotated checkpoint tag identifies the resulting commit, avoiding a self-referential hash.",
+  "checkpoint_integrity_receipt": "docs/release/PRE_ZAP_INTEGRITY_RECEIPT.json",
+  "checkpoint_readiness": "READY; human live acceptance complete. Limited laboratory support and deliberate monitor shutdown remain explicitly documented.",
+  "checkpoint_scope": "docs/release/PRE_ZAP_CHECKPOINT_SCOPE.json",
+  "checkpoint_tag": "pre-zap-demo-ready-20261015",
+  "checkpoint_tag_authorized": true,
+  "checkpoint_targeted_tests": {
+    "command": ".venv/bin/python -B -m pytest -q tests/test_release_operations.py tests/test_behavioral_runtime.py",
+    "passed": 33
+  },
+  "dashboard_modes": [
+    "LIVE_LAB",
+    "ACCEPTED_REPLAY"
+  ],
+  "frontend_build": "PASS",
+  "frozen_core_diff_bytes": 0,
+  "generated_at_utc": "2026-10-15T19:44:23.857807+00:00",
+  "git_diff_check": "PASS",
+  "git_head": "30aa494aa41a6f077db25750ed38d647600a63fc",
+  "human_live_browsing_acceptance": {
+    "interpretation": "Whole-server human operational acceptance; not a new blind research FPR. A deliberately stopped monitor is not an acceptance failure.",
+    "journal_read_only_verification": "PASS",
+    "monitor_shutdown": "INTENTIONALLY_STOPPED_BY_OPERATOR",
+    "new_incidents": 0,
+    "new_observations": 13,
+    "operator_browsing_confirmed": true,
+    "receipt": "outputs/demo/live_acceptance/20261015T184313Z-df0189fb.json",
+    "runtime_last_error": null,
+    "sha256": "cbef658ebfbdb67a4079a8c1f10618e85d69fcc3ea4e75039de51c6ccd9b9c07",
+    "shutdown_evidence": {
+      "fit_calls": 0,
+      "integrity_status": "OK",
+      "path": "runtime/behavioral_v2/ui-d96b2d087ffd49b2a74b0aa33627bdcd/session_summary.json",
+      "sha256": "53232454c0fb11cffe8b6abacd849453ccd32da34ce5cabe280352658d07d901",
+      "stop_reason": "CTRL_C"
+    },
+    "status": "PASS_NO_NEW_INCIDENTS"
+  },
+  "live_operational_smoke": "PASS; backend/runtime/checkpoint verified, then owned processes stopped",
+  "model_v1_preserved": true,
+  "new_research_pack_figures": 7,
+  "new_research_pack_tables": 10,
+  "no_CQI_reweighting": true,
+  "no_new_attack_generation": true,
+  "no_retraining": true,
+  "no_tuning": true,
+  "operational_mutable_pointer": "outputs/demo/live_acceptance/latest.json is explicitly operational; versioned human receipts are retained separately",
+  "performance_summary": {
+    "accepted_package_bytes": 2754689,
+    "benchmark_DB_bytes": 299008,
+    "peak_RSS_bytes": 220692480,
+    "scope": "Saved-evidence components; in-process ASGI, not TCP; benchmark DB is not a full live-journal storage forecast",
+    "stages": {
+      "api_application_snapshot": {
+        "count": 20,
+        "max": 69.276359,
+        "mean": 32.0340869,
+        "median": 29.835981,
+        "p95": 35.906065250000026,
+        "unit": "milliseconds"
+      },
+      "api_behavior_incidents": {
+        "count": 20,
+        "max": 69.997549,
+        "mean": 30.98456805,
+        "median": 28.7604925,
+        "p95": 33.77633755000003,
+        "unit": "milliseconds"
+      },
+      "api_behavior_observations": {
+        "count": 20,
+        "max": 71.419236,
+        "mean": 31.456727850000004,
+        "median": 29.175537,
+        "p95": 34.22542310000003,
+        "unit": "milliseconds"
+      },
+      "api_cqi": {
+        "count": 20,
+        "max": 30.974068,
+        "mean": 28.87176065,
+        "median": 28.7606415,
+        "p95": 30.3459356,
+        "unit": "milliseconds"
+      },
+      "api_health": {
+        "count": 20,
+        "max": 8.755507,
+        "mean": 6.843471750000001,
+        "median": 6.7025285,
+        "p95": 8.0391196,
+        "unit": "milliseconds"
+      },
+      "api_system_status": {
+        "count": 20,
+        "max": 52.043142,
+        "mean": 32.89026785,
+        "median": 31.212566000000002,
+        "p95": 40.63974955000001,
+        "unit": "milliseconds"
+      },
+      "episode_aggregation_68_windows": {
+        "count": 20,
+        "max": 0.189298,
+        "mean": 0.08189915,
+        "median": 0.075349,
+        "p95": 0.08821895000000007,
+        "unit": "milliseconds"
+      },
+      "feature_extraction": {
+        "count": 68,
+        "max": 0.401196,
+        "mean": 0.19771260294117649,
+        "median": 0.178398,
+        "p95": 0.33015100000000003,
+        "unit": "milliseconds"
+      },
+      "ocsvm_with_frozen_scaler": {
+        "count": 68,
+        "max": 0.600493,
+        "mean": 0.2585603823529412,
+        "median": 0.23889749999999998,
+        "p95": 0.38546099999999994,
+        "unit": "milliseconds"
+      },
+      "parsing": {
+        "count": 274,
+        "max": 0.149598,
+        "mean": 0.0362321094890511,
+        "median": 0.034799,
+        "p95": 0.04440434999999999,
+        "unit": "milliseconds"
+      },
+      "reconciliation": {
+        "count": 68,
+        "max": 0.0175,
+        "mean": 0.010085220588235296,
+        "median": 0.0098,
+        "p95": 0.013229999999999997,
+        "unit": "milliseconds"
+      },
+      "saved_prediction_including_SHAP": {
+        "count": 68,
+        "max": 53.657926,
+        "mean": 16.921408691176474,
+        "median": 15.91518,
+        "p95": 30.42968405,
+        "unit": "milliseconds"
+      },
+      "sqlite_journal_commit_and_projections": {
+        "count": 68,
+        "max": 15.500035,
+        "mean": 6.046210176470589,
+        "median": 5.7440375,
+        "p95": 6.930726,
+        "unit": "milliseconds"
+      },
+      "xgboost": {
+        "count": 68,
+        "max": 6.079936,
+        "mean": 0.6012377500000001,
+        "median": 0.371946,
+        "p95": 1.544063449999999,
+        "unit": "milliseconds"
+      }
+    }
+  },
+  "preflight": {
+    "ACCEPTED_REPLAY": {
+      "accepted_root_sha256": "59a8c7c5d3d51632d0afe45f8cd2fe50570b7af2943d26bb313888327ea9f436",
+      "apache_contents_opened": false,
+      "apache_remediation": [
+        "Ask the host administrator to confirm the log-reading group with: stat -c \"%A %U %G\" /var/log/apache2/access.log",
+        "If the group is adm, ask the administrator to run: sudo usermod -aG adm \"$USER\"",
+        "Log out and back in; verify with: id; test -r /var/log/apache2/access.log",
+        "Use accepted replay while permission is unavailable. Do not chmod 777 or run the application as root."
+      ],
+      "checks": [
+        {
+          "check": "accepted_model",
+          "detail": "behavioral-v2-59a8c7c5d3d51632d0af",
+          "status": "PASS"
+        },
+        {
+          "check": "python_dependencies",
+          "detail": "Required imports discoverable; no fitting invoked",
+          "status": "PASS"
+        },
+        {
+          "check": "frontend",
+          "detail": "Built index and referenced local assets",
+          "status": "PASS"
+        },
+        {
+          "check": "apache_exists",
+          "detail": "Apache source exists; contents were not opened",
+          "status": "PASS"
+        },
+        {
+          "check": "apache_readable",
+          "detail": "Read permission only; no permission/group changes",
+          "status": "PASS"
+        },
+        {
+          "check": "runtime_sqlite_checkpoint_probe",
+          "detail": "Temporary SQLite commit and checkpoint read/write succeeded; existing journals untouched",
+          "status": "PASS"
+        },
+        {
+          "check": "api_port",
+          "detail": "Loopback port 8000 available",
+          "status": "PASS"
+        },
+        {
+          "check": "disk_minimum",
+          "detail": "2337505280 free bytes; operational minimum 200 MiB",
+          "status": "PASS"
+        },
+        {
+          "check": "disk_recommended",
+          "detail": "Recommended free space >=1 GiB",
+          "status": "PASS"
+        },
+        {
+          "check": "accepted_evidence",
+          "detail": "Locked posture, blind benign and attack evidence verified; metrics not recomputed",
+          "status": "PASS"
+        }
+      ],
+      "disk_free_bytes": 2337505280,
+      "mode": "ACCEPTED_REPLAY",
+      "model_package_id": "behavioral-v2-59a8c7c5d3d51632d0af",
+      "port": 8000,
+      "result": "PASS",
+      "training_performed": false
+    },
+    "LIVE_LAB": {
+      "accepted_root_sha256": "59a8c7c5d3d51632d0afe45f8cd2fe50570b7af2943d26bb313888327ea9f436",
+      "apache_contents_opened": false,
+      "apache_remediation": [
+        "Ask the host administrator to confirm the log-reading group with: stat -c \"%A %U %G\" /var/log/apache2/access.log",
+        "If the group is adm, ask the administrator to run: sudo usermod -aG adm \"$USER\"",
+        "Log out and back in; verify with: id; test -r /var/log/apache2/access.log",
+        "Use accepted replay while permission is unavailable. Do not chmod 777 or run the application as root."
+      ],
+      "checks": [
+        {
+          "check": "accepted_model",
+          "detail": "behavioral-v2-59a8c7c5d3d51632d0af",
+          "status": "PASS"
+        },
+        {
+          "check": "python_dependencies",
+          "detail": "Required imports discoverable; no fitting invoked",
+          "status": "PASS"
+        },
+        {
+          "check": "frontend",
+          "detail": "Built index and referenced local assets",
+          "status": "PASS"
+        },
+        {
+          "check": "apache_exists",
+          "detail": "Apache source exists; contents were not opened",
+          "status": "PASS"
+        },
+        {
+          "check": "apache_readable",
+          "detail": "Read permission only; no permission/group changes",
+          "status": "PASS"
+        },
+        {
+          "check": "runtime_sqlite_checkpoint_probe",
+          "detail": "Temporary SQLite commit and checkpoint read/write succeeded; existing journals untouched",
+          "status": "PASS"
+        },
+        {
+          "check": "api_port",
+          "detail": "Loopback port 8000 available",
+          "status": "PASS"
+        },
+        {
+          "check": "disk_minimum",
+          "detail": "2337501184 free bytes; operational minimum 200 MiB",
+          "status": "PASS"
+        },
+        {
+          "check": "disk_recommended",
+          "detail": "Recommended free space >=1 GiB",
+          "status": "PASS"
+        },
+        {
+          "check": "accepted_evidence",
+          "detail": "Locked posture, blind benign and attack evidence verified; metrics not recomputed",
+          "status": "PASS"
+        }
+      ],
+      "disk_free_bytes": 2337501184,
+      "mode": "LIVE_LAB",
+      "model_package_id": "behavioral-v2-59a8c7c5d3d51632d0af",
+      "port": 8000,
+      "result": "PASS",
+      "training_performed": false
+    }
+  },
+  "previous_release_receipt": {
+    "path": "docs/release/FINAL_RELEASE_RECEIPT_BEFORE_HUMAN_ACCEPTANCE.json",
+    "sha256": "13945429f625b08bff477520246c8c062ca3b2e43cc7c1d11feb4f2de6f382d5"
+  },
+  "protected_baseline_receipt_sha256": "26c6114f1c2f6fce349f72d354e97cc91c16cf6a6beedaffc432c1598cfa83c2",
+  "protected_changes": [],
+  "protected_preexisting_files_verified": 1279,
+  "reliability": {
+    "checks": {
+      "accepted_package_unchanged": true,
+      "benign_replay_no_incident_storm": true,
+      "clean_shutdown": true,
+      "continued_after_restart": true,
+      "deterministic_saved_replay": true,
+      "idempotent_poll": true,
+      "incident_identity_after_continuation": true,
+      "missing_source_rejected": true,
+      "prediction_identity_after_continuation": true,
+      "restart_resume_no_duplicate": true,
+      "sqlite_journal_persisted": true,
+      "temporary_package_corruption_rejected": true
+    },
+    "status": "PASS"
+  },
+  "remaining_blocking_actions": [],
+  "research_evidence_preserved": true,
+  "research_evidence_sha256": {
+    "outputs/branch1_m1d_acceptance_lab_run02/findings.json": "ca798f9aab2f3be7a08001538f130c9e54a5d7b0171b92d47c2f7491a3973f3e",
+    "outputs/branch2/accepted_behavioral_v2/accepted_manifest.json": "72ee22ef38b7032851d8675f4f03a1b9e360561e50e500bd80e8afd47a80b654",
+    "outputs/branch2/m2c_final_01/package_manifest.json": "e4eea52196c8640f1fee2c2c02a8eeab0a3b7e1d7c0f957444ca063c018d6463",
+    "outputs/branch2/m5_final_day/blind_benign_test_01/evaluation/metrics.json": "959985893fccb3a7e59c481e7e128bc8fac6608734949956b41896e08d484f5e",
+    "outputs/branch2/m5_final_day/blind_benign_test_01/test_evidence_manifest.json": "807a14cbb6b2d26897709a71de2316f4b01c53fde85e836e9b25c344d84711a4",
+    "outputs/branch2/m5_final_day/fresh_attack_holdout_01/candidate_metrics.json": "4eac2a1855ada818844c61bb9f0735b5b21fa531a02d54b890b0e8e31aaf69bb",
+    "outputs/branch2/m5_final_day/fresh_attack_holdout_01/evidence_sha256_20261015.txt": "4bc2226a54f333355c5caf8f80fa4331aa9df3e9b77ba32fe7eb1cd3754f977a",
+    "outputs/branch2/m5_final_day/fresh_attack_holdout_01/predeclared_plan.json": "549ee00ebb163bb826667ab34b7a3ba2bcfd27d4c33534218546d860e8502d74"
+  },
+  "secret_scan_receipt": "docs/release/PRE_ZAP_SECRET_SCAN.json",
+  "status": "READY_WITH_WARNINGS",
+  "tests": {
+    "M2D_live": 44,
+    "application": 30,
+    "behavioral_runtime": 15,
+    "frontend": 30,
+    "fusion": 80,
+    "python": 647,
+    "release_operations": 18
+  },
+  "warnings": [
+    "Small laboratory evaluation support; no population-level generalization or statistical significance claim.",
+    "Monitor was intentionally stopped after successful human acceptance; start it explicitly for a live demonstration.",
+    "Raw capture sources and transient runtime state remain local, preserved and excluded from the Git release."
+  ],
+  "working_tree_state": [
+    "?? .tools/",
+    "?? data/branch2_v2/final_candidate_01/",
+    "?? data/branch2_v3/",
+    "?? data/raw/AP01_suspicious_run51_access.log",
+    "?? data/raw/AP01_suspicious_run52_access.log",
+    "?? data/raw/AP01_suspicious_run53_access.log",
+    "?? data/raw/AP01_suspicious_run54_access.log",
+    "?? data/raw/AP01_suspicious_run55_access.log",
+    "?? data/raw/AP01_suspicious_run56_access.log",
+    "?? data/raw/AP01_suspicious_run57_access.log",
+    "?? data/raw/AP01_suspicious_run58_access.log",
+    "?? data/raw/AP01_suspicious_run59_access.log",
+    "?? data/raw/AP01_suspicious_run60_access.log",
+    "?? data/raw/B04_benign_run51_access.log",
+    "?? data/raw/B04_benign_run52_access.log",
+    "?? data/raw/B04_benign_run53_access.log",
+    "?? data/raw/BN02_benign_run51_access.log",
+    "?? data/raw/BN02_benign_run52_access.log",
+    "?? data/raw/PT01_suspicious_run51_access.log",
+    "?? data/raw/PT01_suspicious_run52_access.log",
+    "?? data/raw/PT01_suspicious_run53_access.log",
+    "?? data/raw/PT01_suspicious_run54_access.log",
+    "?? data/raw/PT01_suspicious_run55_access.log",
+    "?? data/raw/PT01_suspicious_run56_access.log",
+    "?? data/raw/PT01_suspicious_run57_access.log",
+    "?? data/raw/PT01_suspicious_run58_access.log",
+    "?? data/raw/PT01_suspicious_run59_access.log",
+    "?? data/raw/PT01_suspicious_run60_access.log",
+    "?? data/raw/RB01_suspicious_run51_access.log",
+    "?? data/raw/RB01_suspicious_run52_access.log",
+    "?? data/raw/RB01_suspicious_run53_access.log",
+    "?? data/raw/RB01_suspicious_run54_access.log",
+    "?? data/raw/RB01_suspicious_run55_access.log",
+    "?? data/raw/RB01_suspicious_run56_access.log",
+    "?? data/raw/RB01_suspicious_run57_access.log",
+    "?? data/raw/RB01_suspicious_run58_access.log",
+    "?? data/raw/S01_suspicious_run54_access.log",
+    "?? data/raw/S01_suspicious_run55_access.log",
+    "?? data/raw/S01_suspicious_run56_access.log",
+    "?? data/raw/S01_suspicious_run57_access.log",
+    "?? data/raw/S01_suspicious_run58_access.log",
+    "?? data/raw/S01_suspicious_run59_access.log",
+    "?? data/raw/S01_suspicious_run60_access.log",
+    "?? data/raw/S02_suspicious_run53_access.log",
+    "?? data/raw/S02_suspicious_run54_access.log",
+    "?? data/raw/S02_suspicious_run55_access.log",
+    "?? data/raw/S02_suspicious_run56_access.log",
+    "?? data/raw/S02_suspicious_run57_access.log",
+    "?? data/raw/S02_suspicious_run58_access.log",
+    "?? data/raw/S02_suspicious_run59_access.log",
+    "?? data/raw/S02_suspicious_run60_access.log",
+    "?? data/raw/SQ01_suspicious_run51_access.log",
+    "?? data/raw/SQ01_suspicious_run52_access.log",
+    "?? data/raw/SQ01_suspicious_run53_access.log",
+    "?? data/raw/SQ01_suspicious_run54_access.log",
+    "?? data/raw/SQ01_suspicious_run55_access.log",
+    "?? data/raw/SQ01_suspicious_run56_access.log",
+    "?? data/raw/SQ01_suspicious_run57_access.log",
+    "?? data/raw/SQ01_suspicious_run58_access.log",
+    "?? data/raw/SQ01_suspicious_run59_access.log",
+    "?? data/raw/SQ01_suspicious_run60_access.log",
+    "?? data/raw/XS01_suspicious_run51_access.log",
+    "?? data/raw/XS01_suspicious_run52_access.log",
+    "?? data/raw/XS01_suspicious_run53_access.log",
+    "?? data/raw/XS01_suspicious_run54_access.log",
+    "?? data/raw/XS01_suspicious_run55_access.log",
+    "?? data/raw/XS01_suspicious_run56_access.log",
+    "?? data/raw/XS01_suspicious_run57_access.log",
+    "?? data/raw/XS01_suspicious_run58_access.log",
+    "?? data/raw/XS01_suspicious_run59_access.log",
+    "?? data/raw/XS01_suspicious_run60_access.log",
+    "?? demo/",
+    "?? docs/branch2/m5/",
+    "?? docs/branch2/m5_final_day/",
+    "?? docs/productization/",
+    "?? docs/release/",
+    "?? evidence/branch2_captures/",
+    "?? outputs/benchmarks/",
+    "?? outputs/branch2/accepted_behavioral_v2/",
+    "?? outputs/branch2/live/",
+    "?? outputs/branch2/m2c_final_01/",
+    "?? outputs/branch2/m5/",
+    "?? outputs/branch2/m5_final_day/",
+    "?? outputs/demo/",
+    "?? outputs/end_to_end/",
+    "?? outputs/fusion/",
+    "?? outputs/reliability/",
+    "?? outputs/reports/",
+    "?? outputs/research_pack/",
+    "?? requirements/m5-browser.txt",
+    "?? runtime/",
+    "?? scripts/accept_m5_candidate.py",
+    "?? scripts/browser_demo_acceptance.py",
+    "?? scripts/build_release_pack.py",
+    "?? scripts/demo_control.py",
+    "?? scripts/demo_preflight.py",
+    "?? scripts/demo_status.sh",
+    "?? scripts/export_product_test_payload.py",
+    "?? scripts/live_acceptance.py",
+    "?? scripts/run_behavioral_v2_live.py",
+    "?? scripts/run_branch2_m5.py",
+    "?? scripts/run_demo.py",
+    "?? scripts/run_m5_attack_finalization.py",
+    "?? scripts/run_m5_blind_benign_evaluation.py",
+    "?? scripts/run_m5_blind_test_capture.py",
+    "?? scripts/run_m5_browser_capture.py",
+    "?? scripts/run_m5_final_day.py",
+    "?? scripts/run_m5_fresh_attacks.py",
+    "?? scripts/run_m5_quick_attack_holdout.sh",
+    "?? scripts/start_demo.sh",
+    "?? scripts/stop_demo.sh",
+    "?? scripts/verify_behavioral_v2_replay.py",
+    "?? src/behavioral_runtime/",
+    "?? src/behavioral_v2/",
+    "?? tests/test_behavioral_runtime.py",
+    "?? tests/test_behavioral_v2.py",
+    "?? tests/test_m5_attack_finalization.py",
+    "?? tests/test_m5_blind_benign_evaluation.py",
+    "?? tests/test_m5_blind_test_capture.py",
+    "?? tests/test_m5_development_capture.py",
+    "?? tests/test_m5_development_review.py",
+    "?? tests/test_m5_final_day.py",
+    "?? tests/test_m5_quick_holdout.py",
+    "?? tests/test_product_application.py",
+    "?? tests/test_release_operations.py"
+  ]
+}

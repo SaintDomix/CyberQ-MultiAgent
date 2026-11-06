@@ -1,0 +1,59 @@
+{
+  "mappings": {
+    "BENCH-SQL-POSITIVE": {
+      "sql_injection": {
+        "url": "http://127.0.0.1:8765/sql/vulnerable",
+        "parameter": "q",
+        "read_only": true,
+        "baseline_value": "lesson"
+      }
+    },
+    "BENCH-SQL-NEGATIVE": {
+      "sql_injection": {
+        "url": "http://127.0.0.1:8765/sql/safe",
+        "parameter": "q",
+        "read_only": true,
+        "baseline_value": "lesson"
+      }
+    },
+    "BENCH-XSS-POSITIVE": {
+      "unsafe_reflection_xss": {
+        "url": "http://127.0.0.1:8765/xss/unsafe",
+        "parameter": "q",
+        "read_only": true
+      }
+    },
+    "BENCH-XSS-NEGATIVE": {
+      "unsafe_reflection_xss": {
+        "url": "http://127.0.0.1:8765/xss/encoded",
+        "parameter": "q",
+        "read_only": true
+      }
+    },
+    "BENCH-ENUM-POSITIVE": {
+      "account_enumeration": {
+        "url": "http://127.0.0.1:8765/accounts/distinct",
+        "parameter": "q",
+        "read_only": true,
+        "test_identifiers": [
+          "bench-present",
+          "bench-absent"
+        ],
+        "lookup_only": true
+      }
+    },
+    "BENCH-ENUM-NEGATIVE": {
+      "account_enumeration": {
+        "url": "http://127.0.0.1:8765/accounts/normalized",
+        "parameter": "q",
+        "read_only": true,
+        "test_identifiers": [
+          "bench-present",
+          "bench-absent"
+        ],
+        "lookup_only": true
+      }
+    }
+  },
+  "sessions": {}
+}

@@ -1,0 +1,2 @@
+# Kali HTTP generator only; Ubuntu verification uses the existing Branch 2 environment.
+requests>=2.32,<3

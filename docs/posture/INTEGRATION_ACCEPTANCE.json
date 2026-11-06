@@ -1,0 +1,962 @@
+{
+  "artifact_manifest_sha256": "d07e4779529d8f1cd4a9896f00b0099709727d2533cd92b11b5f9f7a801ac9cb",
+  "assessment_id": "posture-20261015T202802Z-d5ad3ac1ef16",
+  "base_head": "f3fdd199a1ffa9fa3f3b3c370f2ed48967328812",
+  "canonical_finding_count": 50,
+  "comparison_semantics": "First operational snapshot; no numeric before/delta asserted. Partial current posture-only projection is not comparable to historical full research CQI.",
+  "coverage": {
+    "authenticated_zap_coverage": "NOT_VALIDATED",
+    "historical_results_recycled": false,
+    "not_reevaluated": 32,
+    "status": "PARTIAL",
+    "unmapped_zap_rules": 0
+  },
+  "current_cqi_before": null,
+  "current_posture_cqi": {
+    "active_behavioral_impact": {
+      "D6_scoring_semantics": "Frozen CQI includes raw behavioral observations, including suppressed UNKNOWN observations. Incident persistence is a separate policy; no CQI suppression is applied.",
+      "active_incident_count": 0,
+      "raw_selected_observations": 0,
+      "selected_observation_ids": []
+    },
+    "as_of": "2026-10-15T20:28:06.378376+00:00",
+    "contributors": [
+      {
+        "advisory_count": 0,
+        "advisory_ids": [],
+        "cluster_id": "cluster-492282f9a35de5af87bbc89202f0b9c65b880dd02936cf3fa2f8a3cad96325a7",
+        "contribution": 0.75,
+        "dimension": "D1",
+        "member_count": 4,
+        "member_evidence_ids": [
+          "posture-2a57581d14fabec09bdbd9eec99e8e295e993835cfccd640a370b3aeefd2373b",
+          "posture-a7cbddb75c502c7761e5fc5f36de0a202464f8e4b935a42abf9ae59604d827e4",
+          "posture-ba6d9208636efe8443c03f530de0662e61884c9603e5697c8c8bf52141255765",
+          "posture-e7d0bf993b5886349f20d517b624019a579aed58e3a2c57654fb803a5153b47a"
+        ],
+        "member_finding_ids": [
+          "COOKIE-MoodleSession-SECURE",
+          "HDR-001",
+          "TLS-001",
+          "TLS-003"
+        ],
+        "rationale": "One lack-of-HTTPS root condition; cross-dimension Secure cookie retained and scored once in D1.",
+        "recommendations": [
+          "Enable HTTPS and redirect HTTP traffic.",
+          "Enable HTTPS and set Secure for MoodleSession.",
+          "Enable HTTPS first, then configure HSTS.",
+          "Enable HTTPS for the Moodle deployment."
+        ],
+        "representative_evidence_id": "posture-2a57581d14fabec09bdbd9eec99e8e295e993835cfccd640a370b3aeefd2373b",
+        "rule_id": "PLAINTEXT_TRANSPORT",
+        "score_eligible": true,
+        "severity_breadth": [
+          "HIGH",
+          "INFO",
+          "MEDIUM"
+        ]
+      },
+      {
+        "advisory_count": 0,
+        "advisory_ids": [],
+        "cluster_id": "cluster-3f48a3dc29b340c23ed0dca2038402a06c801d0e5604fb75854f189767d10aef",
+        "contribution": 0.5,
+        "dimension": "D1",
+        "member_count": 1,
+        "member_evidence_ids": [
+          "posture-41d77644653d593e027856668b3f8aa5d9608015772d9b01bfab4cd98868773a"
+        ],
+        "member_finding_ids": [
+          "HDR-002"
+        ],
+        "rationale": "Distinct evidence; no reviewed shared-root rule.",
+        "recommendations": [
+          "Define a Moodle-compatible CSP."
+        ],
+        "representative_evidence_id": "posture-41d77644653d593e027856668b3f8aa5d9608015772d9b01bfab4cd98868773a",
+        "rule_id": "INDEPENDENT_EVIDENCE",
+        "score_eligible": true,
+        "severity_breadth": [
+          "MEDIUM"
+        ]
+      },
+      {
+        "advisory_count": 0,
+        "advisory_ids": [],
+        "cluster_id": "cluster-824a0bf64f15ce99e7e10b0d1e5955531174062c6a5ea2fb23bd1e35cd672765",
+        "contribution": 0.25,
+        "dimension": "D1",
+        "member_count": 1,
+        "member_evidence_ids": [
+          "posture-17a4cbf859da3da96a3b2f18d381019269326f5d0f052b27356ec64d88adb644"
+        ],
+        "member_finding_ids": [
+          "HDR-005"
+        ],
+        "rationale": "Distinct evidence; no reviewed shared-root rule.",
+        "recommendations": [
+          "Set X-Content-Type-Options: nosniff."
+        ],
+        "representative_evidence_id": "posture-17a4cbf859da3da96a3b2f18d381019269326f5d0f052b27356ec64d88adb644",
+        "rule_id": "INDEPENDENT_EVIDENCE",
+        "score_eligible": true,
+        "severity_breadth": [
+          "LOW"
+        ]
+      },
+      {
+        "advisory_count": 0,
+        "advisory_ids": [],
+        "cluster_id": "cluster-f20e681e450ad679025849bf0478b9c358371486c1c3a8fe19c263efb87f628f",
+        "contribution": 0.25,
+        "dimension": "D3",
+        "member_count": 1,
+        "member_evidence_ids": [
+          "posture-51d8e2cd2f71f8aa2294b4bf42a9859c5157a70a87ee1d742b81b5d0861ca9d3"
+        ],
+        "member_finding_ids": [
+          "DISC-001"
+        ],
+        "rationale": "Distinct evidence; no reviewed shared-root rule.",
+        "recommendations": [
+          "Reduce server tokens."
+        ],
+        "representative_evidence_id": "posture-51d8e2cd2f71f8aa2294b4bf42a9859c5157a70a87ee1d742b81b5d0861ca9d3",
+        "rule_id": "INDEPENDENT_EVIDENCE",
+        "score_eligible": true,
+        "severity_breadth": [
+          "LOW"
+        ]
+      },
+      {
+        "advisory_count": 0,
+        "advisory_ids": [],
+        "cluster_id": "cluster-04361a1e3c8f3a711c915d25552d9eaa57440604f3a232e08fd561d2d543f392",
+        "contribution": 0.125,
+        "dimension": "D1",
+        "member_count": 1,
+        "member_evidence_ids": [
+          "posture-bef174e628d14de4286e6ab980a5f631c9d967e3051f820f330574ff109e0d43"
+        ],
+        "member_finding_ids": [
+          "HDR-008"
+        ],
+        "rationale": "Distinct evidence; no reviewed shared-root rule.",
+        "recommendations": [
+          "Consider an explicit Permissions-Policy."
+        ],
+        "representative_evidence_id": "posture-bef174e628d14de4286e6ab980a5f631c9d967e3051f820f330574ff109e0d43",
+        "rule_id": "INDEPENDENT_EVIDENCE",
+        "score_eligible": true,
+        "severity_breadth": [
+          "LOW"
+        ]
+      },
+      {
+        "advisory_count": 0,
+        "advisory_ids": [],
+        "cluster_id": "cluster-50ebb38951586f7b3628836a834f4d48ad45a4edde0f68eb35c71afcc9200bb7",
+        "contribution": 0.125,
+        "dimension": "D1",
+        "member_count": 1,
+        "member_evidence_ids": [
+          "posture-ecd861eb2feea841bbf78af358c2939723abf889d5eda9578e9d1c66112a5cbe"
+        ],
+        "member_finding_ids": [
+          "HDR-007"
+        ],
+        "rationale": "Distinct evidence; no reviewed shared-root rule.",
+        "recommendations": [
+          "Consider an explicit Referrer-Policy."
+        ],
+        "representative_evidence_id": "posture-ecd861eb2feea841bbf78af358c2939723abf889d5eda9578e9d1c66112a5cbe",
+        "rule_id": "INDEPENDENT_EVIDENCE",
+        "score_eligible": true,
+        "severity_breadth": [
+          "LOW"
+        ]
+      }
+    ],
+    "deductions": [
+      {
+        "cluster_id": "cluster-492282f9a35de5af87bbc89202f0b9c65b880dd02936cf3fa2f8a3cad96325a7",
+        "dimension": "D1",
+        "semantics": "Standalone effect; deductions are NOT additive",
+        "standalone_quality_reduction": 75.0
+      },
+      {
+        "cluster_id": "cluster-3f48a3dc29b340c23ed0dca2038402a06c801d0e5604fb75854f189767d10aef",
+        "dimension": "D1",
+        "semantics": "Standalone effect; deductions are NOT additive",
+        "standalone_quality_reduction": 50.0
+      },
+      {
+        "cluster_id": "cluster-824a0bf64f15ce99e7e10b0d1e5955531174062c6a5ea2fb23bd1e35cd672765",
+        "dimension": "D1",
+        "semantics": "Standalone effect; deductions are NOT additive",
+        "standalone_quality_reduction": 25.0
+      },
+      {
+        "cluster_id": "cluster-f20e681e450ad679025849bf0478b9c358371486c1c3a8fe19c263efb87f628f",
+        "dimension": "D3",
+        "semantics": "Standalone effect; deductions are NOT additive",
+        "standalone_quality_reduction": 25.0
+      },
+      {
+        "cluster_id": "cluster-04361a1e3c8f3a711c915d25552d9eaa57440604f3a232e08fd561d2d543f392",
+        "dimension": "D1",
+        "semantics": "Standalone effect; deductions are NOT additive",
+        "standalone_quality_reduction": 12.5
+      },
+      {
+        "cluster_id": "cluster-50ebb38951586f7b3628836a834f4d48ad45a4edde0f68eb35c71afcc9200bb7",
+        "dimension": "D1",
+        "semantics": "Standalone effect; deductions are NOT additive",
+        "standalone_quality_reduction": 12.5
+      }
+    ],
+    "dimensions": [
+      {
+        "active_incident_count": 0,
+        "dimension_id": "D1",
+        "explanation": "9 scored root/episode clusters; quality = 100 \u00d7 product(1 \u2212 contribution). Zero-risk and coverage exclusions retain source semantics. Additional checks were NOT_REEVALUATED; this score describes observed controls only.",
+        "finding_count": 14,
+        "main_contributors": [
+          {
+            "advisory_count": 0,
+            "advisory_ids": [],
+            "cluster_id": "cluster-492282f9a35de5af87bbc89202f0b9c65b880dd02936cf3fa2f8a3cad96325a7",
+            "contribution": 0.75,
+            "dimension": "D1",
+            "member_count": 4,
+            "member_evidence_ids": [
+              "posture-2a57581d14fabec09bdbd9eec99e8e295e993835cfccd640a370b3aeefd2373b",
+              "posture-a7cbddb75c502c7761e5fc5f36de0a202464f8e4b935a42abf9ae59604d827e4",
+              "posture-ba6d9208636efe8443c03f530de0662e61884c9603e5697c8c8bf52141255765",
+              "posture-e7d0bf993b5886349f20d517b624019a579aed58e3a2c57654fb803a5153b47a"
+            ],
+            "member_finding_ids": [
+              "COOKIE-MoodleSession-SECURE",
+              "HDR-001",
+              "TLS-001",
+              "TLS-003"
+            ],
+            "rationale": "One lack-of-HTTPS root condition; cross-dimension Secure cookie retained and scored once in D1.",
+            "recommendations": [
+              "Enable HTTPS and redirect HTTP traffic.",
+              "Enable HTTPS and set Secure for MoodleSession.",
+              "Enable HTTPS first, then configure HSTS.",
+              "Enable HTTPS for the Moodle deployment."
+            ],
+            "representative_evidence_id": "posture-2a57581d14fabec09bdbd9eec99e8e295e993835cfccd640a370b3aeefd2373b",
+            "rule_id": "PLAINTEXT_TRANSPORT",
+            "score_eligible": true,
+            "severity_breadth": [
+              "HIGH",
+              "INFO",
+              "MEDIUM"
+            ]
+          },
+          {
+            "advisory_count": 0,
+            "advisory_ids": [],
+            "cluster_id": "cluster-3f48a3dc29b340c23ed0dca2038402a06c801d0e5604fb75854f189767d10aef",
+            "contribution": 0.5,
+            "dimension": "D1",
+            "member_count": 1,
+            "member_evidence_ids": [
+              "posture-41d77644653d593e027856668b3f8aa5d9608015772d9b01bfab4cd98868773a"
+            ],
+            "member_finding_ids": [
+              "HDR-002"
+            ],
+            "rationale": "Distinct evidence; no reviewed shared-root rule.",
+            "recommendations": [
+              "Define a Moodle-compatible CSP."
+            ],
+            "representative_evidence_id": "posture-41d77644653d593e027856668b3f8aa5d9608015772d9b01bfab4cd98868773a",
+            "rule_id": "INDEPENDENT_EVIDENCE",
+            "score_eligible": true,
+            "severity_breadth": [
+              "MEDIUM"
+            ]
+          },
+          {
+            "advisory_count": 0,
+            "advisory_ids": [],
+            "cluster_id": "cluster-824a0bf64f15ce99e7e10b0d1e5955531174062c6a5ea2fb23bd1e35cd672765",
+            "contribution": 0.25,
+            "dimension": "D1",
+            "member_count": 1,
+            "member_evidence_ids": [
+              "posture-17a4cbf859da3da96a3b2f18d381019269326f5d0f052b27356ec64d88adb644"
+            ],
+            "member_finding_ids": [
+              "HDR-005"
+            ],
+            "rationale": "Distinct evidence; no reviewed shared-root rule.",
+            "recommendations": [
+              "Set X-Content-Type-Options: nosniff."
+            ],
+            "representative_evidence_id": "posture-17a4cbf859da3da96a3b2f18d381019269326f5d0f052b27356ec64d88adb644",
+            "rule_id": "INDEPENDENT_EVIDENCE",
+            "score_eligible": true,
+            "severity_breadth": [
+              "LOW"
+            ]
+          },
+          {
+            "advisory_count": 0,
+            "advisory_ids": [],
+            "cluster_id": "cluster-04361a1e3c8f3a711c915d25552d9eaa57440604f3a232e08fd561d2d543f392",
+            "contribution": 0.125,
+            "dimension": "D1",
+            "member_count": 1,
+            "member_evidence_ids": [
+              "posture-bef174e628d14de4286e6ab980a5f631c9d967e3051f820f330574ff109e0d43"
+            ],
+            "member_finding_ids": [
+              "HDR-008"
+            ],
+            "rationale": "Distinct evidence; no reviewed shared-root rule.",
+            "recommendations": [
+              "Consider an explicit Permissions-Policy."
+            ],
+            "representative_evidence_id": "posture-bef174e628d14de4286e6ab980a5f631c9d967e3051f820f330574ff109e0d43",
+            "rule_id": "INDEPENDENT_EVIDENCE",
+            "score_eligible": true,
+            "severity_breadth": [
+              "LOW"
+            ]
+          },
+          {
+            "advisory_count": 0,
+            "advisory_ids": [],
+            "cluster_id": "cluster-50ebb38951586f7b3628836a834f4d48ad45a4edde0f68eb35c71afcc9200bb7",
+            "contribution": 0.125,
+            "dimension": "D1",
+            "member_count": 1,
+            "member_evidence_ids": [
+              "posture-ecd861eb2feea841bbf78af358c2939723abf889d5eda9578e9d1c66112a5cbe"
+            ],
+            "member_finding_ids": [
+              "HDR-007"
+            ],
+            "rationale": "Distinct evidence; no reviewed shared-root rule.",
+            "recommendations": [
+              "Consider an explicit Referrer-Policy."
+            ],
+            "representative_evidence_id": "posture-ecd861eb2feea841bbf78af358c2939723abf889d5eda9578e9d1c66112a5cbe",
+            "rule_id": "INDEPENDENT_EVIDENCE",
+            "score_eligible": true,
+            "severity_breadth": [
+              "LOW"
+            ]
+          }
+        ],
+        "name": "TRANSPORT_HTTP_PROTECTION",
+        "policy_weight": 0.16666666666666666,
+        "risk_index": 0.92822265625,
+        "score": 7.177734375,
+        "status": "PARTIAL_EVIDENCE"
+      },
+      {
+        "active_incident_count": 0,
+        "dimension_id": "D2",
+        "explanation": "4 scored root/episode clusters; quality = 100 \u00d7 product(1 \u2212 contribution). Zero-risk and coverage exclusions retain source semantics. Additional checks were NOT_REEVALUATED; this score describes observed controls only.",
+        "finding_count": 7,
+        "main_contributors": [],
+        "name": "IDENTITY_SESSION_ACCESS",
+        "policy_weight": 0.16666666666666666,
+        "risk_index": 0.0,
+        "score": 100.0,
+        "status": "PARTIAL_EVIDENCE"
+      },
+      {
+        "active_incident_count": 0,
+        "dimension_id": "D3",
+        "explanation": "2 scored root/episode clusters; quality = 100 \u00d7 product(1 \u2212 contribution). Zero-risk and coverage exclusions retain source semantics. Additional checks were NOT_REEVALUATED; this score describes observed controls only.",
+        "finding_count": 13,
+        "main_contributors": [
+          {
+            "advisory_count": 0,
+            "advisory_ids": [],
+            "cluster_id": "cluster-f20e681e450ad679025849bf0478b9c358371486c1c3a8fe19c263efb87f628f",
+            "contribution": 0.25,
+            "dimension": "D3",
+            "member_count": 1,
+            "member_evidence_ids": [
+              "posture-51d8e2cd2f71f8aa2294b4bf42a9859c5157a70a87ee1d742b81b5d0861ca9d3"
+            ],
+            "member_finding_ids": [
+              "DISC-001"
+            ],
+            "rationale": "Distinct evidence; no reviewed shared-root rule.",
+            "recommendations": [
+              "Reduce server tokens."
+            ],
+            "representative_evidence_id": "posture-51d8e2cd2f71f8aa2294b4bf42a9859c5157a70a87ee1d742b81b5d0861ca9d3",
+            "rule_id": "INDEPENDENT_EVIDENCE",
+            "score_eligible": true,
+            "severity_breadth": [
+              "LOW"
+            ]
+          }
+        ],
+        "name": "EXPOSURE_DISCLOSURE",
+        "policy_weight": 0.16666666666666666,
+        "risk_index": 0.25,
+        "score": 75.0,
+        "status": "PARTIAL_EVIDENCE"
+      },
+      {
+        "active_incident_count": 0,
+        "dimension_id": "D4",
+        "explanation": "0 scored root/episode clusters; quality = 100 \u00d7 product(1 \u2212 contribution). Zero-risk and coverage exclusions retain source semantics.",
+        "finding_count": 12,
+        "main_contributors": [],
+        "name": "PATCH_VULNERABILITY_MANAGEMENT",
+        "policy_weight": 0.16666666666666666,
+        "risk_index": null,
+        "score": null,
+        "status": "INSUFFICIENT_EVIDENCE"
+      },
+      {
+        "active_incident_count": 0,
+        "dimension_id": "D5",
+        "explanation": "0 scored root/episode clusters; quality = 100 \u00d7 product(1 \u2212 contribution). Zero-risk and coverage exclusions retain source semantics.",
+        "finding_count": 4,
+        "main_contributors": [],
+        "name": "SERVER_HARDENING_INTEGRITY",
+        "policy_weight": 0.16666666666666666,
+        "risk_index": null,
+        "score": null,
+        "status": "INSUFFICIENT_EVIDENCE"
+      },
+      {
+        "active_incident_count": 0,
+        "dimension_id": "D6",
+        "explanation": "0 scored root/episode clusters; quality = 100 \u00d7 product(1 \u2212 contribution). Zero-risk and coverage exclusions retain source semantics.",
+        "finding_count": 0,
+        "main_contributors": [],
+        "name": "BEHAVIORAL_THREAT_ACTIVITY",
+        "policy_weight": 0.16666666666666666,
+        "risk_index": null,
+        "score": null,
+        "status": "INSUFFICIENT_EVIDENCE"
+      }
+    ],
+    "evidence_ids": [
+      "posture-12597d9cda6c9e5fa1048876fffbf736d8302791f2ef62bc2c16de7fa3e72fa2",
+      "posture-15d2e6d4c1233fc5307bcadb204c1873ce733331c4cee5354f3526cb3b7f44cf",
+      "posture-17a4cbf859da3da96a3b2f18d381019269326f5d0f052b27356ec64d88adb644",
+      "posture-228042f60b6c69e307127e0834a007179878c62c8b5430825f3f10644a332aa6",
+      "posture-28170f876ee54aab22172b87fcc22ab8b27c57169a184b5721a110a23f14e3f7",
+      "posture-2a57581d14fabec09bdbd9eec99e8e295e993835cfccd640a370b3aeefd2373b",
+      "posture-323771413586f8f70935a3a33fb166aa50bcfe329e2d7e367b59795824d52daa",
+      "posture-362ff2da0750554521396d9d77ab80211717d7cc5efe5299b984953cefa89b9b",
+      "posture-4005ad461b3a61c27914b7bac60614da3222a6650f25d9d88bdf1fbe81e81a21",
+      "posture-41d77644653d593e027856668b3f8aa5d9608015772d9b01bfab4cd98868773a",
+      "posture-422d3367f7ed1069a504075535f1ca321162aca4fc1d5e3342bdcc9b906c5d90",
+      "posture-48d4078976418696f3186e155d5c6009dd3619721549b25583c694fe9225d404",
+      "posture-519c678bf150208244d7a3dc164de5250fd6a1fe298b38e33364de84ec35124b",
+      "posture-51d8e2cd2f71f8aa2294b4bf42a9859c5157a70a87ee1d742b81b5d0861ca9d3",
+      "posture-5f8d5221dcfacc46bd201c062311d763c7e618be14090f4137bdd1c503c0117a",
+      "posture-6a0731ac077597c46488952ee38efafb00c09974ff27643f3117f083a36cf7a6",
+      "posture-6aaa484ae33bd17fa4014803f9743013938c556b5546ef377823eb8cb198da2a",
+      "posture-6fdf375169cbda08d339828845ffe27c754d4255497748c8f21178bf09663e85",
+      "posture-77463e6e575f9f633c221fc8305a3515d44585d88cd46de7223321cc61e0af9f",
+      "posture-7afef1acf059d4951d086338418db193cf35e88b12baa4f50ede13e20413173a",
+      "posture-7b934c68b1038a9915938c1658a322fd263ad7ee5a9c94b0e1bb0f0618cd9812",
+      "posture-8599d79c29a3ff3b38b438a974a5fcd790241377c90a70f028b8d12a9ad7d24d",
+      "posture-9917bdbd22f0ef076ad2b91b99f0a0970753e9edd08593589bb4fd50bb34ea29",
+      "posture-9d6a7bf5faadfaf5d9bff4d296988b67e94ac1f298067b116f1c179c8b3a8d19",
+      "posture-a02b0da751d8935e99a59a57ed3f95c4b031b0af365c0728fdf382b812cae54b",
+      "posture-a78416c4b0ae7e3736c3a7f591d791ae8e607c99e8818f031dae7dfa197e89e7",
+      "posture-a7cbddb75c502c7761e5fc5f36de0a202464f8e4b935a42abf9ae59604d827e4",
+      "posture-ac4271a822148dd0c84509ebe8816e89d443474c712cf704e36c1ffab2643f9a",
+      "posture-b7add938d69bafd0a1b256481bee5feb5d8279fe21f891c7c6333c117a6b27e5",
+      "posture-b7edb83516cc7f446ee13a4b1786fdc8f08c35fb46fa3fac93a3b6ba9fe68151",
+      "posture-ba6d9208636efe8443c03f530de0662e61884c9603e5697c8c8bf52141255765",
+      "posture-bb37ff96a62bf45a9c02c6ac7b18af30ff5a644b17ae7ae4da08553509d59712",
+      "posture-bef174e628d14de4286e6ab980a5f631c9d967e3051f820f330574ff109e0d43",
+      "posture-c5248d42b2f3ada6ccc84d8abdd8ba2b36febf83b4b42de110730cc8a5052cf1",
+      "posture-c8b00fef24832d1f259c3e5bc14893f5d682667bc403374935f931052d4bd332",
+      "posture-cb044b5d2af0e6514ba24c1f9fc9beb1be0fc05859e089663f436e1586a1a048",
+      "posture-cb91269fb99848511157beb9d95b5b66e0136817de2acebd98fd54fb596c8d41",
+      "posture-db561a2b1d80fd67fb61cf5b04cb27f0008aee27806860fdf9b9243f6912e703",
+      "posture-ddc2efdcc9f96cf3f12c6aceca06a305924b252e6f8b5895e728377b6d7c3879",
+      "posture-e05eca751e648b75a7053ce924157e1f7d583a419cbf6c42cb83b33f50077772",
+      "posture-e5d7afe061490ad66f319f806535fbbcab4cc2ee304e7feab34ab85bea9c935e",
+      "posture-e75c3fda4985440a97939044c3faa797990aa95eb79cecb125dba78b49b8a8a8",
+      "posture-e7d0bf993b5886349f20d517b624019a579aed58e3a2c57654fb803a5153b47a",
+      "posture-ea32b8a69a8ec14042f7975e5183f7c0d30b7e17a1bd871a326d586485e26586",
+      "posture-eacaf4da7f0a839b2ce6bc07342a309fcc7f2fdb6e2801caa4c8c2248f780123",
+      "posture-ecd861eb2feea841bbf78af358c2939723abf889d5eda9578e9d1c66112a5cbe",
+      "posture-edbcebe05e53ea5700a40b8f0eb427661d688b59d86fcf297dc717f90efa3125",
+      "posture-eee2315873f9fb434cc5ad95dead3668c361096f1e3cdc54283c6aa1984b57bd",
+      "posture-f837a37ed068cd315aca7179abd14a4da956b1788cc9df863767f9292dd7cc84",
+      "posture-fa29ea21237ac71ff9429ea28ddaac175c217a55f6b391ba724976b16a67e930"
+    ],
+    "is_probability": false,
+    "overall": 60.72591145833333,
+    "overall_status": "PARTIAL_EVIDENCE",
+    "policy": {
+      "assessment_scope": "CURRENT_CQI",
+      "behavior_scope": "NO_BEHAVIOR_EVIDENCE; D6 unavailable",
+      "coefficient_semantics": "Transparent ordinal policy coefficients; not empirical probabilities",
+      "coefficients": {
+        "behavior_severity": {
+          "ADMIN_PROBING": 0.5,
+          "BENIGN": 0.0,
+          "BRUTE_FORCE": 0.75,
+          "ENUMERATION_RECONNAISSANCE": 0.5,
+          "PATH_TRAVERSAL_ATTEMPT": 0.75,
+          "REQUEST_BURST_DOS_LIKE": 0.75,
+          "SQLI_ATTEMPT": 0.75,
+          "UNCERTAIN": 0.15,
+          "UNKNOWN_ANOMALY": 0.4,
+          "XSS_ATTEMPT": 0.75
+        },
+        "behavior_support": {
+          "ANOMALY_WITHOUT_CONFIDENT_KNOWN_ATTACK": 1.0,
+          "BOTH_BENIGN_NORMAL": 0.0,
+          "KNOWN_ATTACK_MODEL_DISAGREEMENT": 0.8,
+          "KNOWN_ATTACK_WITH_ANOMALY_SUPPORT": 1.0,
+          "NORMAL_IF_WITH_UNCERTAIN_OR_UNAVAILABLE_CLASSIFIER": 1.0
+        },
+        "posture_confirmation": {
+          "CONFIRMED": 1.0,
+          "FALSE_POSITIVE": 0.0,
+          "NOT_APPLICABLE": 0.0,
+          "NOT_CONFIRMED": 0.35,
+          "VERSION_BASED": 0.7
+        },
+        "posture_result": {
+          "DISMISSED": 0.0,
+          "FAIL": 1.0,
+          "NOT_APPLICABLE": 0.0,
+          "PARTIAL": 0.5,
+          "PASS": 0.0
+        },
+        "posture_severity": {
+          "CRITICAL": 1.0,
+          "HIGH": 0.75,
+          "INFO": 0.0,
+          "LOW": 0.25,
+          "MEDIUM": 0.5
+        }
+      },
+      "comparison_caution": "Partial current CQI is not evidence of improvement over full research CQI; missing checks are not PASS.",
+      "coverage": "PARTIAL",
+      "display_rounding": "2 decimal places; internal calculations retain full float precision",
+      "formula": "risk_d=1-product(1-c_cluster); quality_d=100*(1-risk_d); CQI=sum(quality_d*w_d)/sum(available w_d)",
+      "formula_version": "fusion-cqi-1.1",
+      "limitations": [
+        "Validated on local Moodle testbed; platform universality is not claimed.",
+        "Behavior classes are attempts/patterns, not successful exploits; no causal claim.",
+        "Apache combined logs do not expose POST bodies.",
+        "XGBoost confidence is uncalibrated; no probability or compromise inference.",
+        "VERSION_BASED advisory matches do not confirm exploitation.",
+        "Weights and ordinal coefficients are transparent policy, not empirically calibrated.",
+        "Correlations are contextual and never change CQI.",
+        "Posture snapshot must describe one assessed platform; known root rules operate within that snapshot.",
+        "Recent horizon uses emission time, not event time; available dimensions are renormalized and missing coverage is reported.",
+        "Behavior windows are correlated; complementary-product index is not a probabilistic independence model."
+      ],
+      "missing_checks_are_pass": false,
+      "normalized_available_dimension_weights": {
+        "D1": 0.3333333333333333,
+        "D2": 0.3333333333333333,
+        "D3": 0.3333333333333333
+      },
+      "posture_assessment_id": "posture-20261015T202802Z-d5ad3ac1ef16",
+      "unavailable_dimensions": [
+        "D4",
+        "D5",
+        "D6"
+      ],
+      "weighting": "BASELINE_EQUAL_DIMENSION_WEIGHTING",
+      "weights_are_empirically_calibrated": false
+    },
+    "sensitivity": {
+      "absolute_range": 8.58143863514956,
+      "baseline_cqi": 60.72591145833333,
+      "max_cqi": 65.1882595486111,
+      "maximum_deviation": 4.4623480902777715,
+      "min_cqi": 56.60682091346154,
+      "scope": "Dimension-weight sensitivity only; no outcome-based tuning",
+      "variants": [
+        {
+          "change": "-20%",
+          "cqi": 65.1882595486111,
+          "dimension": "D1",
+          "weights": {
+            "D1": 0.13333333333333333,
+            "D2": 0.17333333333333334,
+            "D3": 0.17333333333333334,
+            "D4": 0.17333333333333334,
+            "D5": 0.17333333333333334,
+            "D6": 0.17333333333333334
+          },
+          "weights_exact": {
+            "D1": "2/15",
+            "D2": "13/75",
+            "D3": "13/75",
+            "D4": "13/75",
+            "D5": "13/75",
+            "D6": "13/75"
+          }
+        },
+        {
+          "change": "+20%",
+          "cqi": 56.60682091346154,
+          "dimension": "D1",
+          "weights": {
+            "D1": 0.2,
+            "D2": 0.16,
+            "D3": 0.16,
+            "D4": 0.16,
+            "D5": 0.16,
+            "D6": 0.16
+          },
+          "weights_exact": {
+            "D1": "1/5",
+            "D2": "4/25",
+            "D3": "4/25",
+            "D4": "4/25",
+            "D5": "4/25",
+            "D6": "4/25"
+          }
+        },
+        {
+          "change": "-20%",
+          "cqi": 57.45307074652778,
+          "dimension": "D2",
+          "weights": {
+            "D1": 0.17333333333333334,
+            "D2": 0.13333333333333333,
+            "D3": 0.17333333333333334,
+            "D4": 0.17333333333333334,
+            "D5": 0.17333333333333334,
+            "D6": 0.17333333333333334
+          },
+          "weights_exact": {
+            "D1": "13/75",
+            "D2": "2/15",
+            "D3": "13/75",
+            "D4": "13/75",
+            "D5": "13/75",
+            "D6": "13/75"
+          }
+        },
+        {
+          "change": "+20%",
+          "cqi": 63.7469951923077,
+          "dimension": "D2",
+          "weights": {
+            "D1": 0.16,
+            "D2": 0.2,
+            "D3": 0.16,
+            "D4": 0.16,
+            "D5": 0.16,
+            "D6": 0.16
+          },
+          "weights_exact": {
+            "D1": "4/25",
+            "D2": "1/5",
+            "D3": "4/25",
+            "D4": "4/25",
+            "D5": "4/25",
+            "D6": "4/25"
+          }
+        },
+        {
+          "change": "-20%",
+          "cqi": 59.53640407986111,
+          "dimension": "D3",
+          "weights": {
+            "D1": 0.17333333333333334,
+            "D2": 0.17333333333333334,
+            "D3": 0.13333333333333333,
+            "D4": 0.17333333333333334,
+            "D5": 0.17333333333333334,
+            "D6": 0.17333333333333334
+          },
+          "weights_exact": {
+            "D1": "13/75",
+            "D2": "13/75",
+            "D3": "2/15",
+            "D4": "13/75",
+            "D5": "13/75",
+            "D6": "13/75"
+          }
+        },
+        {
+          "change": "+20%",
+          "cqi": 61.823918269230774,
+          "dimension": "D3",
+          "weights": {
+            "D1": 0.16,
+            "D2": 0.16,
+            "D3": 0.2,
+            "D4": 0.16,
+            "D5": 0.16,
+            "D6": 0.16
+          },
+          "weights_exact": {
+            "D1": "4/25",
+            "D2": "4/25",
+            "D3": "1/5",
+            "D4": "4/25",
+            "D5": "4/25",
+            "D6": "4/25"
+          }
+        },
+        {
+          "change": "-20%",
+          "cqi": 60.72591145833333,
+          "dimension": "D4",
+          "weights": {
+            "D1": 0.17333333333333334,
+            "D2": 0.17333333333333334,
+            "D3": 0.17333333333333334,
+            "D4": 0.13333333333333333,
+            "D5": 0.17333333333333334,
+            "D6": 0.17333333333333334
+          },
+          "weights_exact": {
+            "D1": "13/75",
+            "D2": "13/75",
+            "D3": "13/75",
+            "D4": "2/15",
+            "D5": "13/75",
+            "D6": "13/75"
+          }
+        },
+        {
+          "change": "+20%",
+          "cqi": 60.72591145833333,
+          "dimension": "D4",
+          "weights": {
+            "D1": 0.16,
+            "D2": 0.16,
+            "D3": 0.16,
+            "D4": 0.2,
+            "D5": 0.16,
+            "D6": 0.16
+          },
+          "weights_exact": {
+            "D1": "4/25",
+            "D2": "4/25",
+            "D3": "4/25",
+            "D4": "1/5",
+            "D5": "4/25",
+            "D6": "4/25"
+          }
+        },
+        {
+          "change": "-20%",
+          "cqi": 60.72591145833333,
+          "dimension": "D5",
+          "weights": {
+            "D1": 0.17333333333333334,
+            "D2": 0.17333333333333334,
+            "D3": 0.17333333333333334,
+            "D4": 0.17333333333333334,
+            "D5": 0.13333333333333333,
+            "D6": 0.17333333333333334
+          },
+          "weights_exact": {
+            "D1": "13/75",
+            "D2": "13/75",
+            "D3": "13/75",
+            "D4": "13/75",
+            "D5": "2/15",
+            "D6": "13/75"
+          }
+        },
+        {
+          "change": "+20%",
+          "cqi": 60.72591145833333,
+          "dimension": "D5",
+          "weights": {
+            "D1": 0.16,
+            "D2": 0.16,
+            "D3": 0.16,
+            "D4": 0.16,
+            "D5": 0.2,
+            "D6": 0.16
+          },
+          "weights_exact": {
+            "D1": "4/25",
+            "D2": "4/25",
+            "D3": "4/25",
+            "D4": "4/25",
+            "D5": "1/5",
+            "D6": "4/25"
+          }
+        },
+        {
+          "change": "-20%",
+          "cqi": 60.72591145833333,
+          "dimension": "D6",
+          "weights": {
+            "D1": 0.17333333333333334,
+            "D2": 0.17333333333333334,
+            "D3": 0.17333333333333334,
+            "D4": 0.17333333333333334,
+            "D5": 0.17333333333333334,
+            "D6": 0.13333333333333333
+          },
+          "weights_exact": {
+            "D1": "13/75",
+            "D2": "13/75",
+            "D3": "13/75",
+            "D4": "13/75",
+            "D5": "13/75",
+            "D6": "2/15"
+          }
+        },
+        {
+          "change": "+20%",
+          "cqi": 60.72591145833333,
+          "dimension": "D6",
+          "weights": {
+            "D1": 0.16,
+            "D2": 0.16,
+            "D3": 0.16,
+            "D4": 0.16,
+            "D5": 0.16,
+            "D6": 0.2
+          },
+          "weights_exact": {
+            "D1": "4/25",
+            "D2": "4/25",
+            "D3": "4/25",
+            "D4": "4/25",
+            "D5": "4/25",
+            "D6": "1/5"
+          }
+        }
+      ]
+    }
+  },
+  "deduplicated_count": 0,
+  "duration_seconds": 3.731911,
+  "frontend_tests": 35,
+  "frozen_core_diff_bytes": 0,
+  "full_python_tests": 691,
+  "git_diff_check": "PASS",
+  "incomplete_native_requests": [
+    {
+      "method": "GET",
+      "status": null,
+      "url": "http://192.168.226.132/moodle/admin/"
+    }
+  ],
+  "multi_source_count": 0,
+  "native_checks_rerun": [
+    "COOKIE-MoodleSession-DOMAIN",
+    "COOKIE-MoodleSession-HTTPONLY",
+    "COOKIE-MoodleSession-PATH",
+    "COOKIE-MoodleSession-SAMESITE",
+    "COOKIE-MoodleSession-SECURE",
+    "CORS-001",
+    "CORS-002",
+    "DISC-001",
+    "DISC-002",
+    "HDR-001",
+    "HDR-002",
+    "HDR-005",
+    "HDR-006",
+    "HDR-007",
+    "HDR-008",
+    "TLS-001",
+    "TLS-002",
+    "TLS-003"
+  ],
+  "native_fresh_requests": 9,
+  "new_native_snapshot_independently_hash_verified": true,
+  "new_tests": 44,
+  "no_automatic_commit_or_tag": true,
+  "no_behavioral_retraining": true,
+  "no_cqi_reweighting": true,
+  "no_destructive_payloads": true,
+  "no_research_evidence_mutation": true,
+  "no_threshold_tuning": true,
+  "no_unauthorized_targets": true,
+  "no_zap_active_scan": true,
+  "not_reevaluated_checks": [
+    "ADV-MSA-26-0020",
+    "ADV-MSA-26-0021",
+    "ADV-MSA-26-0025",
+    "ADV-MSA-26-0028",
+    "ADV-MSA-26-0029",
+    "ADV-MSA-26-0030",
+    "ADV-MSA-26-0031",
+    "ADV-MSA-26-0032",
+    "ADV-MSA-26-0033",
+    "ADV-MSA-26-0041",
+    "CFG-003",
+    "CORE-001",
+    "DISC-003",
+    "EXPOSURE--ENV",
+    "EXPOSURE--GIT-HEAD",
+    "EXPOSURE-001",
+    "EXPOSURE-002",
+    "EXPOSURE-003",
+    "EXPOSURE-004",
+    "EXPOSURE-005",
+    "EXPOSURE-006",
+    "EXPOSURE-PHPINFO-PHP",
+    "EXPOSURE-SERVER-STATUS",
+    "FS-001",
+    "FS-002",
+    "FS-003",
+    "HDR-009",
+    "HTTP-001",
+    "HTTP-002",
+    "PATCH-001",
+    "SESSION-001",
+    "evidence-e8fd3f6e7c4d969336a9073c0ae6a11a155b4f0cb5ade74b8ee2c27d12ab616f"
+  ],
+  "posture_is_dynamic_snapshot_based": true,
+  "production_build": "PASS",
+  "protected_changes": [],
+  "protected_files_verified": 1320,
+  "protected_inventory_reference": {
+    "path": "docs/release/PRE_ZAP_INTEGRITY_RECEIPT.json",
+    "sha256": "f6aaa3d07e776a4d0d9308d76cc774652acfb09f81fce4ee39cff884dfc1d2a9"
+  },
+  "provider_statuses": {
+    "native": "COMPLETE",
+    "zap": "UNAVAILABLE"
+  },
+  "raw_finding_counts": {
+    "native": 27,
+    "zap": 0
+  },
+  "real_zap_acceptance": "NOT_EXECUTED; provider integration is tested with synthetic fixtures, not a claimed real scanner acceptance",
+  "real_zap_alerts_imported": 0,
+  "request_methods": [
+    "GET",
+    "OPTIONS"
+  ],
+  "research_cqi_unchanged": true,
+  "snapshot_path": "runtime/posture/posture-20261015T202802Z-d5ad3ac1ef16",
+  "snapshot_sha256": "8d9c8e732b001df16ac5cbd5af76e3fd8b16847effd7e0690c4fd9670b248aa7",
+  "stable_tag": "pre-zap-demo-ready-20261015",
+  "status_counts": {
+    "FAIL": 6,
+    "NOT_APPLICABLE": 2,
+    "NOT_REEVALUATED": 32,
+    "PARTIAL": 2,
+    "PASS": 8
+  },
+  "target": "http://192.168.226.132/moodle/",
+  "targeted_python_tests": 44,
+  "version": "operational-posture-integration-acceptance-1.0",
+  "zap_executed": false,
+  "zap_runtime": "UNAVAILABLE_PENDING_INSTALL"
+}

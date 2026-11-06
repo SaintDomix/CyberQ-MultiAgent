@@ -1,0 +1,68 @@
+[
+  {
+    "parent_id": "BENCH-SQL-POSITIVE",
+    "validator": "sql_injection",
+    "fixture": "positive",
+    "path": "/sql/vulnerable",
+    "expected": {
+      "outcome": "REPRODUCIBLE_DB_ERROR",
+      "check_result": "PARTIAL",
+      "confirmation_status": "LIKELY"
+    }
+  },
+  {
+    "parent_id": "BENCH-SQL-NEGATIVE",
+    "validator": "sql_injection",
+    "fixture": "negative",
+    "path": "/sql/safe",
+    "expected": {
+      "outcome": "NO_SQLI_SIGNAL",
+      "check_result": "PASS",
+      "confirmation_status": "NOT_CONFIRMED"
+    }
+  },
+  {
+    "parent_id": "BENCH-XSS-POSITIVE",
+    "validator": "unsafe_reflection_xss",
+    "fixture": "positive",
+    "path": "/xss/unsafe",
+    "expected": {
+      "outcome": "POTENTIALLY_UNSAFE_CONTEXT",
+      "check_result": "PARTIAL",
+      "confirmation_status": "LIKELY"
+    }
+  },
+  {
+    "parent_id": "BENCH-XSS-NEGATIVE",
+    "validator": "unsafe_reflection_xss",
+    "fixture": "negative",
+    "path": "/xss/encoded",
+    "expected": {
+      "outcome": "ENCODED_REFLECTION",
+      "check_result": "PASS",
+      "confirmation_status": "NOT_CONFIRMED"
+    }
+  },
+  {
+    "parent_id": "BENCH-ENUM-POSITIVE",
+    "validator": "account_enumeration",
+    "fixture": "positive",
+    "path": "/accounts/distinct",
+    "expected": {
+      "outcome": "REPRODUCIBLE_ACCOUNT_DISTINCTION",
+      "check_result": "PARTIAL",
+      "confirmation_status": "CONFIRMED"
+    }
+  },
+  {
+    "parent_id": "BENCH-ENUM-NEGATIVE",
+    "validator": "account_enumeration",
+    "fixture": "negative",
+    "path": "/accounts/normalized",
+    "expected": {
+      "outcome": "NO_ACCOUNT_DISTINCTION",
+      "check_result": "PASS",
+      "confirmation_status": "NOT_CONFIRMED"
+    }
+  }
+]

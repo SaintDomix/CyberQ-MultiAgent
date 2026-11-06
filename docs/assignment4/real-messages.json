@@ -1,0 +1,367 @@
+{
+  "task_id": "ma-b13d670f88e3480aaf257f74f873f4bf",
+  "messages": [
+    {
+      "schema_version": "cqma-message-1.0",
+      "message_id": "msg-6cf70519d0fd46ddbde4fcda099197b3",
+      "task_id": "ma-b13d670f88e3480aaf257f74f873f4bf",
+      "sender": "native",
+      "recipient": "coordinator",
+      "kind": "RESULT",
+      "created_at": "2026-11-06T07:45:15.059322+00:00",
+      "depends_on": [],
+      "payload": {
+        "agent": "native",
+        "summary": {
+          "mapped_records": 40,
+          "confirmation_status_counts": {
+            "CONFIRMED": 19,
+            "NOT_CONFIRMED": 9,
+            "VERSION_BASED": 11,
+            "FALSE_POSITIVE": 1
+          },
+          "finding_semantics": "VERSION_BASED remains distinct from CONFIRMED"
+        },
+        "tools_used": [
+          "native.read_baseline",
+          "native.map_controls"
+        ],
+        "evidence": [
+          {
+            "ref_id": "ref-d4bb6309ef8edd9ad22a2e11",
+            "path": "outputs/branch1_m1d_acceptance_lab_run02/findings.json",
+            "kind": "FILE",
+            "expected_sha256": "ca798f9aab2f3be7a08001538f130c9e54a5d7b0171b92d47c2f7491a3973f3e",
+            "read_sha256": "ca798f9aab2f3be7a08001538f130c9e54a5d7b0171b92d47c2f7491a3973f3e",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "evidence-21cf147d24635df9d5ff6da291e3026fabdd86029c918b8d74b336543639a862",
+              "evidence-3a3000b5292da045cf8cdb58624e5703271534ed44c4c2944349dbc4c5940339",
+              "evidence-6b66825d192e2713a9e6c6ee757c27fa78368deee71a7fc5d646ab2058121862",
+              "evidence-0c11e6215f55b3ca3e294da3f44eec5b28ef8ae05cfe728aa44c4ae39a21ef46",
+              "evidence-ba6a00c2a8ce20409bae836d5df799ad988e171891734cf12c9b6222635718b1",
+              "evidence-f5c29d2fd742cf9726531e3040cbb6ab264673e9fe979eff4c09ed5103c13aef",
+              "evidence-b3eef5264c0c6779290350cf2ff82c0871f2c14b5939d4879b89da957252de06",
+              "evidence-04cbcf70dbdcb7e77548d6fd8237b4506e3e752b610fd215fb41d00e2a34c75c",
+              "evidence-09a726b3729aef24076f4da93cc944195b1e5492b075d217b963535552256b58",
+              "evidence-2c36c704ffe2bd5570c87a3800e9ac1d1e90dbba36e4a37f5692101817e9a7ad",
+              "evidence-f481888f21c6e366100ea10573e1e2f9873c171f0bc1515256154b9f61fd3bff",
+              "evidence-a46217c483cf84418766b1ab7976b603f000104a2f553fd7042db8c74dad5bac",
+              "evidence-cb8ce4e9e2d0b4a1e727424ec5ed14dd7b1dad85cc443fd955e64406e7688a2d",
+              "evidence-5bdbf2f29190e5bbf3d0d70dbe72e598641b5b3d20c667913864e7de736c9978",
+              "evidence-e58a7c43b872e919fd644c9a200f3507d080765a43110d1abe9295ac51cc684e",
+              "evidence-b02dc463adb206880595d15afce98f512baa0932641623b8fe836112919a361c",
+              "evidence-c5a7f7072b80920e9c009252026603e87c0692297e0bf6200e20762a5c04ddf3",
+              "evidence-032cd6b8bf4a36b58b89adcfc7ff027780908551aad1925a829d35d1fa12e78b",
+              "evidence-163c9babc2ad0ef4cff0a269a92305289462ae4f5a5d1afe4b68dddf158299a7",
+              "evidence-8eee9115da48b537dadd5e4ee63014068d98f5bf8c438954e2fc1aeef4e4ac9c",
+              "evidence-64a048eefa2f83b97e965e1f58bf9144d16e8fe910cfd41bfb995836ef673828",
+              "evidence-8848cd45c900123644a385ca3e76a29e617b705b9fd6d945e3c52ffcaadd40ff",
+              "evidence-f2cf76cc8d53f0e25fd7a8c611da5ec871226697213509745a50295fc3aea822",
+              "evidence-1d20f4e2947c3f90b82b7a22774113712946461e4b53d6111415102d0595cb6f",
+              "evidence-62112eef102bce9735273c66a672f51bb03755b1f72cfad828e1d08fcbbd0646",
+              "evidence-9af230861fa409342fb251bfeb7b7dc32009069eb0dc6d022da950c4848b5b67",
+              "evidence-a589d09ff57dcb1bbcf95449f89246849350cd1a0b8c4f49aa4cc9203155c0ee",
+              "evidence-3e6260b51af199f73ef14ac122f525c7cdff7ee171b7dbbf64ae87818ce278f8",
+              "evidence-d7fd504f4bc1fb9da79b4732ccd4523d7134c366d489a736360bcc9dbd4e85fd",
+              "evidence-aaea893b8755d51dc87bc5ef1057af82e3df265e995ff7ac09dff33b00788111",
+              "evidence-ed44a3eb28335a7356abd1be02554601fc1ae40fff2d7889a8981b9662fc5f1a",
+              "evidence-9f40e0701fa6cb04b34b8bf46390c740d9693681f12d4ea80894ff0de2b7ddb6",
+              "evidence-e63898c87be955ed5f566e15bfb2f64455ab7e5a0c15367ee6f6205a32d39dc8",
+              "evidence-69795cd3eda6f260d59ec87ce1c0d298d0cacf84bc3e047eb53dd96c846135ed",
+              "evidence-78f6e7b67b2392d2a98502acb91099974952da48e0054e107824730d3906efa2",
+              "evidence-e3b870f6ed58e3fbcce76de2d7ca759a8f127a0e817f4d8a07e6ebc4f9fbcb7e",
+              "evidence-959e033f26902e600174fb2fc82c802c1cb3e94dda410c8c8a26d3fe392bfe8d",
+              "evidence-6961c4eed96e9c99faf83f9cc4e7b4c6538a4e42b6faf39c570eea54f2288416",
+              "evidence-7b30daf6834a6a202d5380386a294e24bdd290852071eec97c205a241693e41d",
+              "evidence-e8fd3f6e7c4d969336a9073c0ae6a11a155b4f0cb5ade74b8ee2c27d12ab616f"
+            ],
+            "observed_at": null,
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "cqma-message-1.0",
+      "message_id": "msg-ca871819842749f8acd740a72facbfcb",
+      "task_id": "ma-b13d670f88e3480aaf257f74f873f4bf",
+      "sender": "coordinator",
+      "recipient": "verification",
+      "kind": "DISPATCH",
+      "created_at": "2026-11-06T07:45:15.989250+00:00",
+      "depends_on": [
+        "msg-6cf70519d0fd46ddbde4fcda099197b3",
+        "msg-a9de43b1cb254dbf86392b38b76881b0",
+        "msg-6ae0a83c2d8f404eabe3748de22523e7"
+      ],
+      "payload": {
+        "scenario": "sqli_run",
+        "mode": "OFFLINE_EVIDENCE",
+        "allowed_tools": [
+          "verify.artifacts",
+          "verify.consistency",
+          "verify.journal"
+        ],
+        "upstream_agents": [
+          "native",
+          "zap",
+          "behavioral"
+        ]
+      }
+    },
+    {
+      "schema_version": "cqma-message-1.0",
+      "message_id": "msg-7bbed385df39461d94c719c3323df963",
+      "task_id": "ma-b13d670f88e3480aaf257f74f873f4bf",
+      "sender": "verification",
+      "recipient": "coordinator",
+      "kind": "RESULT",
+      "created_at": "2026-11-06T07:45:16.230898+00:00",
+      "depends_on": [
+        "msg-6cf70519d0fd46ddbde4fcda099197b3",
+        "msg-a9de43b1cb254dbf86392b38b76881b0",
+        "msg-6ae0a83c2d8f404eabe3748de22523e7"
+      ],
+      "payload": {
+        "agent": "verification",
+        "summary": {
+          "verification_status": "PARTIAL",
+          "outcomes": {
+            "VERIFIED": 17,
+            "PARTIAL": 2
+          },
+          "sqlite_status": "VERIFIED_READ_ONLY",
+          "journal_is_scored": false
+        },
+        "tools_used": [
+          "verify.artifacts",
+          "verify.consistency",
+          "verify.journal"
+        ],
+        "evidence": [
+          {
+            "ref_id": "ref-d4bb6309ef8edd9ad22a2e11",
+            "path": "outputs/branch1_m1d_acceptance_lab_run02/findings.json",
+            "kind": "FILE",
+            "expected_sha256": "ca798f9aab2f3be7a08001538f130c9e54a5d7b0171b92d47c2f7491a3973f3e",
+            "read_sha256": "ca798f9aab2f3be7a08001538f130c9e54a5d7b0171b92d47c2f7491a3973f3e",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "evidence-21cf147d24635df9d5ff6da291e3026fabdd86029c918b8d74b336543639a862",
+              "evidence-3a3000b5292da045cf8cdb58624e5703271534ed44c4c2944349dbc4c5940339",
+              "evidence-6b66825d192e2713a9e6c6ee757c27fa78368deee71a7fc5d646ab2058121862",
+              "evidence-0c11e6215f55b3ca3e294da3f44eec5b28ef8ae05cfe728aa44c4ae39a21ef46",
+              "evidence-ba6a00c2a8ce20409bae836d5df799ad988e171891734cf12c9b6222635718b1",
+              "evidence-f5c29d2fd742cf9726531e3040cbb6ab264673e9fe979eff4c09ed5103c13aef",
+              "evidence-b3eef5264c0c6779290350cf2ff82c0871f2c14b5939d4879b89da957252de06",
+              "evidence-04cbcf70dbdcb7e77548d6fd8237b4506e3e752b610fd215fb41d00e2a34c75c",
+              "evidence-09a726b3729aef24076f4da93cc944195b1e5492b075d217b963535552256b58",
+              "evidence-2c36c704ffe2bd5570c87a3800e9ac1d1e90dbba36e4a37f5692101817e9a7ad",
+              "evidence-f481888f21c6e366100ea10573e1e2f9873c171f0bc1515256154b9f61fd3bff",
+              "evidence-a46217c483cf84418766b1ab7976b603f000104a2f553fd7042db8c74dad5bac",
+              "evidence-cb8ce4e9e2d0b4a1e727424ec5ed14dd7b1dad85cc443fd955e64406e7688a2d",
+              "evidence-5bdbf2f29190e5bbf3d0d70dbe72e598641b5b3d20c667913864e7de736c9978",
+              "evidence-e58a7c43b872e919fd644c9a200f3507d080765a43110d1abe9295ac51cc684e",
+              "evidence-b02dc463adb206880595d15afce98f512baa0932641623b8fe836112919a361c",
+              "evidence-c5a7f7072b80920e9c009252026603e87c0692297e0bf6200e20762a5c04ddf3",
+              "evidence-032cd6b8bf4a36b58b89adcfc7ff027780908551aad1925a829d35d1fa12e78b",
+              "evidence-163c9babc2ad0ef4cff0a269a92305289462ae4f5a5d1afe4b68dddf158299a7",
+              "evidence-8eee9115da48b537dadd5e4ee63014068d98f5bf8c438954e2fc1aeef4e4ac9c",
+              "evidence-64a048eefa2f83b97e965e1f58bf9144d16e8fe910cfd41bfb995836ef673828",
+              "evidence-8848cd45c900123644a385ca3e76a29e617b705b9fd6d945e3c52ffcaadd40ff",
+              "evidence-f2cf76cc8d53f0e25fd7a8c611da5ec871226697213509745a50295fc3aea822",
+              "evidence-1d20f4e2947c3f90b82b7a22774113712946461e4b53d6111415102d0595cb6f",
+              "evidence-62112eef102bce9735273c66a672f51bb03755b1f72cfad828e1d08fcbbd0646",
+              "evidence-9af230861fa409342fb251bfeb7b7dc32009069eb0dc6d022da950c4848b5b67",
+              "evidence-a589d09ff57dcb1bbcf95449f89246849350cd1a0b8c4f49aa4cc9203155c0ee",
+              "evidence-3e6260b51af199f73ef14ac122f525c7cdff7ee171b7dbbf64ae87818ce278f8",
+              "evidence-d7fd504f4bc1fb9da79b4732ccd4523d7134c366d489a736360bcc9dbd4e85fd",
+              "evidence-aaea893b8755d51dc87bc5ef1057af82e3df265e995ff7ac09dff33b00788111",
+              "evidence-ed44a3eb28335a7356abd1be02554601fc1ae40fff2d7889a8981b9662fc5f1a",
+              "evidence-9f40e0701fa6cb04b34b8bf46390c740d9693681f12d4ea80894ff0de2b7ddb6",
+              "evidence-e63898c87be955ed5f566e15bfb2f64455ab7e5a0c15367ee6f6205a32d39dc8",
+              "evidence-69795cd3eda6f260d59ec87ce1c0d298d0cacf84bc3e047eb53dd96c846135ed",
+              "evidence-78f6e7b67b2392d2a98502acb91099974952da48e0054e107824730d3906efa2",
+              "evidence-e3b870f6ed58e3fbcce76de2d7ca759a8f127a0e817f4d8a07e6ebc4f9fbcb7e",
+              "evidence-959e033f26902e600174fb2fc82c802c1cb3e94dda410c8c8a26d3fe392bfe8d",
+              "evidence-6961c4eed96e9c99faf83f9cc4e7b4c6538a4e42b6faf39c570eea54f2288416",
+              "evidence-7b30daf6834a6a202d5380386a294e24bdd290852071eec97c205a241693e41d",
+              "evidence-e8fd3f6e7c4d969336a9073c0ae6a11a155b4f0cb5ade74b8ee2c27d12ab616f"
+            ],
+            "observed_at": null,
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-89906584769089d7739ad6e9",
+            "path": "runtime/posture/posture-20261105T074340Z-c6f295f4251b/artifact_manifest.json",
+            "kind": "FILE",
+            "expected_sha256": "7c51e7228eb6d6144da79edf9c295eebace9ef69641a7dcb707fe81ddd774bb6",
+            "read_sha256": "7c51e7228eb6d6144da79edf9c295eebace9ef69641a7dcb707fe81ddd774bb6",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "posture-20261105T074340Z-c6f295f4251b"
+            ],
+            "observed_at": "2026-11-05T07:44:40.765542+00:00",
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-6acbbf2bb46577c6a13bbb60",
+            "path": "runtime/posture/posture-20261105T074340Z-c6f295f4251b/snapshot.json",
+            "kind": "FILE",
+            "expected_sha256": "5aa984d0071e2a99fb0d7e647cad6fbc5d42a7f562c74b164f813c24dbdad4db",
+            "read_sha256": "5aa984d0071e2a99fb0d7e647cad6fbc5d42a7f562c74b164f813c24dbdad4db",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "posture-20261105T074340Z-c6f295f4251b"
+            ],
+            "observed_at": "2026-11-05T07:44:40.765542+00:00",
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-304e5c2ad22ce08f9260ac32",
+            "path": "runtime/posture/posture-20261105T074340Z-c6f295f4251b/request.json",
+            "kind": "FILE",
+            "expected_sha256": "35eae8b90382706ac10077bb34b85e9ed1a758be9e76e456c884240d49d40365",
+            "read_sha256": "35eae8b90382706ac10077bb34b85e9ed1a758be9e76e456c884240d49d40365",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "posture-20261105T074340Z-c6f295f4251b"
+            ],
+            "observed_at": "2026-11-05T07:44:40.765542+00:00",
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-21b6535585d267c34bf92709",
+            "path": "runtime/posture/posture-20261105T074340Z-c6f295f4251b/zap.json",
+            "kind": "FILE",
+            "expected_sha256": "689abda83f96fb68f2601053f07c563d477e23d89a51f39fdfce0fe86049e6a8",
+            "read_sha256": "689abda83f96fb68f2601053f07c563d477e23d89a51f39fdfce0fe86049e6a8",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "posture-20261105T074340Z-c6f295f4251b"
+            ],
+            "observed_at": "2026-11-05T07:44:40.765542+00:00",
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-13611f1921e440a3fee64f92",
+            "path": "evidence/branch2_captures/m5_fresh_attack_holdout_01/SQ01-run71/access.log",
+            "kind": "FILE",
+            "expected_sha256": "76bcc80b5e0268b2b75fadc9a5382a4dde84f71dbbae9b6b8192de4b96ed8a46",
+            "read_sha256": "76bcc80b5e0268b2b75fadc9a5382a4dde84f71dbbae9b6b8192de4b96ed8a46",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "SQ01-run71"
+            ],
+            "observed_at": "2026-10-14T19:27:50+00:00",
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-81eafc38883febf3700413f2",
+            "path": "outputs/branch2/accepted_behavioral_v2/accepted_manifest.json",
+            "kind": "FILE",
+            "expected_sha256": "72ee22ef38b7032851d8675f4f03a1b9e360561e50e500bd80e8afd47a80b654",
+            "read_sha256": "72ee22ef38b7032851d8675f4f03a1b9e360561e50e500bd80e8afd47a80b654",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "SQ01-run71"
+            ],
+            "observed_at": "2026-10-14T19:27:50+00:00",
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-7aeb65d26e4ca28c62918c99",
+            "path": "outputs/branch2/m5_final_day/fresh_attack_holdout_01/artifact_hashes.json",
+            "kind": "FILE",
+            "expected_sha256": "43736f1b363d4014fae78dbc3651853c83e4a31a8eb0a5c70edbc2bee421698b",
+            "read_sha256": "43736f1b363d4014fae78dbc3651853c83e4a31a8eb0a5c70edbc2bee421698b",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "SQ01-run71"
+            ],
+            "observed_at": "2026-10-14T19:27:50+00:00",
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-528c625e00caeeba37be2c3c",
+            "path": "outputs/branch2/m5_final_day/fresh_attack_holdout_01/predictions.json",
+            "kind": "FILE",
+            "expected_sha256": "fb6a424d6a202d3664e84c141a081a05a8d717b98f72acc1f11a97a936009d86",
+            "read_sha256": "fb6a424d6a202d3664e84c141a081a05a8d717b98f72acc1f11a97a936009d86",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [
+              "SQ01-run71"
+            ],
+            "observed_at": "2026-10-14T19:27:50+00:00",
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-88eb3d4ddd818e2bb75a1b33",
+            "path": "runtime/behavioral_v2/ui-f7f069141ea340d6a16eccd2c3924da8/journal.sqlite3",
+            "kind": "SQLITE",
+            "expected_sha256": "caf34b41dc33ba61fb7a4b98f2082cf93d0132a39a13cfbdc4e3f5d793275514",
+            "read_sha256": "caf34b41dc33ba61fb7a4b98f2082cf93d0132a39a13cfbdc4e3f5d793275514",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [],
+            "observed_at": null,
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-76e62192bf0ec62838d37f90",
+            "path": "runtime/behavioral_v2/ui-f7f069141ea340d6a16eccd2c3924da8/session_manifest.json",
+            "kind": "FILE",
+            "expected_sha256": "3fbe999ca431d8ef2b72397892d25993923d46d44f82d6a783f0271ed796c82f",
+            "read_sha256": "3fbe999ca431d8ef2b72397892d25993923d46d44f82d6a783f0271ed796c82f",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [],
+            "observed_at": null,
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          },
+          {
+            "ref_id": "ref-2ea472fa596ebe3f428b9d05",
+            "path": "runtime/behavioral_v2/ui-f7f069141ea340d6a16eccd2c3924da8/checkpoint.json",
+            "kind": "FILE",
+            "expected_sha256": "0899420a8bb347a0ca42cd3663dc0f2f2de2400d1e07cef2d79bc356241930d1",
+            "read_sha256": "0899420a8bb347a0ca42cd3663dc0f2f2de2400d1e07cef2d79bc356241930d1",
+            "anchor": "PRESERVED_INVENTORY",
+            "source_record_ids": [],
+            "observed_at": null,
+            "temporal_scope": "HISTORICAL_SAVED_EVIDENCE"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "cqma-message-1.0",
+      "message_id": "msg-d155084b9ea64d70af22ad93f8e9030d",
+      "task_id": "ma-b13d670f88e3480aaf257f74f873f4bf",
+      "sender": "quality",
+      "recipient": "coordinator",
+      "kind": "RESULT",
+      "created_at": "2026-11-06T07:45:16.692132+00:00",
+      "depends_on": [
+        "msg-7bbed385df39461d94c719c3323df963"
+      ],
+      "payload": {
+        "agent": "quality",
+        "summary": {
+          "overall": 0.17002940689377427,
+          "policy": "cqi-evidence-2.0",
+          "dimension_count": 6,
+          "scope": "HISTORICAL_REANALYSIS_PARTIAL",
+          "verification_status": "PARTIAL",
+          "is_probability": false,
+          "consistency_with_existing_cqi": "PASS",
+          "assessment_outcome": "HISTORICAL_REANALYSIS_WITH_LIMITATIONS"
+        },
+        "tools_used": [
+          "quality.evaluate",
+          "quality.check_result"
+        ],
+        "evidence": []
+      }
+    }
+  ],
+  "source": "Actual completed localhost integration task; no generated example findings"
+}

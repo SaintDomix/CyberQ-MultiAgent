@@ -1,0 +1,3 @@
+{"timestamp": "2026-01-01T00:00:01+00:00", "client_ip": "192.0.2.10", "method": "GET", "request_uri": "/academy/catalog?item=4", "status": 200, "bytes": 320, "user_agent": "FixtureAgent/1.0"}
+{"timestamp": "2026-01-01T00:00:04+00:00", "client_ip": "192.0.2.10", "method": "GET", "request_uri": "/academy/app.css", "status": 200, "bytes": 100, "user_agent": "FixtureAgent/1.0"}
+{"timestamp": "2026-01-01T00:00:12+00:00", "client_ip": "192.0.2.10", "method": "GET", "request_uri": "/academy/help", "status": 404, "bytes": 90, "user_agent": "FixtureAgent/1.0"}
